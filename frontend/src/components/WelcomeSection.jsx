@@ -15,16 +15,16 @@ export const WelcomeSection = () => {
             </p>
             <div className="bg-gradient-to-br from-emerald-50 to-sky-50 p-6 rounded-xl border border-emerald-100">
               <p className="text-slate-700 italic leading-relaxed">
-                <span className="font-semibold text-emerald-700">Our Mission:</span> {churchInfo.introduction.mission}
+                <span className="!font-semibold text-emerald-700"></span> {churchInfo.introduction.mission}
               </p>
             </div>
           </div>
           <div className="relative">
-            <img 
+            <img
               src={churchInfo.images.community}
               alt="Church Community"
-              className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-            />
+              className="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+
             <div className="absolute -bottom-6 -right-6 bg-emerald-600 text-white p-6 rounded-xl shadow-xl">
               <p className="text-3xl font-bold">Join Us</p>
               <p className="text-emerald-100">Every Sunday</p>
@@ -32,6 +32,6 @@ export const WelcomeSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
