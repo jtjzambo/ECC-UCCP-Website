@@ -1,97 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Church, BookOpen, Calendar, Heart, Users, Sparkles } from 'lucide-react';
+import { Church, BookOpen, Calendar, Heart, Users } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { HeroSection } from '../components/HeroSection';
+import { WelcomeSection } from '../components/WelcomeSection';
 import { churchInfo } from '../mock';
 
 export const Home = () => {
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${churchInfo.images.hero})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-emerald-900/70 to-sky-900/60"></div>
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white mb-6 border border-white/20">
-              <Sparkles size={16} />
-              <span className="text-sm font-medium">Welcome to Our Faith Community</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              {churchInfo.tagline}
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join us as we worship together, grow in faith, and serve our community with love and compassion.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild
-                size="lg"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                <Link to="/services">Our Services</Link>
-              </Button>
-              <Button 
-                asChild
-                size="lg"
-                variant="outline"
-                className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-white/30 px-8 py-6 text-lg shadow-lg transition-all duration-200"
-              >
-                <Link to="/about">Learn More</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Decorative wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f8fafc"/>
-          </svg>
-        </div>
-      </section>
-
-      {/* Welcome Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-slate-800 mb-6">
-                {churchInfo.introduction.title}
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                {churchInfo.introduction.content}
-              </p>
-              <div className="bg-gradient-to-br from-emerald-50 to-sky-50 p-6 rounded-xl border border-emerald-100">
-                <p className="text-slate-700 italic leading-relaxed">
-                  <span className="font-semibold text-emerald-700">Our Mission:</span> {churchInfo.introduction.mission}
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={churchInfo.images.community}
-                alt="Church Community"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-emerald-600 text-white p-6 rounded-xl shadow-xl">
-                <p className="text-3xl font-bold">Join Us</p>
-                <p className="text-emerald-100">Every Sunday</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      <WelcomeSection />
 
       {/* Quick Links Section */}
       <section className="py-20 bg-white">
