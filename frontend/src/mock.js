@@ -2,7 +2,7 @@
 
 export const churchInfo = {
   name: "Ecumenical Center Church - UCCP",
-  tagline: "Building Faith, Embracing Community",
+  tagline: "Worship Together. Serve Together. Grow Together",
   location: "Zamboanga City",
 
   introduction: {
