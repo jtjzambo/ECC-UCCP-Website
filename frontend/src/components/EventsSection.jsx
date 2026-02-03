@@ -6,6 +6,8 @@ import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
 import { churchInfo } from '../mock';
 
 export const EventsSection = () => {
+  const events = churchInfo.events || [];
+  
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,13 +19,13 @@ export const EventsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {churchInfo.events.map((event) => (
-            <Card key={event.id} className="overflow-hidden hover:shadow-xl">
+          {events.length > 0 && events.map((event) => (
+            <Card key={event.id} className="overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-full object-cover hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <CardHeader>

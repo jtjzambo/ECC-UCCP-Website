@@ -3,49 +3,6 @@ import { Link } from 'react-router-dom';
 import { Church, BookOpen, Calendar, Heart } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from './ui/card';
 
-const quickLinks = [
-  {
-    title: "Our Services",
-    path: "/services",
-    description: "Join us for worship, prayer meetings, and Bible study throughout the week",
-    icon: Church,
-    gradient: "from-emerald-100 to-emerald-200",
-    iconColor: "text-emerald-700",
-    borderColor: "border-emerald-100 hover:border-emerald-300",
-    hoverColor: "group-hover:text-emerald-700"
-  },
-  {
-    title: "Our History",
-    path: "/history",
-    description: "Learn about our journey and how we've served the community over the years",
-    icon: BookOpen,
-    gradient: "from-sky-100 to-sky-200",
-    iconColor: "text-sky-700",
-    borderColor: "border-sky-100 hover:border-sky-300",
-    hoverColor: "group-hover:text-sky-700"
-  },
-  {
-    title: "Events",
-    path: "/events",
-    description: "Stay updated with upcoming church activities, programs, and special events",
-    icon: Calendar,
-    gradient: "from-amber-100 to-amber-200",
-    iconColor: "text-amber-700",
-    borderColor: "border-amber-100 hover:border-amber-300",
-    hoverColor: "group-hover:text-amber-700"
-  },
-  {
-    title: "Donate",
-    path: "/donate",
-    description: "Support our mission and ministry through your generous giving",
-    icon: Heart,
-    gradient: "from-rose-100 to-rose-200",
-    iconColor: "text-rose-700",
-    borderColor: "border-rose-100 hover:border-rose-300",
-    hoverColor: "group-hover:text-rose-700"
-  }
-];
-
 export const QuickLinksSection = () => {
   return (
     <section className="py-20 bg-white">
@@ -58,29 +15,69 @@ export const QuickLinksSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {quickLinks.map((link) => {
-            const IconComponent = link.icon;
-            return (
-              <Card 
-                key={link.path} 
-                className={`group hover:shadow-xl cursor-pointer ${link.borderColor}`}
-              >
-                <Link to={link.path}>
-                  <CardHeader>
-                    <div className={`w-14 h-14 bg-gradient-to-br ${link.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110`}>
-                      <IconComponent className={link.iconColor} size={28} />
-                    </div>
-                    <CardTitle className={`text-xl text-slate-800 ${link.hoverColor}`}>
-                      {link.title}
-                    </CardTitle>
-                    <CardDescription className="text-slate-600">
-                      {link.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Link>
-              </Card>
-            );
-          })}
+          <Card className="group border-emerald-100 hover:border-emerald-300 cursor-pointer">
+            <Link to="/services">
+              <CardHeader>
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-4">
+                  <Church className="text-emerald-700" size={28} />
+                </div>
+                <CardTitle className="text-xl text-slate-800 group-hover:text-emerald-700">
+                  Our Services
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  Join us for worship, prayer meetings, and Bible study throughout the week
+                </CardDescription>
+              </CardHeader>
+            </Link>
+          </Card>
+
+          <Card className="group border-sky-100 hover:border-sky-300 cursor-pointer">
+            <Link to="/history">
+              <CardHeader>
+                <div className="w-14 h-14 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mb-4">
+                  <BookOpen className="text-sky-700" size={28} />
+                </div>
+                <CardTitle className="text-xl text-slate-800 group-hover:text-sky-700">
+                  Our History
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  Learn about our journey and how we've served the community over the years
+                </CardDescription>
+              </CardHeader>
+            </Link>
+          </Card>
+
+          <Card className="group border-amber-100 hover:border-amber-300 cursor-pointer">
+            <Link to="/events">
+              <CardHeader>
+                <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center mb-4">
+                  <Calendar className="text-amber-700" size={28} />
+                </div>
+                <CardTitle className="text-xl text-slate-800 group-hover:text-amber-700">
+                  Events
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  Stay updated with upcoming church activities, programs, and special events
+                </CardDescription>
+              </CardHeader>
+            </Link>
+          </Card>
+
+          <Card className="group border-rose-100 hover:border-rose-300 cursor-pointer">
+            <Link to="/donate">
+              <CardHeader>
+                <div className="w-14 h-14 bg-gradient-to-br from-rose-100 to-rose-200 rounded-xl flex items-center justify-center mb-4">
+                  <Heart className="text-rose-700" size={28} />
+                </div>
+                <CardTitle className="text-xl text-slate-800 group-hover:text-rose-700">
+                  Donate
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  Support our mission and ministry through your generous giving
+                </CardDescription>
+              </CardHeader>
+            </Link>
+          </Card>
         </div>
       </div>
     </section>
