@@ -156,36 +156,27 @@ export const AboutPage = () => {
 
             <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-white">
               <CardHeader>
-                <CardTitle className="text-xl mb-2 text-purple-700">Community Outreach</CardTitle>
+                <CardTitle className="text-xl mb-2 text-purple-700">Community Ministry</CardTitle>
                 <CardDescription className="text-slate-600">
-                  Relief services during crises, livelihood programs (Operation JOB), and community development initiatives
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-amber-200 bg-gradient-to-br from-amber-50 to-white">
-              <CardHeader>
-                <CardTitle className="text-xl mb-2 text-amber-700">Mission Work</CardTitle>
-                <CardDescription className="text-slate-600">
-                  Established missions in Basilan (1987), Tungawan (2005), and ZAMBABME mining company workers outreach
+                  Feeding activities, medical outreach missions, and community development programs reflecting our commitment to holistic ministry and social transformation
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="border-rose-200 bg-gradient-to-br from-rose-50 to-white">
               <CardHeader>
-                <CardTitle className="text-xl mb-2 text-rose-700">Ecumenical Partnerships</CardTitle>
+                <CardTitle className="text-xl mb-2 text-rose-700">Ecumenical and Interfaith Partnerships</CardTitle>
                 <CardDescription className="text-slate-600">
-                  IN-A-PEACE (registered 1992) for ecumenical education and development, hosting conferences and conventions
+                  Ecumenical engagement among Christian churches and interfaith dialogue with people of other faiths, fostering mutual respect, solidarity, and shared responsibility for the common good
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="border-teal-200 bg-gradient-to-br from-teal-50 to-white">
               <CardHeader>
-                <CardTitle className="text-xl mb-2 text-teal-700">Student Ministry</CardTitle>
+                <CardTitle className="text-xl mb-2 text-teal-700">Ministerial Exposure and Immersion Program</CardTitle>
                 <CardDescription className="text-slate-600">
-                  Bayanihan Student Center providing housing and support for students pursuing education
+                  A formation program offering ministerial students guided exposure and immersion in urban poor communities and interfaith settings, deepening their practice of contextual ministry and social witness
                 </CardDescription>
               </CardHeader>
             </Card>
