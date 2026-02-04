@@ -16,19 +16,19 @@ export const HeroSection = () => {
           backgroundImage: `url(${churchInfo.images.hero})`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-emerald-900/75 to-sky-900/65"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-emerald-900/80 to-slate-900/85"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white mb-8 border border-white/20 shadow-lg">
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white mb-8 border border-white/30 shadow-lg">
             <Sparkles size={18} className="text-emerald-300" />
             <span className="text-sm font-semibold tracking-wide">Welcome to Our Faith Community</span>
           </div>
           
           {/* Tagline with visual separation */}
           <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 drop-shadow-lg">
               {taglineParts.map((part, index) => (
                 <React.Fragment key={index}>
                   <span className="inline-block">{part}</span>
@@ -41,7 +41,7 @@ export const HeroSection = () => {
             <div className="w-24 h-1 bg-emerald-400 mx-auto rounded-full"></div>
           </div>
 
-          <p className="text-xl md:text-2xl text-slate-100 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-slate-100 mb-10 max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md">
             A community rooted in Christ's love, committed to justice, compassion, and service to all
           </p>
           
@@ -57,7 +57,7 @@ export const HeroSection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/40 hover:border-white/60 px-10 py-7 text-lg font-semibold shadow-xl"
+              className="bg-white/15 backdrop-blur-md hover:bg-white/25 text-white border-2 border-white/50 hover:border-white/70 px-10 py-7 text-lg font-semibold shadow-xl"
             >
               <Link to="/about">Learn More</Link>
             </Button>
