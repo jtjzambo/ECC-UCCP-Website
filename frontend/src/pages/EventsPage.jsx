@@ -53,67 +53,33 @@ export const EventsPage = () => {
         </div>
       </section>
 
-      {/* Featured Event */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50">
+      {/* Featured Event Announcement */}
+      <section className="py-10 bg-gradient-to-br from-slate-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <Star size={16} />
-              Featured Event
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-              Don't Miss This!
-            </h2>
-          </div>
-
-          <Card className="max-w-4xl mx-auto bg-gradient-to-br from-purple-600 to-pink-600 text-white border-0 shadow-2xl overflow-hidden">
-            <div className="p-8 md:p-12">
-              <div className="flex flex-wrap gap-3 mb-6">
-                <span className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm font-semibold">
-                  🎄 Christmas Special
-                </span>
-                <span className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm font-semibold">
-                  📍 Church Premises
-                </span>
-              </div>
-              
-              <h3 className="text-4xl md:text-5xl font-bold mb-4">
-                Christmas Celebration 2024
-              </h3>
-              
-              <div className="flex flex-wrap gap-6 mb-6 text-purple-100">
-                <div className="flex items-center gap-2">
-                  <Calendar size={20} />
-                  <span className="font-semibold">December 25, 2024</span>
+          <div className="max-w-xl ml-auto">
+            <Card className="bg-gradient-to-br from-emerald-600 to-teal-600 text-white border-0 shadow-lg">
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="text-yellow-300" size={20} />
+                  <span className="text-sm font-semibold text-emerald-100">Featured Announcement</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock size={20} />
-                  <span className="font-semibold">9:00 AM - 12:00 PM</span>
-                </div>
-              </div>
-
-              <p className="text-xl text-purple-50 mb-8 leading-relaxed">
-                Celebrate the birth of our Savior with special worship service, Christmas carols, gift-giving for children, and fellowship meal. Bring your family and friends for a joyful celebration of Christ's love!
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="mailto:eccuccpzamboangacity@gmail.com?subject=Christmas Celebration RSVP"
-                  className="inline-block px-8 py-4 bg-white text-purple-700 rounded-lg font-bold text-lg hover:bg-purple-50 transition-colors duration-200 text-center"
-                >
-                  RSVP Now
-                </a>
+                <h3 className="text-xl font-bold mb-2">
+                  Stay Tuned for Special Events!
+                </h3>
+                <p className="text-emerald-100 text-sm mb-4">
+                  We're planning exciting upcoming celebrations and special services. Follow us on social media for the latest announcements!
+                </p>
                 <a 
                   href="https://www.facebook.com/uccpzambo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white rounded-lg font-bold text-lg transition-colors duration-200 text-center"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-sm font-semibold transition-colors duration-200"
                 >
-                  Share Event
+                  Follow for Updates
                 </a>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </section>
 
