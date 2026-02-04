@@ -71,7 +71,7 @@ export const churchInfo = {
 
 
   contact: {
-    address: "Zamboanga City, Philippines",
+    address: "#27 Castillo Rd., Baliwasan, Zamboanga City, 7000, Philippines",
     email: "eccuccpzamboangacity@gmail.com",
     phone: "+63629916685"
   },
