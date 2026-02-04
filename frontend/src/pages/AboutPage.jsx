@@ -149,7 +149,7 @@ export const AboutPage = () => {
               <CardHeader>
                 <CardTitle className="text-xl mb-2 text-sky-700">Christian Education</CardTitle>
                 <CardDescription className="text-slate-600">
-                  Sunday School for all ages, Youth Fellowship (CYF), and Pre-School Program (ECPSZC) founded in 1986
+                  Sunday School for all ages and Youth Fellowship (CYF) nurturing faith and spiritual growth across generations
                 </CardDescription>
               </CardHeader>
             </Card>
