@@ -29,51 +29,185 @@ export const HistoryPage = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Church size={16} />
-              Ecumenical Center Church
+              Ecumenical Center Church - Zamboanga City
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
               Our Local History
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Ecumenical Center Church has been a beacon of hope and faith in Zamboanga City for many years.
+              From humble beginnings under a mango tree to becoming a beacon of hope and service in Western Mindanao, our church's 60-year journey reflects faith, resilience, and unwavering commitment to Christ and community.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
-              <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
-                1
+          {/* Founding Narrative */}
+          <div className="bg-gradient-to-br from-emerald-50 to-sky-50 rounded-3xl p-8 md:p-12 shadow-lg mb-12 border border-emerald-100">
+            <h3 className="text-3xl font-bold text-slate-800 mb-8 text-center">
+              The Founding Story (1905-1969)
+            </h3>
+            
+            <div className="space-y-8">
+              <div className="bg-white rounded-2xl p-8 shadow-md">
+                <h4 className="text-2xl font-bold text-emerald-700 mb-4">Protestant Roots (1905-1952)</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  Protestant missionaries first designated Zamboanga as a mission field in 1905, with Alliance and Episcopal churches establishing organized work. The Episcopal Church founded Brent Hospital in 1908, strengthening the Christian presence in the region. In 1952, Mr. Gonzaga gathered the first UCCP parishioners in Zamboanga, planting seeds for what would become our church.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Foundation and Early Years
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                Our church was established as a gathering place for believers committed to ecumenical dialogue and unified Christian witness.
-              </p>
+
+              <div className="bg-white rounded-2xl p-8 shadow-md">
+                <h4 className="text-2xl font-bold text-emerald-700 mb-4">Vision Revived (Early 1960s-1964)</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  In the early 1960s, Cipriano 'Papsi' Malonzo revived the vision of establishing a UCCP local church. In 1963, Rodulfo P. Beley was assigned to study the feasibility, and by May 1964, a planning committee was organized. The first congregational worship was held under a mango tree at the Malonzo residence—a humble beginning that exemplified true faith and community spirit.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-md">
+                <h4 className="text-2xl font-bold text-emerald-700 mb-4">Official Establishment (1965-1969)</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  Rev. Estenio Labrador became our first regular pastor in 1965. Through the bayanihan spirit, the congregation built the first church structure (1965-1966), dedicated on December 18, 1966. On August 3, 1969, after a congregational contest, the church was officially named Ecumenical Center Church (ECC), reflecting our commitment to Christian unity and cooperation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Periods */}
+          <div className="space-y-8 mb-12">
+            <h3 className="text-3xl font-bold text-slate-800 text-center mb-8">Key Periods in Our Journey</h3>
+            
+            {/* Period 1967-1981 */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-emerald-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-emerald-600 text-white rounded-full text-sm font-semibold">
+                  1967-1981
+                </div>
+                <h4 className="text-2xl font-bold text-slate-800">Growth and Service</h4>
+              </div>
+              <p className="text-emerald-700 font-semibold mb-4">Pastor: Rev. Rodulfo P. Beley</p>
+              <ul className="space-y-2">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600">Long-term pastoral leadership strengthening worship and education</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1973:</strong> Church became relief center for thousands displaced by Jolo conflict</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1975-1978:</strong> Operation JOB (Just One Break) livelihood program launched</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600">Bayanihan Student Center established providing housing for students</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1976-1981:</strong> ZAMBABME outreach organized among mining company workers</p>
+                </li>
+              </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
-              <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
-                2
+            {/* Period 1984-1996 */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-sky-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-sky-600 text-white rounded-full text-sm font-semibold">
+                  1984-1996
+                </div>
+                <h4 className="text-2xl font-bold text-slate-800">Major Expansion and Formalization</h4>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Growth and Expansion
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                Through the years, our congregation has grown from a small fellowship into a vibrant community of faith with diverse ministries.
-              </p>
+              <p className="text-sky-700 font-semibold mb-4">Pastor: Nemesio Trinidad, Jr.</p>
+              <ul className="space-y-2">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1984-1990:</strong> Construction of new church building through community effort</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1986:</strong> Pre-School Program (ECPSZC) founded</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1987:</strong> Basilan outreach established with building dedication (August 30)</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1992:</strong> IN-A-PEACE registered with SEC for ecumenical education</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>Palm Sunday 1993:</strong> New sanctuary first used for worship</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>1994-1996:</strong> Hosted Western Mindanao Conference and ecumenical conventions</p>
+                </li>
+              </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
-              <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
-                3
+            {/* Period 2005-Present */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-amber-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-amber-600 text-white rounded-full text-sm font-semibold">
+                  2005-Present
+                </div>
+                <h4 className="text-2xl font-bold text-slate-800">Continued Mission and Celebration</h4>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Community Impact
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                Our church has been actively involved in addressing social concerns and working for justice and compassion.
-              </p>
+              <ul className="space-y-2">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>2005:</strong> Tungawan outreach opened</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>2014:</strong> Golden Anniversary celebration - 50 years 'Seasoned by Times'</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600"><strong>2024:</strong> 60 years of faithful service to Christ and community</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p className="text-slate-600">Continued commitment to worship, evangelism, education, social services, and ecumenical partnerships</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Visual Timeline */}
+          <div className="bg-gradient-to-r from-emerald-600 to-sky-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-6 text-center">60 Years of Milestones</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold mb-1">1905</div>
+                <div className="text-sm text-emerald-100">Mission Field Designated</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">1964</div>
+                <div className="text-sm text-emerald-100">Worship Under Mango Tree</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">1966</div>
+                <div className="text-sm text-emerald-100">First Church Built</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">1969</div>
+                <div className="text-sm text-emerald-100">Named ECC</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">1973</div>
+                <div className="text-sm text-emerald-100">Relief Center Service</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">1987</div>
+                <div className="text-sm text-emerald-100">Basilan Outreach</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">2014</div>
+                <div className="text-sm text-emerald-100">Golden Anniversary</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">2024</div>
+                <div className="text-sm text-emerald-100">60 Years Strong</div>
+              </div>
             </div>
           </div>
         </div>
