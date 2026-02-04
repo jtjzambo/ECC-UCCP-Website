@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 
 export const EventsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-white">
