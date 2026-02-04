@@ -24,34 +24,34 @@ export const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 group">
+        <div className="flex justify-between items-center py-3">
+          {/* Logo - Made Larger */}
+          <Link to="/" className="flex items-center gap-5 group">
             <img 
               src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/rc0byv4d_UCCP.jpg" 
               alt="UCCP Logo" 
-              className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-base text-slate-800 leading-tight tracking-wide">
+              <span className="font-bold text-xl text-slate-800 leading-tight tracking-wide">
                 ECUMENICAL CENTER CHURCH
               </span>
-              <span className="text-sm font-bold text-emerald-700 leading-tight tracking-wide">
+              <span className="text-lg font-bold text-emerald-700 leading-tight tracking-wide">
                 United Church of Christ in the Philippines
               </span>
-              <span className="text-xs text-slate-600 leading-tight">
+              <span className="text-sm text-slate-600 leading-tight mt-0.5">
                 Zamboanga City
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Made Smaller */}
+          <nav className="hidden lg:flex items-center gap-6">
             {navigationLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors duration-200 relative group"
+                className="text-sm text-slate-700 hover:text-emerald-600 font-medium transition-colors duration-200 relative group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-200 group-hover:w-full"></span>
@@ -59,7 +59,7 @@ export const Header = () => {
             ))}
             <Link
               to="/donate"
-              className="px-6 py-2.5 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors duration-200 shadow-sm hover:shadow-md"
+              className="px-5 py-2 bg-emerald-600 text-white text-sm rounded-lg font-medium hover:bg-emerald-700 transition-colors duration-200 shadow-sm hover:shadow-md"
             >
               Donate
             </Link>
@@ -68,7 +68,7 @@ export const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-slate-700 hover:text-emerald-600 transition-colors"
+            className="lg:hidden p-2 text-slate-700 hover:text-emerald-600 transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -76,7 +76,7 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-slate-200">
+          <nav className="lg:hidden py-4 border-t border-slate-200">
             {navigationLinks.map((link) => (
               <Link
                 key={link.path}
