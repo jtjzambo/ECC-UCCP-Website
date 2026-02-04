@@ -72,7 +72,7 @@ export const churchInfo = {
 
   contact: {
     address: "Zamboanga City, Philippines",
-    email: "eccuccpchurch.com",
+    email: "eccuccpzamboangacity@gmail.com",
     phone: "+63 XXX XXX XXXX"
   },
 
