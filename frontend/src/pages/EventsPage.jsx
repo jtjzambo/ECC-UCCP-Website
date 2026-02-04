@@ -329,7 +329,7 @@ export const EventsPage = () => {
                   <div className="space-y-2 text-slate-600">
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
-                      <span className="text-sm">August {currentYear}</span>
+                      <span className="text-sm">May {currentYear}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin size={16} />
