@@ -325,11 +325,11 @@ export const EventsPage = () => {
                     </span>
                     <Gift className="text-teal-600" size={24} />
                   </div>
-                  <CardTitle className="text-2xl mb-2">Church Anniversary 2025</CardTitle>
+                  <CardTitle className="text-2xl mb-2">Church Anniversary {currentYear}</CardTitle>
                   <div className="space-y-2 text-slate-600">
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
-                      <span className="text-sm">August 2025</span>
+                      <span className="text-sm">August {currentYear}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin size={16} />
@@ -339,7 +339,7 @@ export const EventsPage = () => {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-slate-600 mb-4">
-                    Celebrate 61 years of God's faithfulness! Special worship, testimonies, fellowship meal, and thanksgiving for our church's journey.
+                    Celebrate God's faithfulness! Special worship, testimonies, fellowship meal, and thanksgiving for our church's journey.
                   </CardDescription>
                   <p className="text-sm text-teal-700 font-semibold">
                     🎉 Mark your calendars - More details coming soon
