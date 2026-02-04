@@ -26,18 +26,21 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-4 group">
             <img 
-              src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/03n3qdeh_ECC%20UCCP%20Logo.jpg" 
-              alt="ECC-UCCP Logo" 
+              src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/rc0byv4d_UCCP.jpg" 
+              alt="UCCP Logo" 
               className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-lg text-slate-800 leading-tight">
-                Ecumenical Center Church
+              <span className="font-bold text-base text-slate-800 leading-tight tracking-wide">
+                ECUMENICAL CENTER CHURCH
               </span>
-              <span className="text-sm text-emerald-700 font-medium">
-                UCCP - Zamboanga City
+              <span className="text-sm font-bold text-emerald-700 leading-tight tracking-wide">
+                United Church of Christ in the Philippines
+              </span>
+              <span className="text-xs text-slate-600 leading-tight">
+                Zamboanga City
               </span>
             </div>
           </Link>
