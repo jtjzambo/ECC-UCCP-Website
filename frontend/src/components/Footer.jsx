@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Heart } from 'lucide-react';
+import { MapPin, Mail, Phone, Heart, Facebook, Youtube, MessageCircle } from 'lucide-react';
 import { churchInfo } from '../mock';
 
 export const Footer = () => {
@@ -22,9 +22,40 @@ export const Footer = () => {
                 <p className="text-xs text-slate-300">Zamboanga City</p>
               </div>
             </div>
-            <p className="text-slate-300 leading-relaxed text-sm">
+            <p className="text-slate-300 leading-relaxed text-sm mb-4">
               Building Faith, Embracing Community. A welcoming place where everyone is valued and lives are transformed through God's love.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex gap-3 mt-4">
+              <a 
+                href={churchInfo.contact.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-slate-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-200"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href={churchInfo.contact.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-slate-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-200"
+                aria-label="YouTube"
+              >
+                <Youtube size={20} />
+              </a>
+              <a 
+                href={churchInfo.contact.social.messenger}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-slate-700 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors duration-200"
+                aria-label="Messenger"
+              >
+                <MessageCircle size={20} />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -64,17 +95,19 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-slate-300">
                 <MapPin size={20} className="text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>{churchInfo.contact.address}</span>
+                <span className="text-sm">{churchInfo.contact.address}</span>
               </li>
               <li className="flex items-start gap-3 text-slate-300">
                 <Mail size={20} className="text-emerald-400 flex-shrink-0 mt-0.5" />
-                <a href={`mailto:${churchInfo.contact.email}`} className="hover:text-emerald-400 transition-colors duration-200">
+                <a href={`mailto:${churchInfo.contact.email}`} className="hover:text-emerald-400 transition-colors duration-200 text-sm">
                   {churchInfo.contact.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-slate-300">
                 <Phone size={20} className="text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>{churchInfo.contact.phone}</span>
+                <a href={`tel:${churchInfo.contact.phone}`} className="hover:text-emerald-400 transition-colors duration-200 text-sm">
+                  {churchInfo.contact.phone}
+                </a>
               </li>
             </ul>
           </div>
