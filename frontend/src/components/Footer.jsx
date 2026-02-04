@@ -12,16 +12,17 @@ export const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/03n3qdeh_ECC%20UCCP%20Logo.jpg" 
-                alt="ECC-UCCP Logo" 
-                className="h-12 w-12 object-contain"
+                src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/rc0byv4d_UCCP.jpg" 
+                alt="UCCP Logo" 
+                className="h-12 w-12 object-contain bg-white rounded-lg p-1"
               />
               <div>
-                <h3 className="font-bold text-lg leading-tight">ECC-UCCP</h3>
-                <p className="text-sm text-slate-300">Zamboanga City</p>
+                <h3 className="font-bold text-base leading-tight">ECUMENICAL CENTER CHURCH</h3>
+                <p className="text-xs text-emerald-300 font-semibold">United Church of Christ in the Philippines</p>
+                <p className="text-xs text-slate-300">Zamboanga City</p>
               </div>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-slate-300 leading-relaxed text-sm">
               Building Faith, Embracing Community. A welcoming place where everyone is valued and lives are transformed through God's love.
             </p>
           </div>
@@ -80,13 +81,27 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-400 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Ecumenical Center Church - UCCP. All rights reserved.
-          </p>
-          <p className="text-slate-400 text-sm flex items-center gap-2">
-            Made with <Heart size={16} className="text-red-500 fill-red-500" /> for our community
-          </p>
+        <div className="border-t border-slate-700 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-slate-400 text-sm text-center md:text-left">
+              © {new Date().getFullYear()} Ecumenical Center Church - UCCP. All rights reserved.
+            </p>
+            
+            {/* ECC Logo Badge */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 bg-slate-700 px-4 py-2 rounded-lg">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/03n3qdeh_ECC%20UCCP%20Logo.jpg" 
+                  alt="ECC Badge" 
+                  className="h-8 w-8 object-contain"
+                />
+                <span className="text-xs text-slate-300 font-medium">Est. 1964</span>
+              </div>
+              <p className="text-slate-400 text-sm flex items-center gap-2">
+                Made with <Heart size={16} className="text-red-500 fill-red-500" /> for our community
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
