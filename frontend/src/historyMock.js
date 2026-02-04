@@ -7,20 +7,80 @@ export const historyData = {
 
   localHistory: {
     title: "Our Local History",
-    introduction: "Ecumenical Center Church has been a beacon of hope and faith in Zamboanga City for many years. Our story is one of dedication, service, and unwavering commitment to the Gospel of Jesus Christ and the transformation of our community.",
-    content: [
+    subtitle: "Ecumenical Center Church - Zamboanga City",
+    introduction: "From humble beginnings under a mango tree to becoming a beacon of hope and service in Western Mindanao, our church's 60-year journey reflects faith, resilience, and unwavering commitment to Christ and community.",
+    
+    foundingNarrative: {
+      title: "The Founding Story (1905-1969)",
+      content: [
+        {
+          subtitle: "Protestant Roots (1905-1952)",
+          text: "Protestant missionaries first designated Zamboanga as a mission field in 1905, with Alliance and Episcopal churches establishing organized work. The Episcopal Church founded Brent Hospital in 1908, strengthening the Christian presence in the region. In 1952, Mr. Gonzaga gathered the first UCCP parishioners in Zamboanga, planting seeds for what would become our church."
+        },
+        {
+          subtitle: "Vision Revived (Early 1960s-1964)",
+          text: "In the early 1960s, Cipriano 'Papsi' Malonzo revived the vision of establishing a UCCP local church. In 1963, Rodulfo P. Beley was assigned to study the feasibility, and by May 1964, a planning committee was organized. The first congregational worship was held under a mango tree at the Malonzo residence—a humble beginning that exemplified true faith and community spirit."
+        },
+        {
+          subtitle: "Official Establishment (1965-1969)",
+          text: "Rev. Estenio Labrador became our first regular pastor in 1965. Through the bayanihan spirit, the congregation built the first church structure (1965-1966), dedicated on December 18, 1966. On August 3, 1969, after a congregational contest, the church was officially named Ecumenical Center Church (ECC), reflecting our commitment to Christian unity and cooperation."
+        }
+      ]
+    },
+
+    keyPeriods: [
       {
-        title: "Foundation and Early Years",
-        text: "Our church was established as a gathering place for believers committed to ecumenical dialogue and unified Christian witness. From the beginning, we embraced the vision of the United Church of Christ in the Philippines to be a church united in service to God and community."
+        years: "1967-1981",
+        title: "Growth and Service",
+        pastor: "Rev. Rodulfo P. Beley",
+        highlights: [
+          "Long-term pastoral leadership strengthening worship and education",
+          "1973: Church became relief center for thousands displaced by Jolo conflict, partnering with DSWD, Red Cross, and ecumenical groups",
+          "1975-1978: Operation JOB (Just One Break) livelihood program launched",
+          "Bayanihan Student Center established providing housing for students",
+          "1976-1981: ZAMBABME outreach organized among mining company workers",
+          "1979: Church Building Fund Campaign initiated for expansion"
+        ]
       },
       {
-        title: "Growth and Expansion",
-        text: "Through the years, our congregation has grown from a small fellowship into a vibrant community of faith. We've expanded our ministries to include youth programs, community outreach, and various service initiatives that touch lives throughout Zamboanga City."
+        years: "1984-1996",
+        title: "Major Expansion and Formalization",
+        pastor: "Pastor Nemesio Trinidad, Jr.",
+        highlights: [
+          "1984-1990: Construction of new church building through community effort",
+          "1986: Pre-School Program (ECPSZC) founded",
+          "1987: Basilan outreach established with first worship (May 23) and building dedication (August 30)",
+          "December 31, 1987: Groundbreaking with historic documents buried",
+          "1992: IN-A-PEACE registered with SEC for ecumenical education and development",
+          "Palm Sunday 1993: New sanctuary first used for worship",
+          "November 1993: Pre-School formally registered with SEC",
+          "1994-1996: Hosted Western Mindanao Conference and ecumenical conventions"
+        ]
       },
       {
-        title: "Community Impact",
-        text: "Our church has been actively involved in addressing social concerns, providing support during times of crisis, and working alongside other faith communities to build a more just and compassionate society. We continue to be guided by our commitment to justice, peace, and the integrity of creation."
+        years: "2005-Present",
+        title: "Continued Mission and Celebration",
+        highlights: [
+          "2005: Tungawan outreach opened",
+          "2014: Golden Anniversary celebration - 50 years 'Seasoned by Times'",
+          "Present: Continued commitment to worship, evangelism, education, social services, and ecumenical partnerships"
+        ]
       }
+    ],
+
+    milestones: [
+      { year: "1905", event: "Protestant missionaries designate Zamboanga as mission field" },
+      { year: "1952", event: "Mr. Gonzaga gathers first UCCP parishioners" },
+      { year: "1964", event: "First worship under mango tree at Malonzo residence" },
+      { year: "1965", event: "Rev. Estenio Labrador becomes first regular pastor" },
+      { year: "1966", event: "First church structure dedicated (December 18)" },
+      { year: "1969", event: "Officially named Ecumenical Center Church (August 3)" },
+      { year: "1973", event: "Church serves as relief center during Jolo conflict" },
+      { year: "1986", event: "Pre-School Program (ECPSZC) founded" },
+      { year: "1987", event: "Basilan outreach church building dedicated" },
+      { year: "1993", event: "New sanctuary first used for worship (Palm Sunday)" },
+      { year: "2014", event: "Golden Anniversary - 50 years of ministry" },
+      { year: "2024", event: "60 years of faithful service to Christ and community" }
     ]
   },
 
