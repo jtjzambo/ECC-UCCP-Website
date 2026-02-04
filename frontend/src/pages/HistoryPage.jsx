@@ -1,7 +1,14 @@
-import React from 'react';
-import { Calendar, Users, Heart, BookOpen, Award, Church } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Users, Heart, BookOpen, Award, Church, Building2, GraduationCap } from 'lucide-react';
+import { historyData } from '../historyMock';
 
 export const HistoryPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  
+  const filteredEvents = selectedCategory === 'all' 
+    ? historyData.timeline.events 
+    : historyData.timeline.events.filter(e => e.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -13,10 +20,10 @@ export const HistoryPage = () => {
             <span className="text-sm font-semibold">Our Heritage</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Our Story of Faith
+            {historyData.hero.title}
           </h1>
           <p className="text-xl text-slate-200">
-            A journey of service, transformation, and community
+            {historyData.hero.subtitle}
           </p>
         </div>
       </section>
@@ -30,54 +37,32 @@ export const HistoryPage = () => {
               Ecumenical Center Church
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-              Our Local History
+              {historyData.localHistory.title}
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Ecumenical Center Church has been a beacon of hope and faith in Zamboanga City for many years. Our story is one of dedication, service, and unwavering commitment to the Gospel of Jesus Christ and the transformation of our community.
+              {historyData.localHistory.introduction}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
-              <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
-                1
+            {historyData.localHistory.content.map((section, idx) => (
+              <div key={idx} className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
+                <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
+                  {idx + 1}
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">
+                  {section.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {section.text}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Foundation and Early Years
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                Our church was established as a gathering place for believers committed to ecumenical dialogue and unified Christian witness. From the beginning, we embraced the vision of the United Church of Christ in the Philippines.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
-              <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
-                2
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Growth and Expansion
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                Through the years, our congregation has grown from a small fellowship into a vibrant community of faith. We've expanded our ministries to include youth programs, community outreach, and various service initiatives.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
-              <div className="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
-                3
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Community Impact
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                Our church has been actively involved in addressing social concerns, providing support during times of crisis, and working alongside other faith communities to build a more just and compassionate society.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* UCCP Overview Section */}
+      {/* UCCP History Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-emerald-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -86,136 +71,132 @@ export const HistoryPage = () => {
               United Church of Christ in the Philippines
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-              Understanding UCCP
+              {historyData.uccpHistory.title}
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              The United Church of Christ in the Philippines represents a historic union of Protestant churches in the Philippines, united in mission, vision, and commitment to transformative ministry.
+              {historyData.uccpHistory.subtitle}
             </p>
           </div>
 
-          {/* UCCP History */}
+          {/* Founding Story */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center">
                 <Calendar className="text-amber-700" size={24} />
               </div>
               <h3 className="text-3xl font-bold text-slate-800">
-                UCCP History
+                {historyData.uccpHistory.foundingStory.title}
               </h3>
             </div>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              The UCCP was formally established on May 25, 1948, through the union of three major Protestant denominations: the Evangelical Church of the Philippines, the Philippine Methodist Church, and the United Evangelical Church. This historic merger represented a powerful witness to Christian unity and cooperation in service to the Filipino people.
-            </p>
+            {historyData.uccpHistory.foundingStory.content.split('\n\n').map((para, idx) => (
+              <p key={idx} className="text-lg text-slate-600 leading-relaxed mb-4">
+                {para}
+              </p>
+            ))}
+          </div>
+
+          {/* Key Milestones */}
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
+                <Award className="text-emerald-700" size={24} />
+              </div>
+              <h3 className="text-3xl font-bold text-slate-800">
+                Key Periods in UCCP History
+              </h3>
+            </div>
+            <div className="space-y-8">
+              {historyData.uccpHistory.keyMilestones.map((milestone, idx) => (
+                <div key={idx} className="border-l-4 border-emerald-600 pl-6">
+                  <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-2">
+                    {milestone.period}
+                  </div>
+                  <h4 className="text-2xl font-bold text-slate-800 mb-3">
+                    {milestone.title}
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    {milestone.content}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Core Values */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
-                <Heart className="text-emerald-700" size={24} />
+              <div className="w-12 h-12 bg-gradient-to-br from-rose-100 to-rose-200 rounded-xl flex items-center justify-center">
+                <Heart className="text-rose-700" size={24} />
               </div>
               <h3 className="text-3xl font-bold text-slate-800">
-                Core Values
+                {historyData.uccpHistory.values.title}
               </h3>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">
-                  1
+              {historyData.uccpHistory.values.items.map((value, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">
+                    {idx + 1}
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-slate-800 mb-2">
+                      {value.name}
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">
-                    Unity in Diversity
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    We celebrate our diverse backgrounds while maintaining unity in Christ, embracing ecumenical dialogue and cooperation with all people of goodwill.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">
-                  2
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">
-                    Prophetic Witness
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    We stand with the marginalized and speak truth to power, advocating for justice, peace, and the integrity of creation.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">
-                  3
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">
-                    Servant Leadership
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    Following Christ's example, we lead through service, empowering communities and fostering transformation through humble engagement.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">
-                  4
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">
-                    Faith in Action
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    Our faith compels us to action. We don't just proclaim the Gospel; we live it through concrete acts of compassion and justice.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Theological Stance */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center">
                 <BookOpen className="text-sky-700" size={24} />
               </div>
               <h3 className="text-3xl font-bold text-slate-800">
-                Our Theological Stance
+                {historyData.uccpHistory.theological.title}
               </h3>
             </div>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              The UCCP is rooted in Reformed theology while embracing a progressive, contextual approach to faith. We affirm the authority of Scripture, the sovereignty of God, and the lordship of Jesus Christ.
+              {historyData.uccpHistory.theological.content}
             </p>
             <ul className="space-y-3">
-              <li className="flex gap-3 items-start">
-                <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                <p className="text-slate-700 leading-relaxed">The Bible as our primary source of faith and practice, interpreted in community and context</p>
-              </li>
-              <li className="flex gap-3 items-start">
-                <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                <p className="text-slate-700 leading-relaxed">Salvation through God's grace, not by human merit</p>
-              </li>
-              <li className="flex gap-3 items-start">
-                <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                <p className="text-slate-700 leading-relaxed">The priesthood of all believers and the giftedness of every member</p>
-              </li>
-              <li className="flex gap-3 items-start">
-                <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                <p className="text-slate-700 leading-relaxed">God's preferential option for the poor and marginalized</p>
-              </li>
-              <li className="flex gap-3 items-start">
-                <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                <p className="text-slate-700 leading-relaxed">Commitment to social transformation as integral to the Gospel</p>
-              </li>
-              <li className="flex gap-3 items-start">
-                <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                <p className="text-slate-700 leading-relaxed">Care for creation as faithful stewardship</p>
-              </li>
+              {historyData.uccpHistory.theological.principles.map((principle, idx) => (
+                <li key={idx} className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p className="text-slate-700 leading-relaxed">{principle}</p>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Historic Institutions */}
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center">
+                <Building2 className="text-purple-700" size={24} />
+              </div>
+              <h3 className="text-3xl font-bold text-slate-800">
+                {historyData.institutions.title}
+              </h3>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {historyData.institutions.items.map((inst, idx) => (
+                <div key={idx} className="bg-gradient-to-br from-purple-50 to-sky-50 rounded-xl p-6 border border-purple-100">
+                  <div className="flex items-center gap-2 mb-3">
+                    <GraduationCap className="text-purple-600" size={20} />
+                    <span className="text-sm font-semibold text-purple-700">{inst.year}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">{inst.name}</h4>
+                  <p className="text-sm text-slate-500 mb-2">{inst.location}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{inst.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -229,11 +210,65 @@ export const HistoryPage = () => {
               Milestones
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-              Timeline of Events
+              {historyData.timeline.title}
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              Key milestones in our journey of faith
+              {historyData.timeline.subtitle}
             </p>
+
+            {/* Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`px-6 py-2 rounded-full font-medium ${
+                  selectedCategory === 'all'
+                    ? 'bg-emerald-600 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                All Events
+              </button>
+              <button
+                onClick={() => setSelectedCategory('foundation')}
+                className={`px-6 py-2 rounded-full font-medium ${
+                  selectedCategory === 'foundation'
+                    ? 'bg-emerald-600 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                Early Foundations
+              </button>
+              <button
+                onClick={() => setSelectedCategory('union')}
+                className={`px-6 py-2 rounded-full font-medium ${
+                  selectedCategory === 'union'
+                    ? 'bg-emerald-600 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                Path to Union
+              </button>
+              <button
+                onClick={() => setSelectedCategory('uccp')}
+                className={`px-6 py-2 rounded-full font-medium ${
+                  selectedCategory === 'uccp'
+                    ? 'bg-emerald-600 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                UCCP Era
+              </button>
+              <button
+                onClick={() => setSelectedCategory('local')}
+                className={`px-6 py-2 rounded-full font-medium ${
+                  selectedCategory === 'local'
+                    ? 'bg-emerald-600 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                Our Local Church
+              </button>
+            </div>
           </div>
 
           {/* Timeline */}
@@ -241,68 +276,48 @@ export const HistoryPage = () => {
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-emerald-200"></div>
 
             <div className="space-y-12">
-              {/* Event 1948 */}
-              <div className="relative flex items-center md:flex-row flex-col gap-8">
-                <div className="w-full md:w-5/12 md:text-right">
-                  <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-6 border border-emerald-100">
-                    <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 bg-sky-100 text-sky-700">
-                      UCCP
+              {filteredEvents.map((event, idx) => (
+                <div
+                  key={idx}
+                  className={`relative flex items-center ${
+                    idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  } flex-col gap-8`}
+                >
+                  <div className={`w-full md:w-5/12 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                    <div className={`rounded-2xl p-6 border ${
+                      event.highlight 
+                        ? 'bg-gradient-to-br from-emerald-100 to-sky-100 border-emerald-300 shadow-lg' 
+                        : 'bg-gradient-to-br from-slate-50 to-emerald-50 border-emerald-100'
+                    }`}>
+                      <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 ${
+                        event.category === 'uccp' 
+                          ? 'bg-sky-600 text-white' 
+                          : event.category === 'local'
+                          ? 'bg-emerald-600 text-white'
+                          : 'bg-amber-100 text-amber-700'
+                      }`}>
+                        {event.category === 'uccp' ? 'UCCP' : event.category === 'local' ? 'Local Church' : 'Historical'}
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                        {event.title}
+                      </h3>
+                      <p className="text-slate-600 leading-relaxed">
+                        {event.description}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                      UCCP Founded
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      The United Church of Christ in the Philippines is established through the historic union of three Protestant denominations.
-                    </p>
                   </div>
-                </div>
-                <div className="flex-shrink-0 w-20 h-20 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg z-10">
-                  1948
-                </div>
-                <div className="hidden md:block w-5/12"></div>
-              </div>
 
-              {/* Event 1990s */}
-              <div className="relative flex items-center md:flex-row-reverse flex-col gap-8">
-                <div className="w-full md:w-5/12 md:text-left">
-                  <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-6 border border-emerald-100">
-                    <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 bg-emerald-100 text-emerald-700">
-                      Local Church
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                      Formal Establishment
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      Ecumenical Center Church is officially organized as a local congregation of the UCCP, beginning regular worship services and community programs.
-                    </p>
+                  <div className={`flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center font-bold shadow-lg z-10 ${
+                    event.highlight 
+                      ? 'bg-gradient-to-br from-emerald-600 to-sky-600 text-white text-base' 
+                      : 'bg-emerald-600 text-white text-lg'
+                  }`}>
+                    {event.year}
                   </div>
-                </div>
-                <div className="flex-shrink-0 w-20 h-20 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg z-10">
-                  1990s
-                </div>
-                <div className="hidden md:block w-5/12"></div>
-              </div>
 
-              {/* Event Present */}
-              <div className="relative flex items-center md:flex-row flex-col gap-8">
-                <div className="w-full md:w-5/12 md:text-right">
-                  <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-6 border border-emerald-100">
-                    <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 bg-emerald-100 text-emerald-700">
-                      Local Church
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                      Continuing the Journey
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      Today, we continue to grow in faith and service, embracing new challenges and opportunities to be Christ's witness in Zamboanga City and beyond.
-                    </p>
-                  </div>
+                  <div className="hidden md:block w-5/12"></div>
                 </div>
-                <div className="flex-shrink-0 w-20 h-20 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10">
-                  Present
-                </div>
-                <div className="hidden md:block w-5/12"></div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -317,7 +332,7 @@ export const HistoryPage = () => {
               Photo Gallery Coming Soon
             </h3>
             <p className="text-slate-600 leading-relaxed">
-              We're gathering historical photos to showcase our church's journey. Suggested photos include: UCCP founders (1948), early church gatherings, dedication ceremonies, youth ministry activities, community outreach programs, and current congregation photos.
+              We're gathering historical photos to showcase our church's journey. Suggested photos include: UCCP founders at the 1948 Uniting Assembly, Silliman University founding, early mission hospitals, wartime unity efforts, People Power participation, and current congregation photos from ECC-UCCP Zamboanga.
             </p>
           </div>
         </div>
