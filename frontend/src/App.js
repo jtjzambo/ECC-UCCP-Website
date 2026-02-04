@@ -6,17 +6,9 @@ import { Home } from "./pages/Home";
 import { HistoryPage } from "./pages/HistoryPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import { AboutPage } from "./pages/AboutPage";
+import { EventsPage } from "./pages/EventsPage";
 
 // Placeholder pages
-const EventsPage = () => (
-  <div className="min-h-screen pt-24 pb-12 px-4">
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-slate-800 mb-6">Events</h1>
-      <p className="text-lg text-slate-600">Content coming soon...</p>
-    </div>
-  </div>
-);
-
 const ContactPage = () => (
   <div className="min-h-screen pt-24 pb-12 px-4">
     <div className="max-w-4xl mx-auto">
