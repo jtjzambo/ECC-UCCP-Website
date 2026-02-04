@@ -216,7 +216,7 @@ export const EventsPage = () => {
               </Card>
             )}
 
-            {/* Event 3: Community Outreach */}
+            {/* Event 3: Community Ministry Program */}
             {(selectedCategory === 'all' || selectedCategory === 'outreach') && (
               <Card className="hover:shadow-xl transition-shadow duration-300 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white">
                 <CardHeader>
@@ -226,7 +226,7 @@ export const EventsPage = () => {
                     </span>
                     <Heart className="text-emerald-600" size={24} />
                   </div>
-                  <CardTitle className="text-2xl mb-2">Community Outreach Program</CardTitle>
+                  <CardTitle className="text-2xl mb-2">Community Ministry Program</CardTitle>
                   <div className="space-y-2 text-slate-600">
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
