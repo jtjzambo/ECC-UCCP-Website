@@ -73,7 +73,12 @@ export const churchInfo = {
   contact: {
     address: "#27 Castillo Rd., Baliwasan, Zamboanga City, 7000, Philippines",
     email: "eccuccpzamboangacity@gmail.com",
-    phone: "+63629916685"
+    phone: "+63629916685",
+    social: {
+      facebook: "https://www.facebook.com/uccpzambo",
+      youtube: "https://www.youtube.com/@uccpzambo",
+      messenger: "https://m.me/uccpzambo"
+    }
   },
 
   images: {
