@@ -1,7 +1,6 @@
 import React from 'react';
 import { Clock, Users, Church, BookOpen, Calendar, Star, Facebook, Youtube, MapPin, Info } from 'lucide-react';
 import { Card, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 
 export const ServicesPage = () => {
   return (
@@ -419,43 +418,35 @@ export const ServicesPage = () => {
             </h2>
           </div>
 
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-0">
-              <AccordionTrigger className="text-lg font-semibold text-slate-800 hover:text-emerald-600">
-                What should I wear?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+          <div className="space-y-6">
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-semibold text-slate-800 mb-3">What should I wear?</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Come as you are! We welcome casual and formal attire. What matters most is your heart for worship.
-              </AccordionContent>
-            </AccordionItem>
+              </p>
+            </div>
 
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-semibold text-slate-800 hover:text-emerald-600">
-                Where do I park?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-semibold text-slate-800 mb-3">Where do I park?</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Parking is available near the church premises. Arrive early for the best spots, especially for Sunday morning worship.
-              </AccordionContent>
-            </AccordionItem>
+              </p>
+            </div>
 
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold text-slate-800 hover:text-emerald-600">
-                What about children?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-semibold text-slate-800 mb-3">What about children?</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Children are welcome in all services! We have dedicated Children Sunday School and Junior Worship at 9:45 AM for age-appropriate ministry.
-              </AccordionContent>
-            </AccordionItem>
+              </p>
+            </div>
 
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="text-lg font-semibold text-slate-800 hover:text-emerald-600">
-                How long are services?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-semibold text-slate-800 mb-3">How long are services?</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Sunday Morning Worship typically lasts 1.5-2 hours, including worship, message, and fellowship time.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+              </p>
+            </div>
+          </div>
 
           <div className="mt-12 bg-gradient-to-br from-emerald-50 to-sky-50 rounded-2xl p-8 border border-emerald-100">
             <div className="flex items-start gap-4">
