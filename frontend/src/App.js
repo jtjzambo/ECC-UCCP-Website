@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
+import { HistoryPage } from "./pages/HistoryPage";
 
 // Placeholder pages
 const AboutPage = () => (
@@ -18,15 +19,6 @@ const ServicesPage = () => (
   <div className="min-h-screen pt-24 pb-12 px-4">
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold text-slate-800 mb-6">Our Services</h1>
-      <p className="text-lg text-slate-600">Content coming soon...</p>
-    </div>
-  </div>
-);
-
-const HistoryPage = () => (
-  <div className="min-h-screen pt-24 pb-12 px-4">
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-slate-800 mb-6">Our History</h1>
       <p className="text-lg text-slate-600">Content coming soon...</p>
     </div>
   </div>
