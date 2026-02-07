@@ -251,7 +251,25 @@ export const EventsPage = () => {
 
             {/* Event 4: Sunday Fellowship */}
             {(selectedCategory === 'all' || selectedCategory === 'fellowship') && (
-              <Card className="hover:shadow-xl transition-shadow duration-300 border-amber-200 bg-gradient-to-br from-amber-50 to-white">
+              <Card className="hover:shadow-xl transition-shadow duration-300 border-amber-200 bg-gradient-to-br from-amber-50 to-white overflow-hidden">
+                {/* Image Collage */}
+                <div className="grid grid-cols-3 gap-1 h-40">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/2po3vv36_Sunday%20Fellowship.jpg" 
+                    alt="Sunday Fellowship" 
+                    className="w-full h-full object-cover"
+                  />
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/66ejwuyz_Sunday%20Fellowship%202.jpg" 
+                    alt="Sunday Fellowship" 
+                    className="w-full h-full object-cover"
+                  />
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/95a1yswv_Sunday%20Fellowship%203.jpg" 
+                    alt="Sunday Fellowship" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">
