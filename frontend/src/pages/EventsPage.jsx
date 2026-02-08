@@ -82,7 +82,7 @@ export const EventsPage = () => {
 
       {/* Live Worship Section - Only shows on Sundays */}
       {isSunday && (
-        <section id="live-worship" className="py-16 bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 scroll-mt-20">
+        <section id="live-worship" className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 scroll-mt-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 animate-pulse">
@@ -97,25 +97,27 @@ export const EventsPage = () => {
               </p>
             </div>
 
-            {/* YouTube Live Embed */}
+            {/* Facebook Live Embed */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-800">
               <div className="aspect-video flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                  <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
                     <Play size={48} className="text-white ml-2" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">Live Stream Available</h3>
                   <p className="text-slate-300 mb-6 max-w-md mx-auto">
-                    Click below to join our Sunday worship service live on YouTube
+                    Click below to join our Sunday worship service live on Facebook
                   </p>
                   <a 
-                    href="https://www.youtube.com/@uccpzambo/live" 
+                    href="https://www.facebook.com/uccpzambo/live" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-colors shadow-lg"
                   >
-                    <Play size={24} />
-                    Watch Live on YouTube
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Watch Live on Facebook
                   </a>
                 </div>
               </div>
@@ -124,30 +126,30 @@ export const EventsPage = () => {
             {/* Service Info */}
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                <Clock className="mx-auto text-emerald-400 mb-2" size={24} />
+                <Clock className="mx-auto text-blue-400 mb-2" size={24} />
                 <p className="text-white font-semibold">Morning Service</p>
                 <p className="text-slate-300 text-sm">9:00 AM</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                <Church className="mx-auto text-emerald-400 mb-2" size={24} />
+                <Church className="mx-auto text-blue-400 mb-2" size={24} />
                 <p className="text-white font-semibold">In-Person Worship</p>
                 <p className="text-slate-300 text-sm">All are welcome!</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                <MessageCircle className="mx-auto text-emerald-400 mb-2" size={24} />
+                <MessageCircle className="mx-auto text-blue-400 mb-2" size={24} />
                 <p className="text-white font-semibold">Join the Chat</p>
-                <p className="text-slate-300 text-sm">Comment on YouTube</p>
+                <p className="text-slate-300 text-sm">Comment on Facebook</p>
               </div>
             </div>
 
             <div className="text-center mt-8">
               <a 
-                href="https://www.youtube.com/@uccpzambo" 
+                href="https://www.facebook.com/uccpzambo" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
               >
-                Subscribe to our YouTube channel for past services and more
+                Follow our Facebook page for updates and past services
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                   <polyline points="15 3 21 3 21 9"></polyline>
