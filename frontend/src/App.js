@@ -26,6 +26,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/statement-of-faith" element={<StatementOfFaithPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
