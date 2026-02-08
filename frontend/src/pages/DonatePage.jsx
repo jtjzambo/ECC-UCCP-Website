@@ -183,7 +183,7 @@ export const DonatePage = () => {
                 </CardContent>
               </Card>
 
-              {/* Bank Transfer Card - Second with QR Code */}
+              {/* Bank Transfer Card */}
               <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 shadow-lg">
                 <CardHeader className="pb-2">
                   <div className="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center mb-4">
@@ -192,23 +192,28 @@ export const DonatePage = () => {
                   <CardTitle className="text-xl text-slate-800">Bank Transfer</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-white rounded-xl p-5 border border-emerald-100 flex flex-col items-center">
-                    <p className="text-sm text-slate-600 mb-4 text-center">
-                      Scan the QR code below to view bank details
+                  <div className="bg-white rounded-xl p-6 border border-emerald-100 text-center">
+                    <Phone className="mx-auto text-emerald-600 mb-4" size={32} />
+                    <p className="text-slate-700 font-medium mb-4">
+                      For bank transfer details, please contact our church office or pastor.
                     </p>
-                    <div className="bg-white p-3 rounded-xl shadow-md border border-emerald-100">
-                      <img 
-                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&format=png&data=BANK TRANSFER DETAILS%0A%0ABank: BDO SM Mindpro%0AAccount Name: United Church of Christ in the Philippines%0AAccount Number: 013158001114%0A%0APlease send deposit slip to church office."
-                        alt="Bank Details QR Code"
-                        className="w-44 h-44"
-                      />
+                    <div className="space-y-2">
+                      <a 
+                        href="tel:+63629916685" 
+                        className="block text-emerald-600 hover:text-emerald-700 font-semibold"
+                      >
+                        +63 62 991 6685
+                      </a>
+                      <a 
+                        href="mailto:eccuccpzamboangacity@gmail.com" 
+                        className="block text-emerald-600 hover:text-emerald-700 text-sm"
+                      >
+                        eccuccpzamboangacity@gmail.com
+                      </a>
                     </div>
-                    <p className="text-xs text-emerald-600 font-medium mt-3">
-                      BDO SM Mindpro • UCCP
-                    </p>
                   </div>
                   <p className="text-sm text-slate-500 mt-4 text-center">
-                    Please send a copy of your deposit slip to the church office for proper recording.
+                    We'll be happy to assist you with your donation.
                   </p>
                 </CardContent>
               </Card>
