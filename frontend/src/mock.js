@@ -58,7 +58,11 @@ export const churchInfo = {
     date: "Monthly",
     time: "Various",
     description: "Serving our community through various outreach programs and initiatives.",
-    image: "https://images.unsplash.com/photo-1569292567777-e5d61a759322"
+    image: "collage",
+    images: [
+      "https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/ryz248nv_community%20outreach.jpg",
+      "https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/e0wzlevt_community%20outreach%202.jpg"
+    ]
   },
   {
     id: 3,
