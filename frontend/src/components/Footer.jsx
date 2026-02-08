@@ -162,7 +162,11 @@ export const Footer = () => {
         <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-3">
-              <Church size={20} className="text-emerald-500" />
+              <img 
+                src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/d8enp9qc_ECC%20lOGO.jpg"
+                alt="ECC Logo"
+                className="h-8 w-8 rounded-full object-cover"
+              />
               <p className="text-slate-500 text-sm">
                 © {currentYear} Ecumenical Center Church – UCCP. All rights reserved.
               </p>
