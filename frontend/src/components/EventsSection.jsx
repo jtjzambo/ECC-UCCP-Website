@@ -22,11 +22,24 @@ export const EventsSection = () => {
           {events.length > 0 && events.map((event) => (
             <Card key={event.id} className="overflow-hidden">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-full object-cover"
-                />
+                {event.image === 'collage' && event.images ? (
+                  <div className="grid grid-cols-2 gap-1 h-full">
+                    {event.images.map((img, idx) => (
+                      <img 
+                        key={idx}
+                        src={img}
+                        alt={`${event.title} ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <img 
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
               <CardHeader>
                 <CardTitle className="text-xl text-slate-800">{event.title}</CardTitle>
