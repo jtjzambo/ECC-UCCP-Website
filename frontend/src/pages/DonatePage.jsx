@@ -220,7 +220,7 @@ export const DonatePage = () => {
 
       {/* Special Campaigns */}
       <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-emerald-300 mb-4">
               <Target size={16} />
@@ -234,38 +234,18 @@ export const DonatePage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {specialCampaigns.map((campaign, index) => (
               <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-white">
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                      <campaign.icon className="text-emerald-300" size={24} />
-                    </div>
-                    <span className="text-emerald-300 font-bold">{campaign.goal}</span>
+                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                    <campaign.icon className="text-emerald-300" size={28} />
                   </div>
-                  <CardTitle className="text-xl text-white mb-2">{campaign.title}</CardTitle>
-                  <CardDescription className="text-slate-300">
+                  <CardTitle className="text-2xl text-white mb-2">{campaign.title}</CardTitle>
+                  <CardDescription className="text-slate-300 text-base">
                     {campaign.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-slate-400">Progress</span>
-                      <span className="text-emerald-300 font-semibold">{campaign.progress}%</span>
-                    </div>
-                    <div className="w-full bg-white/20 rounded-full h-3">
-                      <div 
-                        className="bg-gradient-to-r from-emerald-400 to-teal-400 h-3 rounded-full transition-all duration-500"
-                        style={{ width: `${campaign.progress}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                  <Button className="w-full bg-white/20 hover:bg-white/30 text-white border border-white/30">
-                    Support This Cause
-                  </Button>
-                </CardContent>
               </Card>
             ))}
           </div>
