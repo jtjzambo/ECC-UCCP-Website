@@ -257,7 +257,55 @@ export const EventsPage = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Event 1: Alabanza Y Adora Night */}
+            {/* Event 1: Sunday Fellowship */}
+            {(selectedCategory === 'all' || selectedCategory === 'fellowship') && (
+              <Card className="hover:shadow-xl transition-shadow duration-300 border-amber-200 bg-gradient-to-br from-amber-50 to-white overflow-hidden">
+                {/* Image Collage */}
+                <div className="grid grid-cols-3 gap-1 h-40">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/2po3vv36_Sunday%20Fellowship.jpg" 
+                    alt="Sunday Fellowship" 
+                    className="w-full h-full object-cover"
+                  />
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/66ejwuyz_Sunday%20Fellowship%202.jpg" 
+                    alt="Sunday Fellowship" 
+                    className="w-full h-full object-cover"
+                  />
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/95a1yswv_Sunday%20Fellowship%203.jpg" 
+                    alt="Sunday Fellowship" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">
+                      Fellowship
+                    </span>
+                    <Users className="text-amber-600" size={24} />
+                  </div>
+                  <CardTitle className="text-2xl mb-2">Sunday Fellowship</CardTitle>
+                  <div className="space-y-2 text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Calendar size={16} />
+                      <span className="text-sm">Every Sunday</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} />
+                      <span className="text-sm">After Morning Service</span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-slate-600">
+                    Enjoy fellowship after worship. Great opportunity to meet new friends and connect with church family!
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Event 2: Alabanza Y Adora Night */}
             {(selectedCategory === 'all' || selectedCategory === 'youth' || selectedCategory === 'worship') && (
               <Card className="hover:shadow-xl transition-shadow duration-300 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
                 <CardHeader>
