@@ -9,16 +9,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { EventsPage } from "./pages/EventsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { BlogPage } from "./pages/BlogPage";
-
-// Placeholder pages
-const DonatePage = () => (
-  <div className="min-h-screen pt-24 pb-12 px-4">
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-slate-800 mb-6">Donate</h1>
-      <p className="text-lg text-slate-600">Content coming soon...</p>
-    </div>
-  </div>
-);
+import { DonatePage } from "./pages/DonatePage";
 
 function App() {
   return (
