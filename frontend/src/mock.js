@@ -83,7 +83,7 @@ export const churchInfo = {
 
   images: {
     hero: "https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/1x7tlz9t_eccuccpchurchzc.jpg",
-    community: "https://images.unsplash.com/photo-1695938746747-ec185ea81325",
+    community: "https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/8n1g6gue_Cover%20photo.jpg",
     fellowship: "https://images.unsplash.com/photo-1565813086292-604790c8a97b",
     worship: "https://images.unsplash.com/photo-1570786032462-2efc3ca8fccd",
     mission: "https://images.unsplash.com/photo-1529070538774-1843cb3265df"
