@@ -2,6 +2,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 import { Home } from "./pages/Home";
 import { HistoryPage } from "./pages/HistoryPage";
 import { ServicesPage } from "./pages/ServicesPage";
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         {/* Spacer for fixed header - responsive height */}
         <div className="h-16 sm:h-20 md:h-24 lg:h-28"></div>
