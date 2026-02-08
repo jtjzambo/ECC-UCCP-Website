@@ -24,14 +24,16 @@ export const EventsSection = () => {
               <div className="h-48 overflow-hidden">
                 {event.image === 'collage' && event.images ? (
                   <div className="grid grid-cols-2 gap-1 h-full">
-                    {event.images.map((img, idx) => (
-                      <img 
-                        key={idx}
-                        src={img}
-                        alt={`${event.title} ${idx + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    ))}
+                    <img 
+                      src={event.images[0]}
+                      alt={`${event.title} 1`}
+                      className="w-full h-full object-cover"
+                    />
+                    <img 
+                      src={event.images[1]}
+                      alt={`${event.title} 2`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 ) : (
                   <img 
