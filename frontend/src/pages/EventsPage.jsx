@@ -1,13 +1,39 @@
-import React, { useState } from 'react';
-import { Calendar, Clock, MapPin, Users, Heart, Star, Music, BookOpen, Gift, Church, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Calendar, Clock, MapPin, Users, Heart, Star, Music, BookOpen, Gift, Church, MessageCircle, Radio, Play } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 
 export const EventsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isSunday, setIsSunday] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    // Check if today is Sunday (0 = Sunday)
+    const today = new Date();
+    setIsSunday(today.getDay() === 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Live Worship Banner - Only shows on Sundays */}
+      {isSunday && (
+        <section className="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center gap-2 animate-pulse">
+                <Radio size={20} className="text-white" />
+                <span className="font-bold uppercase tracking-wide">Live Now</span>
+              </div>
+              <span className="text-white/80">|</span>
+              <span className="font-medium">Sunday Worship Service is happening now!</span>
+              <a href="#live-worship" className="ml-4 px-4 py-1 bg-white text-red-600 rounded-full font-semibold text-sm hover:bg-red-50 transition-colors">
+                Watch Live
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Hero Section */}
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-pink-800 to-orange-700">
         <div className="absolute inset-0 bg-black/30"></div>
