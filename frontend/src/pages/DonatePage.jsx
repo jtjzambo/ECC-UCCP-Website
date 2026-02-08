@@ -154,38 +154,7 @@ export const DonatePage = () => {
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Bank Transfer Card */}
-              <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 shadow-lg">
-                <CardHeader className="pb-2">
-                  <div className="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center mb-4">
-                    <Building className="text-white" size={28} />
-                  </div>
-                  <CardTitle className="text-xl text-slate-800">Bank Transfer</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="bg-white rounded-xl p-5 border border-emerald-100">
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-sm text-slate-500 mb-1">Bank</p>
-                        <p className="font-semibold text-slate-800">BDO SM Mindpro</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-slate-500 mb-1">Account Name</p>
-                        <p className="font-semibold text-slate-800">United Church of Christ in the Philippines</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-slate-500 mb-1">Account Number</p>
-                        <p className="font-bold text-emerald-600 text-lg tracking-wide">013158001114</p>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-slate-500 mt-4 text-center">
-                    Please send a copy of your deposit slip to the church office for proper recording.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* In-Person Giving Card */}
+              {/* In-Person Giving Card - First */}
               <Card className="bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200 shadow-lg">
                 <CardHeader className="pb-2">
                   <div className="w-14 h-14 bg-amber-600 rounded-xl flex items-center justify-center mb-4">
@@ -210,6 +179,36 @@ export const DonatePage = () => {
                   </div>
                   <p className="text-sm text-slate-500 mt-4 text-center">
                     Visit us at #27 Castillo Rd., Baliwasan, Zamboanga City
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Bank Transfer Card - Second with QR Code */}
+              <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 shadow-lg">
+                <CardHeader className="pb-2">
+                  <div className="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                    <Building className="text-white" size={28} />
+                  </div>
+                  <CardTitle className="text-xl text-slate-800">Bank Transfer</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-white rounded-xl p-5 border border-emerald-100 flex flex-col items-center">
+                    <p className="text-sm text-slate-600 mb-4 text-center">
+                      Scan the QR code below to view bank details
+                    </p>
+                    <div className="bg-white p-3 rounded-xl shadow-md border border-emerald-100">
+                      <img 
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=Bank%3A%20BDO%20SM%20Mindpro%0AAccount%20Name%3A%20United%20Church%20of%20Christ%20in%20the%20Philippines%0AAccount%20Number%3A%20013158001114"
+                        alt="Bank Details QR Code"
+                        className="w-44 h-44"
+                      />
+                    </div>
+                    <p className="text-xs text-emerald-600 font-medium mt-3">
+                      BDO SM Mindpro • UCCP
+                    </p>
+                  </div>
+                  <p className="text-sm text-slate-500 mt-4 text-center">
+                    Please send a copy of your deposit slip to the church office for proper recording.
                   </p>
                 </CardContent>
               </Card>
