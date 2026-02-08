@@ -222,6 +222,57 @@ export const StatementOfFaithPage = () => {
         </div>
       </section>
 
+      {/* UCCP Identity Section */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/01wz3rqz_cmac%20shirt.jpg"
+            alt="UCCP Identity Cross"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
+              UCCP's Identity
+            </h2>
+            
+            <div className="space-y-6 text-xl md:text-2xl text-white leading-relaxed">
+              <p>
+                <span className="font-bold text-amber-400">UCCP's Identity</span> is{' '}
+                <span className="font-bold text-amber-300">United</span> and{' '}
+                <span className="font-bold text-amber-300">Uniting</span>.
+              </p>
+              <p>
+                My <span className="font-bold text-orange-400">character</span> is{' '}
+                <span className="font-bold text-orange-300">Evangelical</span> and{' '}
+                <span className="font-bold text-orange-300">Evangelistic</span>.
+              </p>
+              <p>
+                My <span className="font-bold text-yellow-400">ministry</span> is{' '}
+                <span className="font-bold text-yellow-300">Wholistic</span>.
+              </p>
+              <p>
+                My <span className="font-bold text-amber-400">concerns</span> are{' '}
+                <span className="font-bold text-amber-300">Universal</span> and{' '}
+                <span className="font-bold text-amber-300">Inclusive</span>.
+              </p>
+              <p>
+                My <span className="font-bold text-orange-400">Spirit</span> is{' '}
+                <span className="font-bold text-orange-300">Progressive</span>.
+              </p>
+              <p>
+                And my <span className="font-bold text-yellow-400">Attitude</span> is{' '}
+                <span className="font-bold text-yellow-300">Open-Minded</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* UCCP Connection */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
