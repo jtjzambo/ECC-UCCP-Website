@@ -8,6 +8,7 @@ import { ServicesPage } from "./pages/ServicesPage";
 import { AboutPage } from "./pages/AboutPage";
 import { EventsPage } from "./pages/EventsPage";
 import { ContactPage } from "./pages/ContactPage";
+import { BlogPage } from "./pages/BlogPage";
 
 // Placeholder pages
 const DonatePage = () => (
