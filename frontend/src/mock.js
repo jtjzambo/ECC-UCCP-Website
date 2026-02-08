@@ -50,7 +50,7 @@ export const churchInfo = {
     date: "Every Sunday",
     time: "After Service",
     description: "Join us for refreshments and fellowship after our morning worship service.",
-    image: "https://images.unsplash.com/photo-1565813086292-604790c8a97b"
+    image: "https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/66ejwuyz_Sunday%20Fellowship%202.jpg"
   },
   {
     id: 2,
