@@ -10,6 +10,7 @@ import { EventsPage } from "./pages/EventsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { BlogPage } from "./pages/BlogPage";
 import { DonatePage } from "./pages/DonatePage";
+import { StatementOfFaithPage } from "./pages/StatementOfFaithPage";
 
 function App() {
   return (
