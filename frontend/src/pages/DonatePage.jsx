@@ -31,12 +31,6 @@ export const DonatePage = () => {
       commitment: "Saturdays/Sundays"
     },
     {
-      title: "Hospitality Team",
-      description: "Welcome visitors, prepare fellowship meals, and create a warm atmosphere.",
-      icon: "☕",
-      commitment: "Sundays"
-    },
-    {
       title: "Media & Communications",
       description: "Help with livestreaming, social media, photography, and church announcements.",
       icon: "📱",
@@ -46,18 +40,16 @@ export const DonatePage = () => {
 
   const specialCampaigns = [
     {
-      title: "Building Fund",
+      title: "Church Development Support",
       description: "Help us maintain and improve our church facilities for future generations.",
-      goal: "₱500,000",
-      progress: 65,
       icon: Building
     },
     {
-      title: "Community Ministry Fund",
-      description: "Support our feeding programs and outreach to families in need.",
-      goal: "₱100,000",
-      progress: 80,
+      title: "Ministerial Student Support",
+      description: "Support ministerial students in their formation and theological education.",
       icon: Heart
+    }
+  ];
     },
     {
       title: "Youth Scholarship Fund",
