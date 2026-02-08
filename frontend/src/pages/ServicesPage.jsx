@@ -247,7 +247,7 @@ export const ServicesPage = () => {
                 </div>
                 <CardTitle className="text-xl mb-2">Church Anniversary</CardTitle>
                 <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-3">
-                  August
+                  May
                 </div>
                 <CardDescription className="text-slate-600">
                   Celebrating our heritage and God's faithfulness with special services and fellowship
