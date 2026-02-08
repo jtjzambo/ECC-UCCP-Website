@@ -46,9 +46,20 @@ export const AboutPage = () => {
               <p className="text-xl text-slate-700 leading-relaxed mb-6">
                 Through the faithful leadership of pastors and lay members, we have built ministries that serve families, children, and communities—offering relief in times of crisis, establishing missions in surrounding areas, and promoting unity through ecumenical partnerships.
               </p>
-              <p className="text-xl text-slate-700 leading-relaxed">
+              <p className="text-xl text-slate-700 leading-relaxed mb-6">
                 Guided by our rich heritage and sustained by God's grace, we continue to proclaim the Gospel and serve Zamboanga with hope, love, and dedication.
               </p>
+              
+              {/* Statement of Faith Link */}
+              <div className="mt-8 pt-6 border-t border-emerald-200">
+                <a 
+                  href="/statement-of-faith"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold transition-colors shadow-lg hover:shadow-xl"
+                >
+                  <BookOpen size={20} />
+                  Read Our Statement of Faith
+                </a>
+              </div>
             </div>
           </div>
         </div>
