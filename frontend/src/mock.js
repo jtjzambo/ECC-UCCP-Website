@@ -95,7 +95,6 @@ export const navigationLinks = [
 { name: "About Us", path: "/about" },
 { name: "Our Services", path: "/services" },
 { name: "History", path: "/history" },
-{ name: "Statement of Faith", path: "/statement-of-faith" },
 { name: "Events", path: "/events" },
 { name: "Blog", path: "/blog" },
 { name: "Contact", path: "/contact" }];
