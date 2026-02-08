@@ -168,132 +168,72 @@ export const DonatePage = () => {
             </p>
           </div>
 
-          <Card className="shadow-xl border-0 overflow-hidden">
-            <CardContent className="p-8 md:p-10">
-              {/* Donation Type Toggle */}
-              <div className="flex justify-center mb-8">
-                <div className="bg-slate-100 p-1 rounded-full inline-flex">
-                  <button
-                    onClick={() => setDonationType('one-time')}
-                    className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                      donationType === 'one-time'
-                        ? 'bg-emerald-600 text-white shadow-md'
-                        : 'text-slate-600 hover:text-slate-800'
-                    }`}
-                  >
-                    One-Time Gift
-                  </button>
-                  <button
-                    onClick={() => setDonationType('recurring')}
-                    className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                      donationType === 'recurring'
-                        ? 'bg-emerald-600 text-white shadow-md'
-                        : 'text-slate-600 hover:text-slate-800'
-                    }`}
-                  >
-                    Monthly Giving
-                  </button>
-                </div>
-              </div>
-
-              {donationType === 'recurring' && (
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-8 text-center">
-                  <p className="text-emerald-700 font-medium">
-                    🌟 Become a monthly partner and provide consistent support for our ministries!
+          {/* Give Now Section */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-slate-800 text-center mb-8">Give Now</h3>
+            <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">
+              You can support our church and ministries through the following ways:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Bank Transfer Card */}
+              <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 shadow-lg">
+                <CardHeader className="pb-2">
+                  <div className="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                    <Building className="text-white" size={28} />
+                  </div>
+                  <CardTitle className="text-xl text-slate-800">Bank Transfer</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-white rounded-xl p-5 border border-emerald-100">
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-sm text-slate-500 mb-1">Bank</p>
+                        <p className="font-semibold text-slate-800">BDO SM Mindpro</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500 mb-1">Account Name</p>
+                        <p className="font-semibold text-slate-800">United Church of Christ in the Philippines</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500 mb-1">Account Number</p>
+                        <p className="font-bold text-emerald-600 text-lg tracking-wide">013158001114</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-slate-500 mt-4 text-center">
+                    Please send a copy of your deposit slip to the church office for proper recording.
                   </p>
-                </div>
-              )}
-
-              {/* Amount Selection */}
-              <div className="mb-8">
-                <p className="text-center text-slate-600 mb-4 font-medium">Select an amount (PHP)</p>
-                <div className="grid grid-cols-3 md:grid-cols-5 gap-3 mb-4">
-                  {donationAmounts.map(amount => (
-                    <button
-                      key={amount}
-                      onClick={() => setSelectedAmount(amount)}
-                      className={`py-4 rounded-xl font-bold text-lg transition-all ${
-                        selectedAmount === amount
-                          ? 'bg-emerald-600 text-white shadow-lg scale-105'
-                          : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                      }`}
-                    >
-                      ₱{amount.toLocaleString()}
-                    </button>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 max-w-xs mx-auto">
-                  <span className="text-slate-600 font-medium">Or enter:</span>
-                  <div className="relative flex-1">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">₱</span>
-                    <input
-                      type="number"
-                      placeholder="Other amount"
-                      className="w-full pl-8 pr-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                      onChange={(e) => setSelectedAmount(Number(e.target.value))}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Donate Button */}
-              <div className="text-center">
-                <Button 
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-6 text-xl font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
-                  data-testid="donate-btn"
-                >
-                  {donationType === 'recurring' ? 'Start Monthly Giving' : 'Give Now'}
-                  <Heart className="ml-2" size={24} />
-                </Button>
-                <p className="text-sm text-slate-500 mt-4">
-                  Secure donation powered by trusted payment providers
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Other Ways to Give */}
-          <div className="mt-12">
-            <h3 className="text-2xl font-bold text-slate-800 text-center mb-8">Other Ways to Give</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-sky-50 to-white border-sky-200">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-3">
-                    <Building className="text-sky-600" size={24} />
-                  </div>
-                  <CardTitle className="text-lg text-slate-800">Bank Transfer</CardTitle>
-                  <CardDescription className="text-slate-600 text-sm">
-                    <strong>Account Name:</strong> Ecumenical Center Church - UCCP<br />
-                    <strong>Bank:</strong> [Bank Name]<br />
-                    <strong>Account No:</strong> [Account Number]
-                  </CardDescription>
-                </CardHeader>
+                </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-purple-50 to-white border-purple-200">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
-                    <Wallet className="text-purple-600" size={24} />
+              {/* In-Person Giving Card */}
+              <Card className="bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200 shadow-lg">
+                <CardHeader className="pb-2">
+                  <div className="w-14 h-14 bg-amber-600 rounded-xl flex items-center justify-center mb-4">
+                    <Calendar className="text-white" size={28} />
                   </div>
-                  <CardTitle className="text-lg text-slate-800">GCash / Maya</CardTitle>
-                  <CardDescription className="text-slate-600 text-sm">
-                    Send your gift via mobile wallet:<br />
-                    <strong>GCash:</strong> 0917-XXX-XXXX<br />
-                    <strong>Maya:</strong> 0917-XXX-XXXX
-                  </CardDescription>
+                  <CardTitle className="text-xl text-slate-800">In-Person Giving</CardTitle>
                 </CardHeader>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-amber-50 to-white border-amber-200">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-3">
-                    <Calendar className="text-amber-600" size={24} />
+                <CardContent>
+                  <div className="bg-white rounded-xl p-5 border border-amber-100">
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-sm text-slate-500 mb-1">During Worship Services</p>
+                        <p className="font-semibold text-slate-800">Every Sunday</p>
+                        <p className="text-slate-600 text-sm">Drop your tithes and offerings during the collection</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500 mb-1">Church Office</p>
+                        <p className="font-semibold text-slate-800">Monday - Friday</p>
+                        <p className="text-slate-600 text-sm">8:00 AM - 5:00 PM</p>
+                      </div>
+                    </div>
                   </div>
-                  <CardTitle className="text-lg text-slate-800">In-Person Giving</CardTitle>
-                  <CardDescription className="text-slate-600 text-sm">
-                    Drop your tithes and offerings during our Sunday worship services or visit the church office during office hours.
-                  </CardDescription>
-                </CardHeader>
+                  <p className="text-sm text-slate-500 mt-4 text-center">
+                    Visit us at #27 Castillo Rd., Baliwasan, Zamboanga City
+                  </p>
+                </CardContent>
               </Card>
             </div>
           </div>
