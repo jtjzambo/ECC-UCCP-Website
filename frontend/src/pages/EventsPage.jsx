@@ -101,7 +101,7 @@ export const EventsPage = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
               <div className="aspect-video">
                 <iframe
-                  src="https://www.youtube.com/embed/live_stream?channel=UCYourChannelID&autoplay=1"
+                  src="https://www.youtube.com/embed?listType=user_uploads&list=uccpzambo"
                   title="UCCP Zamboanga Live Worship"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -109,23 +109,22 @@ export const EventsPage = () => {
                   className="w-full h-full"
                 ></iframe>
               </div>
-              
-              {/* Fallback message */}
-              <div className="absolute inset-0 flex items-center justify-center bg-slate-900/90 opacity-0 hover:opacity-100 transition-opacity">
-                <div className="text-center p-8">
-                  <Play size={64} className="mx-auto text-white mb-4" />
-                  <p className="text-white text-lg mb-4">If the live stream isn't showing, visit our YouTube channel directly:</p>
-                  <a 
-                    href="https://www.youtube.com/@uccpzambo/live" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-colors"
-                  >
-                    <Play size={20} />
-                    Watch on YouTube
-                  </a>
-                </div>
-              </div>
+            </div>
+
+            {/* Watch on YouTube Link */}
+            <div className="mt-6 text-center">
+              <a 
+                href="https://www.youtube.com/@uccpzambo/live" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold text-lg transition-colors shadow-lg"
+              >
+                <Play size={24} />
+                Watch Live on YouTube
+              </a>
+              <p className="text-slate-400 text-sm mt-3">
+                Click above if the video doesn't load automatically
+              </p>
             </div>
 
             {/* Service Info */}
