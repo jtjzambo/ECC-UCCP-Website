@@ -40,12 +40,21 @@ export const WelcomeSection = () => {
           </div>
           <div className="relative h-full">
             <div className="sticky top-24">
-              <img 
-                src={churchInfo.images.community}
-                alt="Church Community"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-emerald-600 text-white p-6 rounded-xl shadow-xl">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400 via-sky-400 to-purple-400 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+              <div className="relative">
+                <img 
+                  src={churchInfo.images.community}
+                  alt="Church Community"
+                  className="rounded-2xl shadow-2xl w-full h-[500px] object-cover ring-4 ring-white/50 brightness-105 contrast-105 saturate-110"
+                  style={{
+                    filter: 'brightness(1.08) contrast(1.05) saturate(1.15)'
+                  }}
+                />
+                {/* Radiant overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-emerald-500/10 via-transparent to-amber-500/10 pointer-events-none"></div>
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-6 rounded-xl shadow-xl">
                 <p className="text-3xl font-bold">Join Us</p>
                 <p className="text-emerald-100">Every Sunday</p>
               </div>
