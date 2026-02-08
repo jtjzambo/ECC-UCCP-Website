@@ -70,7 +70,7 @@ export const churchInfo = {
     date: "Every Saturday",
     time: "4:00 PM",
     description: "Engaging activities and spiritual formation for our young people.",
-    image: "https://images.unsplash.com/photo-1507692049790-de58290a4334"
+    image: "https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/jjm4r4h9_CYF.jpg"
   }],
 
 
