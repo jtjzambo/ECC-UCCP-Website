@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Gift, Users, HandHeart, CreditCard, Building, Wallet, Calendar, Target, Sparkles, ChevronRight, Check, Phone, Mail } from 'lucide-react';
+import { Heart, Gift, Users, HandHeart, Building, Calendar, Target, Sparkles, ChevronRight, Check, Phone, Mail } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
 export const DonatePage = () => {
-  const [donationType, setDonationType] = useState('one-time');
-  const [selectedAmount, setSelectedAmount] = useState(null);
-
-  const donationAmounts = [500, 1000, 2500, 5000, 10000];
-
   const volunteerOpportunities = [
     {
       title: "Worship Ministry",
