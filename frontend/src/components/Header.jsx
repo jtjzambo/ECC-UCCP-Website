@@ -24,28 +24,28 @@ export const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3">
-          {/* Logo - Made Larger */}
-          <Link to="/" className="flex items-center gap-5 group">
+        <div className="flex justify-between items-center py-2 md:py-3">
+          {/* Logo - Responsive sizing */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 md:gap-5 group">
             <img 
               src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/rc0byv4d_UCCP.jpg" 
               alt="UCCP Logo" 
-              className="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-slate-800 leading-tight tracking-wide">
+              <span className="font-bold text-xs sm:text-sm md:text-lg lg:text-xl text-slate-800 leading-tight tracking-wide">
                 ECUMENICAL CENTER CHURCH
               </span>
-              <span className="text-lg font-bold text-emerald-700 leading-tight tracking-wide">
+              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-emerald-700 leading-tight tracking-wide">
                 United Church of Christ in the Philippines
               </span>
-              <span className="text-sm text-slate-600 leading-tight mt-0.5">
+              <span className="text-xs text-slate-600 leading-tight mt-0.5 hidden sm:block">
                 Zamboanga City
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation - Made Smaller */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             {navigationLinks.map((link) => (
               <Link
