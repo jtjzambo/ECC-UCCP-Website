@@ -198,7 +198,7 @@ export const DonatePage = () => {
                     </p>
                     <div className="bg-white p-3 rounded-xl shadow-md border border-emerald-100">
                       <img 
-                        src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=Bank%3A%20BDO%20SM%20Mindpro%0AAccount%20Name%3A%20United%20Church%20of%20Christ%20in%20the%20Philippines%0AAccount%20Number%3A%20013158001114"
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&format=png&data=BANK TRANSFER DETAILS%0A%0ABank: BDO SM Mindpro%0AAccount Name: United Church of Christ in the Philippines%0AAccount Number: 013158001114%0A%0APlease send deposit slip to church office."
                         alt="Bank Details QR Code"
                         className="w-44 h-44"
                       />
