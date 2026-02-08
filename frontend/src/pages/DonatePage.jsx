@@ -50,15 +50,6 @@ export const DonatePage = () => {
       icon: Heart
     }
   ];
-    },
-    {
-      title: "Youth Scholarship Fund",
-      description: "Provide educational support for deserving young members of our community.",
-      goal: "₱150,000",
-      progress: 45,
-      icon: Target
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
