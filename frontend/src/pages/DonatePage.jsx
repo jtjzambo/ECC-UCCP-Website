@@ -361,51 +361,6 @@ export const DonatePage = () => {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">Frequently Asked Questions</h2>
-          
-          <div className="space-y-4">
-            <Card className="bg-white">
-              <CardHeader>
-                <CardTitle className="text-lg text-slate-800 flex items-center gap-2">
-                  <Check className="text-emerald-600" size={20} />
-                  Is my donation tax-deductible?
-                </CardTitle>
-                <CardDescription className="text-slate-600 pl-7">
-                  Yes, donations to Ecumenical Center Church - UCCP may be tax-deductible. Please contact our office for official receipts and documentation.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-white">
-              <CardHeader>
-                <CardTitle className="text-lg text-slate-800 flex items-center gap-2">
-                  <Check className="text-emerald-600" size={20} />
-                  Can I designate my gift for a specific purpose?
-                </CardTitle>
-                <CardDescription className="text-slate-600 pl-7">
-                  Absolutely! You can direct your gift to our General Fund, Building Fund, Community Ministry, Youth Scholarship, or any of our special campaigns.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-white">
-              <CardHeader>
-                <CardTitle className="text-lg text-slate-800 flex items-center gap-2">
-                  <Check className="text-emerald-600" size={20} />
-                  How can I cancel or modify my recurring donation?
-                </CardTitle>
-                <CardDescription className="text-slate-600 pl-7">
-                  Simply contact our church office by phone or email, and we'll be happy to assist you with any changes to your giving.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
