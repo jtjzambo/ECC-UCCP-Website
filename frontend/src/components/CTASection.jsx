@@ -6,9 +6,14 @@ import { Button } from './ui/button';
 export const CTASection = () => {
   return (
     <section className="py-20 bg-slate-800 text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-500 rounded-full blur-3xl"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://customer-assets.emergentagent.com/job_0ca8b7ab-d422-4d3b-b565-d4e3e0d6ac03/artifacts/8n1g6gue_Cover%20photo.jpg"
+          alt="Ecumenical Center Church Community"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-800/90 to-slate-800/80"></div>
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
