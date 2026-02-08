@@ -17,6 +17,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
+        {/* Spacer for fixed header - responsive height */}
+        <div className="h-16 sm:h-20 md:h-24 lg:h-28"></div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
