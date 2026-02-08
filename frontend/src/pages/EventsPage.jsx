@@ -17,7 +17,7 @@ export const EventsPage = () => {
     <div className="min-h-screen bg-white">
       {/* Live Worship Banner - Only shows on Sundays */}
       {isSunday && (
-        <section className="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-4">
+        <section className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 text-white py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-3">
               <div className="flex items-center gap-2 animate-pulse">
@@ -26,7 +26,7 @@ export const EventsPage = () => {
               </div>
               <span className="text-white/80">|</span>
               <span className="font-medium">Sunday Worship Service is happening now!</span>
-              <a href="#live-worship" className="ml-4 px-4 py-1 bg-white text-red-600 rounded-full font-semibold text-sm hover:bg-red-50 transition-colors">
+              <a href="#live-worship" className="ml-4 px-4 py-1 bg-white text-blue-600 rounded-full font-semibold text-sm hover:bg-blue-50 transition-colors">
                 Watch Live
               </a>
             </div>
