@@ -98,33 +98,27 @@ export const EventsPage = () => {
             </div>
 
             {/* YouTube Live Embed */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
-              <div className="aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed?listType=user_uploads&list=uccpzambo"
-                  title="UCCP Zamboanga Live Worship"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-800">
+              <div className="aspect-video flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                    <Play size={48} className="text-white ml-2" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Live Stream Available</h3>
+                  <p className="text-slate-300 mb-6 max-w-md mx-auto">
+                    Click below to join our Sunday worship service live on YouTube
+                  </p>
+                  <a 
+                    href="https://www.youtube.com/@uccpzambo/live" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold text-lg transition-colors shadow-lg"
+                  >
+                    <Play size={24} />
+                    Watch Live on YouTube
+                  </a>
+                </div>
               </div>
-            </div>
-
-            {/* Watch on YouTube Link */}
-            <div className="mt-6 text-center">
-              <a 
-                href="https://www.youtube.com/@uccpzambo/live" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold text-lg transition-colors shadow-lg"
-              >
-                <Play size={24} />
-                Watch Live on YouTube
-              </a>
-              <p className="text-slate-400 text-sm mt-3">
-                Click above if the video doesn't load automatically
-              </p>
             </div>
 
             {/* Service Info */}
