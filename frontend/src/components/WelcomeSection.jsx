@@ -1,5 +1,6 @@
 import React from 'react';
-import { Heart, Users, BookOpen } from 'lucide-react';
+import { Heart, Users, BookOpen, Cross } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { churchInfo } from '../mock';
 
 export const WelcomeSection = () => {
