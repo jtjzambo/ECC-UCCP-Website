@@ -80,6 +80,92 @@ export const EventsPage = () => {
         </div>
       </section>
 
+      {/* Live Worship Section - Only shows on Sundays */}
+      {isSunday && (
+        <section id="live-worship" className="py-16 bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 scroll-mt-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 animate-pulse">
+                <Radio size={16} />
+                LIVE NOW
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                Sunday Worship Service
+              </h2>
+              <p className="text-lg text-slate-300">
+                Join us in worship from wherever you are!
+              </p>
+            </div>
+
+            {/* YouTube Live Embed */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/live_stream?channel=UCYourChannelID&autoplay=1"
+                  title="UCCP Zamboanga Live Worship"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              
+              {/* Fallback message */}
+              <div className="absolute inset-0 flex items-center justify-center bg-slate-900/90 opacity-0 hover:opacity-100 transition-opacity">
+                <div className="text-center p-8">
+                  <Play size={64} className="mx-auto text-white mb-4" />
+                  <p className="text-white text-lg mb-4">If the live stream isn't showing, visit our YouTube channel directly:</p>
+                  <a 
+                    href="https://www.youtube.com/@uccpzambo/live" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-colors"
+                  >
+                    <Play size={20} />
+                    Watch on YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Service Info */}
+            <div className="mt-8 grid md:grid-cols-3 gap-4">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
+                <Clock className="mx-auto text-emerald-400 mb-2" size={24} />
+                <p className="text-white font-semibold">Morning Service</p>
+                <p className="text-slate-300 text-sm">9:00 AM</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
+                <Church className="mx-auto text-emerald-400 mb-2" size={24} />
+                <p className="text-white font-semibold">In-Person Worship</p>
+                <p className="text-slate-300 text-sm">All are welcome!</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
+                <MessageCircle className="mx-auto text-emerald-400 mb-2" size={24} />
+                <p className="text-white font-semibold">Join the Chat</p>
+                <p className="text-slate-300 text-sm">Comment on YouTube</p>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <a 
+                href="https://www.youtube.com/@uccpzambo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
+              >
+                Subscribe to our YouTube channel for past services and more
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Featured Event Announcement */}
       <section className="py-10 bg-gradient-to-br from-slate-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
