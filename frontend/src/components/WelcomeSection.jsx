@@ -121,6 +121,28 @@ export const WelcomeSection = () => {
               })}
             </div>
           </div>
+
+          {/* What We Believe Section */}
+          <div className="mt-8 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-2xl p-8 text-white shadow-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                  <Cross className="text-white" size={28} />
+                </div>
+                <div>
+                  <h4 className="text-2xl font-bold">What We Believe</h4>
+                  <p className="text-purple-200">Discover the foundation of our faith</p>
+                </div>
+              </div>
+              <Link 
+                to="/statement-of-faith"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-purple-700 rounded-xl font-semibold hover:bg-purple-50 transition-colors shadow-lg"
+              >
+                <BookOpen size={18} />
+                Read Our Statement of Faith
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
