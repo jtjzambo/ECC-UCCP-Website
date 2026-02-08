@@ -104,9 +104,15 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about#ministries" className="text-slate-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2">
+                <Link to="/blog" className="text-slate-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2">
                   <span className="w-1 h-1 bg-emerald-500 rounded-full"></span>
-                  Ministries
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/statement-of-faith" className="text-slate-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-emerald-500 rounded-full"></span>
+                  Statement of Faith
                 </Link>
               </li>
               <li>
