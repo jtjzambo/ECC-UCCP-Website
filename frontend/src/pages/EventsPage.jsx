@@ -397,12 +397,9 @@ export const EventsPage = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-slate-600 mb-4">
-                    Enjoy refreshments and fellowship after worship. Great opportunity to meet new friends and connect with church family!
+                  <CardDescription className="text-slate-600">
+                    Enjoy fellowship after worship. Great opportunity to meet new friends and connect with church family!
                   </CardDescription>
-                  <p className="text-sm text-amber-700 font-semibold">
-                    ☕ Refreshments provided - Stay and connect
-                  </p>
                 </CardContent>
               </Card>
             )}
