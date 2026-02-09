@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Calendar, Clock, User, Heart, ChevronRight, Sparkles, Search, Bell } from 'lucide-react';
+import { BookOpen, Calendar, Clock, User, Heart, ChevronRight, Sparkles, Search, Bell, ExternalLink, RefreshCw } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -9,6 +9,30 @@ export const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [odbDevotionals, setOdbDevotionals] = useState([]);
+  const [loadingOdb, setLoadingOdb] = useState(true);
+
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
+  // Fetch Our Daily Bread devotionals
+  useEffect(() => {
+    const fetchDevotionals = async () => {
+      try {
+        setLoadingOdb(true);
+        const response = await fetch(`${BACKEND_URL}/api/devotionals`);
+        if (response.ok) {
+          const data = await response.json();
+          setOdbDevotionals(data);
+        }
+      } catch (error) {
+        console.error('Error fetching devotionals:', error);
+      } finally {
+        setLoadingOdb(false);
+      }
+    };
+    
+    fetchDevotionals();
+  }, [BACKEND_URL]);
 
   const categories = [
     { id: 'all', name: 'All Posts' },
