@@ -243,6 +243,105 @@ export const BlogPage = () => {
         </div>
       </section>
 
+      {/* Our Daily Bread Section */}
+      <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-orange-100 rounded-lg">
+                <BookOpen className="text-orange-600" size={24} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-slate-800">Our Daily Bread</h2>
+                <p className="text-sm text-slate-500">Weekly devotionals from odb.org</p>
+              </div>
+            </div>
+            <a 
+              href="https://odb.org" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-orange-600 hover:text-orange-700 text-sm font-medium flex items-center gap-1"
+            >
+              Visit odb.org
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          {loadingOdb ? (
+            <div className="flex items-center justify-center py-12">
+              <RefreshCw className="animate-spin text-orange-500" size={32} />
+              <span className="ml-3 text-slate-500">Loading devotionals...</span>
+            </div>
+          ) : odbDevotionals.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {odbDevotionals.map((devotional, index) => (
+                <a
+                  key={devotional.id}
+                  href={devotional.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Card className={`h-full hover:shadow-xl transition-all duration-300 border-orange-200 hover:border-orange-400 ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getCategoryColor('odb')}`}>
+                          {devotional.category}
+                        </span>
+                        <ExternalLink size={14} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
+                      </div>
+                      <CardTitle className="text-lg mb-1 group-hover:text-orange-600 transition-colors line-clamp-2">
+                        {devotional.title}
+                      </CardTitle>
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
+                        <Calendar size={12} />
+                        <span>{formatDate(devotional.published_date)}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <CardDescription className="text-slate-600 text-sm leading-relaxed line-clamp-3">
+                        {devotional.snippet}
+                      </CardDescription>
+                      <div className="flex items-center justify-between pt-3 mt-3 border-t border-slate-100">
+                        <span className="text-xs text-slate-500 flex items-center gap-1">
+                          <User size={12} />
+                          {devotional.author}
+                        </span>
+                        <span className="text-orange-600 font-medium text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
+                          Read on ODB
+                          <ChevronRight size={14} />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 bg-white rounded-xl">
+              <BookOpen size={48} className="mx-auto text-slate-300 mb-4" />
+              <p className="text-slate-500">Unable to load devotionals. Please try again later.</p>
+              <a 
+                href="https://odb.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-orange-600 hover:text-orange-700 font-medium"
+              >
+                Visit Our Daily Bread directly
+                <ExternalLink size={16} />
+              </a>
+            </div>
+          )}
+
+          <div className="mt-8 p-4 bg-white/70 rounded-xl border border-orange-200 text-center">
+            <p className="text-sm text-slate-600">
+              Devotionals provided by <a href="https://odb.org" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline font-medium">Our Daily Bread Ministries</a>. 
+              Click any devotional to read the full content on their website.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Category Filter */}
       <section className="py-8 bg-white border-b border-slate-200 sticky top-[88px] z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
