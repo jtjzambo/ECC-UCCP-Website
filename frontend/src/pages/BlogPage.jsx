@@ -52,6 +52,20 @@ export const BlogPage = () => {
     fetchVerseOfTheWeek();
   }, [BACKEND_URL]);
 
+  // Format date from RSS feed
+  const formatDate = (dateStr) => {
+    try {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    } catch {
+      return dateStr;
+    }
+  };
+
   const categories = [
     { id: 'all', name: 'All Posts' },
     { id: 'odb', name: 'Our Daily Bread' },
