@@ -90,6 +90,127 @@ async def get_status_checks():
     
     return status_checks
 
+# Helper function to extract snippet from HTML content
+def extract_snippet(html_content: str, max_length: int = 150) -> str:
+    """Extract a brief text snippet from HTML content"""
+    # Remove HTML tags
+    text = re.sub(r'<[^>]+>', '', html_content)
+    # Decode HTML entities
+    text = unescape(text)
+    # Clean up whitespace
+    text = ' '.join(text.split())
+    # Truncate to max length
+    if len(text) > max_length:
+        text = text[:max_length].rsplit(' ', 1)[0] + '...'
+    return text
+
+# Helper function to extract image URL from HTML content
+def extract_image_url(html_content: str) -> Optional[str]:
+    """Extract the first image URL from HTML content"""
+    match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', html_content)
+    return match.group(1) if match else None
+
+async def fetch_odb_devotionals() -> List[dict]:
+    """Fetch devotionals from Our Daily Bread RSS feed"""
+    try:
+        feed = feedparser.parse("https://odb.org/feed/")
+        devotionals = []
+        
+        for entry in feed.entries[:7]:  # Get last 7 days of devotionals
+            # Extract categories
+            categories = [cat.term for cat in entry.get('tags', [])]
+            category = categories[0] if categories else 'Devotional'
+            
+            # Get description/summary
+            description = entry.get('description', entry.get('summary', ''))
+            
+            devotional = {
+                'id': str(uuid.uuid4()),
+                'title': entry.get('title', 'Untitled'),
+                'link': entry.get('link', 'https://odb.org'),
+                'author': entry.get('dc_creator', entry.get('author', 'Our Daily Bread')),
+                'published_date': entry.get('published', ''),
+                'category': category,
+                'snippet': extract_snippet(description, 150),
+                'image_url': extract_image_url(description)
+            }
+            devotionals.append(devotional)
+        
+        return devotionals
+    except Exception as e:
+        logger.error(f"Error fetching ODB feed: {e}")
+        return []
+
+@api_router.get("/devotionals", response_model=List[Devotional])
+async def get_devotionals():
+    """
+    Get Our Daily Bread devotionals.
+    - Fetches from ODB RSS feed
+    - Caches for 1 week to minimize requests
+    - Returns snippets only - full content available at odb.org links
+    """
+    # Check cache first
+    cache = await db.devotional_cache.find_one({}, {"_id": 0})
+    
+    now = datetime.now(timezone.utc)
+    
+    if cache:
+        expires_at = cache.get('expires_at')
+        if isinstance(expires_at, str):
+            expires_at = datetime.fromisoformat(expires_at.replace('Z', '+00:00'))
+        
+        # If cache is still valid, return cached devotionals
+        if expires_at and now < expires_at:
+            logger.info("Returning cached devotionals")
+            return cache.get('devotionals', [])
+    
+    # Cache expired or doesn't exist - fetch fresh data
+    logger.info("Fetching fresh devotionals from Our Daily Bread")
+    devotionals = await fetch_odb_devotionals()
+    
+    if devotionals:
+        # Store in cache with 1 week expiration
+        cache_doc = {
+            'id': str(uuid.uuid4()),
+            'devotionals': devotionals,
+            'fetched_at': now.isoformat(),
+            'expires_at': (now + timedelta(days=7)).isoformat()
+        }
+        
+        # Upsert cache (replace existing or insert new)
+        await db.devotional_cache.delete_many({})
+        await db.devotional_cache.insert_one(cache_doc)
+        
+        return devotionals
+    
+    # If fetch failed but we have old cache, return that
+    if cache:
+        logger.warning("Fetch failed, returning stale cache")
+        return cache.get('devotionals', [])
+    
+    return []
+
+@api_router.post("/devotionals/refresh", response_model=List[Devotional])
+async def refresh_devotionals():
+    """Force refresh devotionals from Our Daily Bread (admin use)"""
+    logger.info("Force refreshing devotionals")
+    
+    devotionals = await fetch_odb_devotionals()
+    
+    if devotionals:
+        now = datetime.now(timezone.utc)
+        cache_doc = {
+            'id': str(uuid.uuid4()),
+            'devotionals': devotionals,
+            'fetched_at': now.isoformat(),
+            'expires_at': (now + timedelta(days=7)).isoformat()
+        }
+        
+        await db.devotional_cache.delete_many({})
+        await db.devotional_cache.insert_one(cache_doc)
+    
+    return devotionals
+
 # Include the router in the main app
 app.include_router(api_router)
 
