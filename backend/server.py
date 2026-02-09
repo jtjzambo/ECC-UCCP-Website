@@ -51,7 +51,18 @@ class Devotional(BaseModel):
     published_date: str
     category: str
     snippet: str  # Brief preview only - links to full content on ODB
+    bible_verse: Optional[str] = None  # Scripture reference
     image_url: Optional[str] = None
+
+class VerseOfTheWeek(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    verse_text: str
+    verse_reference: str
+    reflection: str
+    fetched_at: str
+    expires_at: str
 
 class DevotionalCache(BaseModel):
     model_config = ConfigDict(extra="ignore")
