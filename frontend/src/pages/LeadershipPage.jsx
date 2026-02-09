@@ -1,0 +1,297 @@
+import React from 'react';
+import { Users, User, Building2, Heart, BookOpen, Music, Briefcase, Crown, Church } from 'lucide-react';
+import { Card, CardContent } from '../components/ui/card';
+
+export const LeadershipPage = () => {
+  // Pastor Information (placeholder for now)
+  const pastor = {
+    name: "Rev. Ronnie Flor T. Nicanor",
+    title: "Resident Minister",
+    image: null, // Will be added later
+    bio: null // Will be added later
+  };
+
+  // Church Council
+  const churchCouncil = [
+    { name: "Leo Raul D. Jumalon", position: "Chairperson" },
+    { name: "Rosemarie O. Taguibolos", position: "Vice-Chairperson" },
+    { name: "Flordeliza T. Nicanor", position: "Secretary" },
+    { name: "Cherie Lou S. Enriquez", position: "Treasurer" },
+    { name: "Arceli D. Silay", position: "Auditor" },
+    { name: "Avelino A. Sulit", position: "Financial Secretary" }
+  ];
+
+  // Church Boards
+  const churchBoards = [
+    { name: "Esther N. Chang", position: "Board of Elders Chairperson", icon: Crown },
+    { name: "Jesus C. Tan, Jr.", position: "Board of Christian Education Chairperson", icon: BookOpen },
+    { name: "Romulo S. Sangalang", position: "Board of Trustees Chairperson", icon: Building2 }
+  ];
+
+  // Church Organizations
+  const churchOrganizations = [
+    { name: "Mario B. Jacobe", position: "United Church Men President", org: "UCM" },
+    { name: "Felogine T. Oscera", position: "Christian Women's Association President", org: "CWA" },
+    { name: "Arvin V. Duhaylungsod", position: "Christian Young Adult Fellowship President", org: "CYAF" },
+    { name: "Jobert A. Naval", position: "Christian Youth Fellowship President", org: "CYF" }
+  ];
+
+  // Church Staff
+  const churchStaff = [
+    { name: "Ronaliza N. Imperial", position: "Church Office Secretary", icon: Briefcase },
+    { name: "Alfredo F. Alba, Jr.", position: "Musical Director", icon: Music },
+    { name: "Yolanda J. Hablo", position: "Utility", icon: Heart },
+    { name: "Jose Marie T. Indig", position: "Driver / Utility", icon: Heart }
+  ];
+
+  // Wider Judicatory
+  const widerJudicatory = [
+    { name: "To be updated", position: "Jurisdictional Bishop of NWMJ" },
+    { name: "To be updated", position: "Acting General Secretary" }
+  ];
+
+  // Leader Card Component
+  const LeaderCard = ({ name, position, image, icon: Icon, highlight = false }) => (
+    <Card className={`hover:shadow-lg transition-all duration-300 ${highlight ? 'border-purple-300 bg-purple-50' : 'border-slate-200'}`}>
+      <CardContent className="p-6 text-center">
+        <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${highlight ? 'bg-purple-600' : 'bg-slate-200'}`}>
+          {image ? (
+            <img src={image} alt={name} className="w-full h-full rounded-full object-cover" />
+          ) : Icon ? (
+            <Icon className={`w-10 h-10 ${highlight ? 'text-white' : 'text-slate-500'}`} />
+          ) : (
+            <User className={`w-10 h-10 ${highlight ? 'text-white' : 'text-slate-500'}`} />
+          )}
+        </div>
+        <h3 className="font-bold text-slate-800 text-lg">{name}</h3>
+        <p className={`text-sm mt-1 ${highlight ? 'text-purple-600 font-medium' : 'text-slate-500'}`}>{position}</p>
+      </CardContent>
+    </Card>
+  );
+
+  // Small Leader Card for lists
+  const SmallLeaderCard = ({ name, position, org }) => (
+    <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-all">
+      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+        {org || name.charAt(0)}
+      </div>
+      <div>
+        <h4 className="font-semibold text-slate-800">{name}</h4>
+        <p className="text-sm text-slate-500">{position}</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-800 to-slate-900">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full text-white mb-6 border border-white/30">
+            <Users size={18} />
+            <span className="text-sm font-semibold">Our Church Family</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            Church Leadership
+          </h1>
+          <p className="text-xl text-purple-100 max-w-2xl mx-auto">
+            Meet the dedicated servants who lead and serve our church community with love and faithfulness.
+          </p>
+        </div>
+      </section>
+
+      {/* Pastor Section */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full text-purple-700 mb-4">
+              <Church size={18} />
+              <span className="text-sm font-semibold">Pastoral Leadership</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Our Resident Minister</h2>
+          </div>
+
+          <Card className="max-w-3xl mx-auto overflow-hidden bg-white shadow-xl border-0">
+            <div className="grid md:grid-cols-3">
+              <div className="bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center p-8">
+                <div className="w-32 h-32 rounded-full bg-white/20 flex items-center justify-center">
+                  {pastor.image ? (
+                    <img src={pastor.image} alt={pastor.name} className="w-full h-full rounded-full object-cover" />
+                  ) : (
+                    <User className="w-16 h-16 text-white" />
+                  )}
+                </div>
+              </div>
+              <div className="md:col-span-2 p-8">
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">{pastor.name}</h3>
+                <p className="text-purple-600 font-medium mb-4">{pastor.title}</p>
+                {pastor.bio ? (
+                  <p className="text-slate-600 leading-relaxed">{pastor.bio}</p>
+                ) : (
+                  <p className="text-slate-400 italic">Bio and additional information coming soon.</p>
+                )}
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Church Council Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-emerald-100 px-4 py-2 rounded-full text-emerald-700 mb-4">
+              <Users size={18} />
+              <span className="text-sm font-semibold">Elected Leadership EY 2025-2026</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Church Council</h2>
+            <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
+              The governing body that oversees the administration and direction of our church.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {churchCouncil.map((leader, index) => (
+              <LeaderCard 
+                key={index} 
+                name={leader.name} 
+                position={leader.position} 
+                highlight={index === 0}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Church Boards Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-sky-100 px-4 py-2 rounded-full text-sky-700 mb-4">
+              <Building2 size={18} />
+              <span className="text-sm font-semibold">Board Chairpersons</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Church Boards</h2>
+            <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
+              Leading specialized ministries and areas of church life.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {churchBoards.map((leader, index) => (
+              <LeaderCard 
+                key={index} 
+                name={leader.name} 
+                position={leader.position}
+                icon={leader.icon}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Church Organizations Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-amber-100 px-4 py-2 rounded-full text-amber-700 mb-4">
+              <Heart size={18} />
+              <span className="text-sm font-semibold">Organization Presidents</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Church Organizations</h2>
+            <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
+              Fellowship groups that bring our church family together across all ages.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {churchOrganizations.map((leader, index) => (
+              <SmallLeaderCard 
+                key={index} 
+                name={leader.name} 
+                position={leader.position}
+                org={leader.org}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Church Staff Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-100 to-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-rose-100 px-4 py-2 rounded-full text-rose-700 mb-4">
+              <Briefcase size={18} />
+              <span className="text-sm font-semibold">Administrative Team</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Church Staff</h2>
+            <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
+              Dedicated individuals who support the daily operations of our church.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {churchStaff.map((staff, index) => (
+              <LeaderCard 
+                key={index} 
+                name={staff.name} 
+                position={staff.position}
+                icon={staff.icon}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Wider Judicatory Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-purple-300 mb-4">
+              <Church size={18} />
+              <span className="text-sm font-semibold">UCCP Connection</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Wider Judicatory</h2>
+            <p className="text-slate-300 mt-2 max-w-2xl mx-auto">
+              Our connection to the United Church of Christ in the Philippines leadership.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {widerJudicatory.map((leader, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-600 flex items-center justify-center">
+                    <Crown className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-white text-lg">{leader.name}</h3>
+                  <p className="text-purple-300 text-sm mt-1">{leader.position}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-800 mb-4">
+            Serving Together in Christ
+          </h2>
+          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+            Our leaders are committed to serving God and our community. If you have questions or would like to connect with any of our leaders, please reach out.
+          </p>
+          <a 
+            href="/contact" 
+            className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition-colors"
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+};
