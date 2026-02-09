@@ -329,7 +329,7 @@ export const BlogPage = () => {
             </div>
           ) : odbDevotionals.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {odbDevotionals.map((devotional, index) => (
+              {odbDevotionals.slice(1).map((devotional, index) => (
                 <a
                   key={devotional.id}
                   href={devotional.link}
@@ -352,6 +352,11 @@ export const BlogPage = () => {
                         <Calendar size={12} />
                         <span>{formatDate(devotional.published_date)}</span>
                       </div>
+                      {devotional.bible_verse && (
+                        <div className="mt-2 text-xs text-purple-600 font-medium italic">
+                          📖 {devotional.bible_verse}
+                        </div>
+                      )}
                     </CardHeader>
                     <CardContent className="pt-0">
                       <CardDescription className="text-slate-600 text-sm leading-relaxed line-clamp-3">
