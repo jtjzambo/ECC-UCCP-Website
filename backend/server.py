@@ -121,6 +121,27 @@ def extract_image_url(html_content: str) -> Optional[str]:
     match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', html_content)
     return match.group(1) if match else None
 
+# Helper function to extract Bible verse references from text
+def extract_bible_verse(html_content: str) -> Optional[str]:
+    """Extract Bible verse reference from HTML content"""
+    text = re.sub(r'<[^>]+>', '', html_content)
+    text = unescape(text)
+    
+    # Common Bible verse patterns
+    # Matches patterns like "John 3:16", "1 Corinthians 13:4-7", "Psalm 23:1-6", "Genesis 1:1"
+    patterns = [
+        r'(\d?\s?[A-Z][a-z]+\s+\d+:\d+(?:-\d+)?)',  # Standard format
+        r'((?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1\s?Samuel|2\s?Samuel|1\s?Kings|2\s?Kings|1\s?Chronicles|2\s?Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs?|Ecclesiastes|Song\s?of\s?Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1\s?Corinthians|2\s?Corinthians|Galatians|Ephesians|Philippians|Colossians|1\s?Thessalonians|2\s?Thessalonians|1\s?Timothy|2\s?Timothy|Titus|Philemon|Hebrews|James|1\s?Peter|2\s?Peter|1\s?John|2\s?John|3\s?John|Jude|Revelation)\s+\d+:\d+(?:-\d+)?)',
+    ]
+    
+    for pattern in patterns:
+        matches = re.findall(pattern, text, re.IGNORECASE)
+        if matches:
+            # Return the first meaningful match
+            return matches[0].strip()
+    
+    return None
+
 async def fetch_odb_devotionals() -> List[dict]:
     """Fetch devotionals from Our Daily Bread RSS feed"""
     try:
