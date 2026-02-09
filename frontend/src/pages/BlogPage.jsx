@@ -65,15 +65,6 @@ export const BlogPage = () => {
     }
   };
 
-  const categories = [
-    { id: 'all', name: 'All Posts' },
-    { id: 'odb', name: 'Our Daily Bread' },
-    { id: 'devotional', name: 'Devotionals' },
-    { id: 'faith', name: 'Faith & Life' },
-    { id: 'news', name: 'Church News' },
-    { id: 'reflection', name: 'Reflections' }
-  ];
-
   // Featured devotional comes from ODB (first item) or fallback
   const featuredDevotional = odbDevotionals.length > 0 ? {
     id: odbDevotionals[0].id,
