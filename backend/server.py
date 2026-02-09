@@ -249,8 +249,10 @@ async def refresh_devotionals():
                 'expires_at': (now + timedelta(days=7)).isoformat()
             }
         
-        await db.devotional_cache.delete_many({})
-        await db.devotional_cache.insert_one(cache_doc)
+            await db.devotional_cache.delete_many({})
+            await db.devotional_cache.insert_one(cache_doc)
+        except Exception as e:
+            logger.warning(f"Cache write failed: {e}")
     
     return devotionals
 
