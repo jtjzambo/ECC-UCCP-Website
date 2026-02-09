@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Calendar, Clock, User, Heart, ChevronRight, Sparkles, Search, Bell, ExternalLink, RefreshCw } from 'lucide-react';
+import { BookOpen, Calendar, Clock, User, Heart, ChevronRight, Sparkles, Bell, ExternalLink, RefreshCw } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 
 export const BlogPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [odbDevotionals, setOdbDevotionals] = useState([]);
