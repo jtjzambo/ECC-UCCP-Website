@@ -5,6 +5,117 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 
+// Weekly rotating verses - curated selection (weeks start on Sunday)
+const WEEKLY_VERSES = [
+  {
+    verse_text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+    verse_reference: "Jeremiah 29:11 (NIV)",
+    reflection: "Let this promise remind you that God's plans for your life are good. Trust His timing, embrace His purpose, and walk confidently into the future He has prepared for you."
+  },
+  {
+    verse_text: "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+    verse_reference: "Proverbs 3:5-6 (NIV)",
+    reflection: "When life feels uncertain, remember that God sees the full picture. Surrender your plans to Him and watch as He guides your steps with perfect wisdom."
+  },
+  {
+    verse_text: "I can do all this through him who gives me strength.",
+    verse_reference: "Philippians 4:13 (NIV)",
+    reflection: "Whatever challenges you face this week, know that God's strength is available to you. You are never alone in your struggles."
+  },
+  {
+    verse_text: "The Lord is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
+    verse_reference: "Psalm 23:1-3 (NIV)",
+    reflection: "In the busyness of life, God invites you to rest in His care. He provides everything you need and leads you to places of peace."
+  },
+  {
+    verse_text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+    verse_reference: "Joshua 1:9 (NIV)",
+    reflection: "Courage isn't the absence of fear—it's moving forward despite fear because you know God walks with you every step of the way."
+  },
+  {
+    verse_text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+    verse_reference: "Romans 8:28 (NIV)",
+    reflection: "Even in difficult circumstances, God is working behind the scenes. Trust that He is weaving every experience into something beautiful."
+  },
+  {
+    verse_text: "Come to me, all you who are weary and burdened, and I will give you rest.",
+    verse_reference: "Matthew 11:28 (NIV)",
+    reflection: "Jesus offers rest for your tired soul. Bring your burdens to Him this week and experience the peace that only He can give."
+  },
+  {
+    verse_text: "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
+    verse_reference: "Lamentations 3:22-23 (ESV)",
+    reflection: "Each morning brings fresh mercy from God. No matter what yesterday held, today is a new opportunity to experience His faithful love."
+  }
+];
+
+// Helper function to get week number (Sunday start)
+const getWeekNumberSundayStart = () => {
+  const now = new Date();
+  const startOfYear = new Date(now.getFullYear(), 0, 1);
+  const dayOfYear = Math.floor((now - startOfYear) / (24 * 60 * 60 * 1000));
+  // Adjust for Sunday start
+  const adjustedDay = (now.getDay() + 1) % 7;
+  const daysSinceSunday = adjustedDay;
+  const adjustedDayOfYear = dayOfYear - daysSinceSunday;
+  return Math.floor(adjustedDayOfYear / 7);
+};
+
+// Get current verse of the week
+const getCurrentVerseOfTheWeek = () => {
+  const weekNum = getWeekNumberSundayStart();
+  const verseIndex = Math.abs(weekNum) % WEEKLY_VERSES.length;
+  return WEEKLY_VERSES[verseIndex];
+};
+
+// Helper to extract Bible verse from text
+const extractBibleVerse = (text) => {
+  const pattern = /(\d?\s?[A-Z][a-z]+\s+\d+:\d+(?:-\d+)?)/;
+  const match = text.match(pattern);
+  return match ? match[1] : null;
+};
+
+// Helper to extract snippet from HTML
+const extractSnippet = (html, maxLength = 150) => {
+  const text = html.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim();
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength).replace(/\s+\S*$/, '') + '...';
+  }
+  return text;
+};
+
+// Parse RSS XML to devotionals
+const parseODBFeed = (xmlText) => {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+  const items = xmlDoc.querySelectorAll('item');
+  
+  const devotionals = [];
+  items.forEach((item, index) => {
+    if (index >= 7) return; // Only get 7 items
+    
+    const title = item.querySelector('title')?.textContent || 'Untitled';
+    const link = item.querySelector('link')?.textContent || 'https://odb.org';
+    const author = item.querySelector('creator')?.textContent || 'Our Daily Bread';
+    const pubDate = item.querySelector('pubDate')?.textContent || '';
+    const description = item.querySelector('description')?.textContent || '';
+    const category = item.querySelector('category')?.textContent || 'Devotional';
+    
+    devotionals.push({
+      id: `odb-${index}`,
+      title,
+      link,
+      author,
+      published_date: pubDate,
+      category,
+      snippet: extractSnippet(description),
+      bible_verse: extractBibleVerse(description)
+    });
+  });
+  
+  return devotionals;
+};
+
 export const BlogPage = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -12,17 +123,21 @@ export const BlogPage = () => {
   const [loadingOdb, setLoadingOdb] = useState(true);
   const [verseOfTheWeek, setVerseOfTheWeek] = useState(null);
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
-  // Fetch Our Daily Bread devotionals
+  // Fetch Our Daily Bread devotionals directly (using CORS proxy)
   useEffect(() => {
     const fetchDevotionals = async () => {
       try {
         setLoadingOdb(true);
-        const response = await fetch(`${BACKEND_URL}/api/devotionals`);
+        
+        // Use allorigins.win as CORS proxy
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+        const odbUrl = encodeURIComponent('https://odb.org/feed/');
+        
+        const response = await fetch(proxyUrl + odbUrl);
         if (response.ok) {
-          const data = await response.json();
-          setOdbDevotionals(data);
+          const xmlText = await response.text();
+          const devotionals = parseODBFeed(xmlText);
+          setOdbDevotionals(devotionals);
         }
       } catch (error) {
         console.error('Error fetching devotionals:', error);
@@ -32,24 +147,12 @@ export const BlogPage = () => {
     };
     
     fetchDevotionals();
-  }, [BACKEND_URL]);
+  }, []);
 
-  // Fetch Verse of the Week
+  // Set Verse of the Week (calculated locally, updates weekly on Sunday)
   useEffect(() => {
-    const fetchVerseOfTheWeek = async () => {
-      try {
-        const response = await fetch(`${BACKEND_URL}/api/verse-of-the-week`);
-        if (response.ok) {
-          const data = await response.json();
-          setVerseOfTheWeek(data);
-        }
-      } catch (error) {
-        console.error('Error fetching verse of the week:', error);
-      }
-    };
-    
-    fetchVerseOfTheWeek();
-  }, [BACKEND_URL]);
+    setVerseOfTheWeek(getCurrentVerseOfTheWeek());
+  }, []);
 
   // Format date from RSS feed
   const formatDate = (dateStr) => {
