@@ -186,20 +186,6 @@ export const BlogPage = () => {
     return colors[category] || 'bg-slate-100 text-slate-700';
   };
 
-  // Format date from RSS feed
-  const formatDate = (dateStr) => {
-    try {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-      });
-    } catch {
-      return dateStr;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
