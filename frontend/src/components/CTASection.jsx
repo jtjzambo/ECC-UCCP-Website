@@ -20,7 +20,7 @@ export const CTASection = () => {
         <Users size={48} className="mx-auto mb-6 text-emerald-400" />
         <h2 className="text-4xl font-bold mb-6">Become Part of Our Family</h2>
         <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-          Everyone is welcome here. Come as you are and experience the love of God and the warmth of our community.
+          Everyone is welcome here! Come as you are and experience the love of God and the warmth of our community.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
