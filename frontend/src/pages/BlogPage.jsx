@@ -11,6 +11,7 @@ export const BlogPage = () => {
   const [subscribed, setSubscribed] = useState(false);
   const [odbDevotionals, setOdbDevotionals] = useState([]);
   const [loadingOdb, setLoadingOdb] = useState(true);
+  const [verseOfTheWeek, setVerseOfTheWeek] = useState(null);
 
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -34,6 +35,23 @@ export const BlogPage = () => {
     fetchDevotionals();
   }, [BACKEND_URL]);
 
+  // Fetch Verse of the Week
+  useEffect(() => {
+    const fetchVerseOfTheWeek = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/verse-of-the-week`);
+        if (response.ok) {
+          const data = await response.json();
+          setVerseOfTheWeek(data);
+        }
+      } catch (error) {
+        console.error('Error fetching verse of the week:', error);
+      }
+    };
+    
+    fetchVerseOfTheWeek();
+  }, [BACKEND_URL]);
+
   const categories = [
     { id: 'all', name: 'All Posts' },
     { id: 'odb', name: 'Our Daily Bread' },
@@ -43,17 +61,27 @@ export const BlogPage = () => {
     { id: 'reflection', name: 'Reflections' }
   ];
 
-  const featuredDevotional = {
+  // Featured devotional comes from ODB (first item) or fallback
+  const featuredDevotional = odbDevotionals.length > 0 ? {
+    id: odbDevotionals[0].id,
+    title: odbDevotionals[0].title,
+    excerpt: odbDevotionals[0].snippet,
+    author: odbDevotionals[0].author,
+    date: formatDate(odbDevotionals[0].published_date),
+    readTime: "5 min read",
+    category: "odb",
+    verse: odbDevotionals[0].bible_verse || "Our Daily Bread",
+    link: odbDevotionals[0].link
+  } : {
     id: 1,
     title: "Finding Peace in the Storm",
     excerpt: "In the midst of life's challenges, God offers us a peace that surpasses all understanding. Jesus said, 'Peace I leave with you; my peace I give you.' This isn't the absence of trouble—it's the presence of God in the trouble.",
-    content: "When the disciples found themselves in a boat tossed by violent waves, Jesus was asleep. Their fear was understandable, yet Jesus' response reminds us that He is sovereign over every storm we face...",
     author: "Pastor's Desk",
     date: "February 8, 2026",
     readTime: "5 min read",
     category: "devotional",
     verse: "John 14:27",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"
+    link: null
   };
 
   const blogPosts = [
