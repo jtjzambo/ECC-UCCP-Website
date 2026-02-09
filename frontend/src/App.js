@@ -12,6 +12,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { BlogPage } from "./pages/BlogPage";
 import { DonatePage } from "./pages/DonatePage";
 import { StatementOfFaithPage } from "./pages/StatementOfFaithPage";
+import { LeadershipPage } from "./pages/LeadershipPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/statement-of-faith" element={<StatementOfFaithPage />} />
+          <Route path="/leadership" element={<LeadershipPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
