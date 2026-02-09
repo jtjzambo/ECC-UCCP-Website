@@ -509,14 +509,29 @@ export const BlogPage = () => {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-purple-300 mb-6">
             <Heart size={16} />
             <span className="text-sm font-semibold">Verse of the Week</span>
+            <span className="text-xs opacity-70">(Updates Weekly)</span>
           </div>
-          <blockquote className="text-3xl md:text-4xl font-serif italic text-white mb-6 leading-relaxed">
-            "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."
-          </blockquote>
-          <p className="text-xl text-purple-300 font-medium">— Jeremiah 29:11 (NIV)</p>
-          <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
-            Let this promise remind you that God's plans for your life are good. Trust His timing, embrace His purpose, and walk confidently into the future He has prepared for you.
-          </p>
+          {verseOfTheWeek ? (
+            <>
+              <blockquote className="text-3xl md:text-4xl font-serif italic text-white mb-6 leading-relaxed">
+                "{verseOfTheWeek.verse_text}"
+              </blockquote>
+              <p className="text-xl text-purple-300 font-medium">— {verseOfTheWeek.verse_reference}</p>
+              <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
+                {verseOfTheWeek.reflection}
+              </p>
+            </>
+          ) : (
+            <>
+              <blockquote className="text-3xl md:text-4xl font-serif italic text-white mb-6 leading-relaxed">
+                "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."
+              </blockquote>
+              <p className="text-xl text-purple-300 font-medium">— Jeremiah 29:11 (NIV)</p>
+              <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
+                Let this promise remind you that God's plans for your life are good. Trust His timing, embrace His purpose, and walk confidently into the future He has prepared for you.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
