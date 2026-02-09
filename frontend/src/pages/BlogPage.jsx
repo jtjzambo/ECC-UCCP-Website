@@ -149,12 +149,27 @@ export const BlogPage = () => {
 
   const getCategoryColor = (category) => {
     const colors = {
+      odb: 'bg-orange-100 text-orange-700',
       devotional: 'bg-purple-100 text-purple-700',
       faith: 'bg-emerald-100 text-emerald-700',
       news: 'bg-sky-100 text-sky-700',
       reflection: 'bg-amber-100 text-amber-700'
     };
     return colors[category] || 'bg-slate-100 text-slate-700';
+  };
+
+  // Format date from RSS feed
+  const formatDate = (dateStr) => {
+    try {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    } catch {
+      return dateStr;
+    }
   };
 
   return (
