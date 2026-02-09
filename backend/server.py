@@ -164,6 +164,7 @@ async def fetch_odb_devotionals() -> List[dict]:
                 'published_date': entry.get('published', ''),
                 'category': category,
                 'snippet': extract_snippet(description, 150),
+                'bible_verse': extract_bible_verse(description),
                 'image_url': extract_image_url(description)
             }
             devotionals.append(devotional)
