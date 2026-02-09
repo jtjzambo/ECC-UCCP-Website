@@ -36,6 +36,7 @@ export const BlogPage = () => {
 
   const categories = [
     { id: 'all', name: 'All Posts' },
+    { id: 'odb', name: 'Our Daily Bread' },
     { id: 'devotional', name: 'Devotionals' },
     { id: 'faith', name: 'Faith & Life' },
     { id: 'news', name: 'Church News' },
