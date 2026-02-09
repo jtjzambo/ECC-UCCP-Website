@@ -244,6 +244,82 @@ async def refresh_devotionals():
     
     return devotionals
 
+# Weekly rotating verses - curated selection
+WEEKLY_VERSES = [
+    {
+        "verse_text": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+        "verse_reference": "Jeremiah 29:11 (NIV)",
+        "reflection": "Let this promise remind you that God's plans for your life are good. Trust His timing, embrace His purpose, and walk confidently into the future He has prepared for you."
+    },
+    {
+        "verse_text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+        "verse_reference": "Proverbs 3:5-6 (NIV)",
+        "reflection": "When life feels uncertain, remember that God sees the full picture. Surrender your plans to Him and watch as He guides your steps with perfect wisdom."
+    },
+    {
+        "verse_text": "I can do all this through him who gives me strength.",
+        "verse_reference": "Philippians 4:13 (NIV)",
+        "reflection": "Whatever challenges you face this week, know that God's strength is available to you. You are never alone in your struggles."
+    },
+    {
+        "verse_text": "The Lord is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
+        "verse_reference": "Psalm 23:1-3 (NIV)",
+        "reflection": "In the busyness of life, God invites you to rest in His care. He provides everything you need and leads you to places of peace."
+    },
+    {
+        "verse_text": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+        "verse_reference": "Joshua 1:9 (NIV)",
+        "reflection": "Courage isn't the absence of fear—it's moving forward despite fear because you know God walks with you every step of the way."
+    },
+    {
+        "verse_text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+        "verse_reference": "Romans 8:28 (NIV)",
+        "reflection": "Even in difficult circumstances, God is working behind the scenes. Trust that He is weaving every experience into something beautiful."
+    },
+    {
+        "verse_text": "Come to me, all you who are weary and burdened, and I will give you rest.",
+        "verse_reference": "Matthew 11:28 (NIV)",
+        "reflection": "Jesus offers rest for your tired soul. Bring your burdens to Him this week and experience the peace that only He can give."
+    },
+    {
+        "verse_text": "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
+        "verse_reference": "Lamentations 3:22-23 (ESV)",
+        "reflection": "Each morning brings fresh mercy from God. No matter what yesterday held, today is a new opportunity to experience His faithful love."
+    }
+]
+
+def get_week_number() -> int:
+    """Get the current week number of the year"""
+    return datetime.now(timezone.utc).isocalendar()[1]
+
+@api_router.get("/verse-of-the-week", response_model=VerseOfTheWeek)
+async def get_verse_of_the_week():
+    """
+    Get the verse of the week.
+    - Rotates automatically each week
+    - Uses a curated selection of inspiring verses
+    """
+    week_num = get_week_number()
+    verse_index = week_num % len(WEEKLY_VERSES)
+    verse_data = WEEKLY_VERSES[verse_index]
+    
+    now = datetime.now(timezone.utc)
+    # Calculate when this week ends (next Monday)
+    days_until_monday = (7 - now.weekday()) % 7
+    if days_until_monday == 0:
+        days_until_monday = 7
+    next_monday = now + timedelta(days=days_until_monday)
+    next_monday = next_monday.replace(hour=0, minute=0, second=0, microsecond=0)
+    
+    return VerseOfTheWeek(
+        id=str(uuid.uuid4()),
+        verse_text=verse_data["verse_text"],
+        verse_reference=verse_data["verse_reference"],
+        reflection=verse_data["reflection"],
+        fetched_at=now.isoformat(),
+        expires_at=next_monday.isoformat()
+    )
+
 # Include the router in the main app
 app.include_router(api_router)
 
