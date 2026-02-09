@@ -46,7 +46,26 @@
                 document.head.appendChild(tailwindScript);
             }
         </script>
-    </head>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var target = params.get("__cfspa");
+    if (target) {
+      // Clean the URL then restore the intended path
+      params.delete("__cfspa");
+      var newSearch = params.toString();
+      var cleanUrl =
+        window.location.pathname +
+        (newSearch ? "?" + newSearch : "") +
+        window.location.hash;
+
+      window.history.replaceState(null, "", cleanUrl);
+      window.history.replaceState(null, "", decodeURIComponent(target));
+    }
+  })();
+</script>
+
+</head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
