@@ -6,9 +6,12 @@ import os
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from typing import List, Optional
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+import feedparser
+import re
+from html import unescape
 
 
 ROOT_DIR = Path(__file__).parent
