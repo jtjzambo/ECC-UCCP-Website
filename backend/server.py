@@ -188,49 +188,49 @@ async def get_devotionals():
     """
     Get Our Daily Bread devotionals.
     - Fetches from ODB RSS feed
-    - Caches for 1 week to minimize requests
+    - Caches for 1 week to minimize requests (if MongoDB available)
     - Returns snippets only - full content available at odb.org links
     """
-    # Check cache first
-    cache = await db.devotional_cache.find_one({}, {"_id": 0})
-    
     now = datetime.now(timezone.utc)
     
-    if cache:
-        expires_at = cache.get('expires_at')
-        if isinstance(expires_at, str):
-            expires_at = datetime.fromisoformat(expires_at.replace('Z', '+00:00'))
-        
-        # If cache is still valid, return cached devotionals
-        if expires_at and now < expires_at:
-            logger.info("Returning cached devotionals")
-            return cache.get('devotionals', [])
+    # Try to use cache if MongoDB is available
+    if db is not None:
+        try:
+            cache = await db.devotional_cache.find_one({}, {"_id": 0})
+            
+            if cache:
+                expires_at = cache.get('expires_at')
+                if isinstance(expires_at, str):
+                    expires_at = datetime.fromisoformat(expires_at.replace('Z', '+00:00'))
+                
+                # If cache is still valid, return cached devotionals
+                if expires_at and now < expires_at:
+                    logger.info("Returning cached devotionals")
+                    return cache.get('devotionals', [])
+        except Exception as e:
+            logger.warning(f"Cache read failed: {e}")
     
-    # Cache expired or doesn't exist - fetch fresh data
+    # Cache expired, doesn't exist, or no DB - fetch fresh data
     logger.info("Fetching fresh devotionals from Our Daily Bread")
     devotionals = await fetch_odb_devotionals()
     
-    if devotionals:
-        # Store in cache with 1 week expiration
-        cache_doc = {
-            'id': str(uuid.uuid4()),
-            'devotionals': devotionals,
-            'fetched_at': now.isoformat(),
-            'expires_at': (now + timedelta(days=7)).isoformat()
-        }
-        
-        # Upsert cache (replace existing or insert new)
-        await db.devotional_cache.delete_many({})
-        await db.devotional_cache.insert_one(cache_doc)
-        
-        return devotionals
+    if devotionals and db is not None:
+        try:
+            # Store in cache with 1 week expiration
+            cache_doc = {
+                'id': str(uuid.uuid4()),
+                'devotionals': devotionals,
+                'fetched_at': now.isoformat(),
+                'expires_at': (now + timedelta(days=7)).isoformat()
+            }
+            
+            # Upsert cache (replace existing or insert new)
+            await db.devotional_cache.delete_many({})
+            await db.devotional_cache.insert_one(cache_doc)
+        except Exception as e:
+            logger.warning(f"Cache write failed: {e}")
     
-    # If fetch failed but we have old cache, return that
-    if cache:
-        logger.warning("Fetch failed, returning stale cache")
-        return cache.get('devotionals', [])
-    
-    return []
+    return devotionals
 
 @api_router.post("/devotionals/refresh", response_model=List[Devotional])
 async def refresh_devotionals():
@@ -239,14 +239,15 @@ async def refresh_devotionals():
     
     devotionals = await fetch_odb_devotionals()
     
-    if devotionals:
-        now = datetime.now(timezone.utc)
-        cache_doc = {
-            'id': str(uuid.uuid4()),
-            'devotionals': devotionals,
-            'fetched_at': now.isoformat(),
-            'expires_at': (now + timedelta(days=7)).isoformat()
-        }
+    if devotionals and db is not None:
+        try:
+            now = datetime.now(timezone.utc)
+            cache_doc = {
+                'id': str(uuid.uuid4()),
+                'devotionals': devotionals,
+                'fetched_at': now.isoformat(),
+                'expires_at': (now + timedelta(days=7)).isoformat()
+            }
         
         await db.devotional_cache.delete_many({})
         await db.devotional_cache.insert_one(cache_doc)
