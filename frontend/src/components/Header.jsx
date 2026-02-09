@@ -26,32 +26,32 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-2 md:py-3">
           {/* Logo - Responsive sizing */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 md:gap-5 group">
+          <Link to="/" className="flex items-center gap-1 sm:gap-2 md:gap-3 group">
             <img 
               src="https://customer-assets.emergentagent.com/job_90205a7e-4d6d-494e-8cef-9b429c5f743c/artifacts/rc0byv4d_UCCP.jpg" 
               alt="UCCP Logo" 
-              className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-xs sm:text-sm md:text-lg lg:text-xl text-slate-800 leading-tight tracking-wide">
+              <span className="font-bold text-[10px] sm:text-xs md:text-sm lg:text-base text-slate-800 leading-tight tracking-wide">
                 ECUMENICAL CENTER CHURCH
               </span>
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-emerald-700 leading-tight tracking-wide">
+              <span className="text-[9px] sm:text-xs md:text-sm lg:text-base font-bold text-emerald-700 leading-tight tracking-wide">
                 United Church of Christ in the Philippines
               </span>
-              <span className="text-xs text-slate-600 leading-tight mt-0.5 hidden sm:block">
+              <span className="text-[8px] sm:text-[10px] text-slate-600 leading-tight mt-0.5 hidden sm:block">
                 Zamboanga City
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-5">
             {navigationLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-sm text-slate-700 hover:text-emerald-600 font-medium transition-colors duration-200 relative group"
+                className="text-xs xl:text-sm text-slate-700 hover:text-emerald-600 font-medium transition-colors duration-200 relative group whitespace-nowrap"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-200 group-hover:w-full"></span>
@@ -59,7 +59,7 @@ export const Header = () => {
             ))}
             <Link
               to="/donate"
-              className="px-5 py-2 bg-emerald-600 text-white text-sm rounded-lg font-medium hover:bg-emerald-700 transition-colors duration-200 shadow-sm hover:shadow-md"
+              className="px-4 py-2 bg-emerald-600 text-white text-xs xl:text-sm rounded-lg font-medium hover:bg-emerald-700 transition-colors duration-200 shadow-sm hover:shadow-md"
             >
               Donate
             </Link>
