@@ -288,28 +288,42 @@ WEEKLY_VERSES = [
     }
 ]
 
-def get_week_number() -> int:
-    """Get the current week number of the year"""
-    return datetime.now(timezone.utc).isocalendar()[1]
+def get_week_number_sunday_start() -> int:
+    """Get the current week number of the year (weeks start on Sunday)"""
+    now = datetime.now(timezone.utc)
+    # Adjust for Sunday start: if today is Sunday (weekday=6), it's the start of a new week
+    # Python's weekday(): Monday=0, Sunday=6
+    # We want Sunday=0, so we shift by 1
+    adjusted_day = (now.weekday() + 1) % 7
+    # Get the Sunday of current week
+    days_since_sunday = adjusted_day
+    current_sunday = now - timedelta(days=days_since_sunday)
+    # Calculate week number based on day of year of the Sunday
+    return current_sunday.timetuple().tm_yday // 7
 
 @api_router.get("/verse-of-the-week", response_model=VerseOfTheWeek)
 async def get_verse_of_the_week():
     """
     Get the verse of the week.
-    - Rotates automatically each week
+    - Rotates automatically each week (weeks start on Sunday)
     - Uses a curated selection of inspiring verses
     """
-    week_num = get_week_number()
+    week_num = get_week_number_sunday_start()
     verse_index = week_num % len(WEEKLY_VERSES)
     verse_data = WEEKLY_VERSES[verse_index]
     
     now = datetime.now(timezone.utc)
-    # Calculate when this week ends (next Monday)
-    days_until_monday = (7 - now.weekday()) % 7
-    if days_until_monday == 0:
-        days_until_monday = 7
-    next_monday = now + timedelta(days=days_until_monday)
-    next_monday = next_monday.replace(hour=0, minute=0, second=0, microsecond=0)
+    # Calculate when this week ends (next Sunday)
+    # Python weekday: Monday=0, Sunday=6
+    current_weekday = now.weekday()
+    # Days until next Sunday (if today is Sunday, next Sunday is in 7 days)
+    if current_weekday == 6:  # Today is Sunday
+        days_until_sunday = 7
+    else:
+        days_until_sunday = (6 - current_weekday)
+    
+    next_sunday = now + timedelta(days=days_until_sunday)
+    next_sunday = next_sunday.replace(hour=0, minute=0, second=0, microsecond=0)
     
     return VerseOfTheWeek(
         id=str(uuid.uuid4()),
@@ -317,7 +331,7 @@ async def get_verse_of_the_week():
         verse_reference=verse_data["verse_reference"],
         reflection=verse_data["reflection"],
         fetched_at=now.isoformat(),
-        expires_at=next_monday.isoformat()
+        expires_at=next_sunday.isoformat()
     )
 
 # Include the router in the main app
