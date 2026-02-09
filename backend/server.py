@@ -17,13 +17,22 @@ from html import unescape
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# MongoDB connection (optional - for caching)
+mongo_url = os.environ.get('MONGO_URL') or os.environ.get('MONGODB_URL')
+db_name = os.environ.get('DB_NAME', 'church_website')
+client = None
+db = None
+
+if mongo_url:
+    try:
+        client = AsyncIOMotorClient(mongo_url)
+        db = client[db_name]
+        logging.info("MongoDB connected successfully")
+    except Exception as e:
+        logging.warning(f"MongoDB connection failed: {e}. Running without database caching.")
 
 # Create the main app without a prefix
-app = FastAPI()
+app = FastAPI(title="Church Website API")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
