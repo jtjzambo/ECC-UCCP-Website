@@ -2,17 +2,17 @@ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
 
-  // If the request looks like a real file (has an extension), serve assets normally
-  // e.g. /static/js/main.js, /images/logo.png, /favicon.ico
-  const isFile = url.pathname.includes(".") && !url.pathname.endsWith(".");
-
-  if (isFile) {
+  // Allow real files (JS, CSS, images, etc.) to pass through
+  if (url.pathname.includes(".")) {
     return env.ASSETS.fetch(request);
   }
 
-  // Otherwise, treat it as an SPA route and serve index.html
+  // IMPORTANT:
+  // Your CRA build lives in /frontend/build
   const indexUrl = new URL(request.url);
-  indexUrl.pathname = "/index.html";
+  indexUrl.pathname = "/frontend/build/index.html";
 
-  return env.ASSETS.fetch(new Request(indexUrl.toString(), request));
+  return env.ASSETS.fetch(
+    new Request(indexUrl.toString(), request)
+  );
 }
