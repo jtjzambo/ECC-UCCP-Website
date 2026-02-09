@@ -298,7 +298,7 @@ export const BlogPage = () => {
         </div>
       </section>
 
-      {/* Our Daily Bread Section */}
+      {/* Reflections Section */}
       <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
@@ -307,8 +307,8 @@ export const BlogPage = () => {
                 <BookOpen className="text-orange-600" size={24} />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-slate-800">Our Daily Bread</h2>
-                <p className="text-sm text-slate-500">Weekly devotionals from odb.org</p>
+                <h2 className="text-2xl font-bold text-slate-800">Reflections</h2>
+                <p className="text-sm text-slate-500">Weekly devotionals from Our Daily Bread</p>
               </div>
             </div>
             <a 
