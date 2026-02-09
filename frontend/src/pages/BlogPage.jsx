@@ -222,9 +222,22 @@ export const BlogPage = () => {
       {/* Featured Devotional */}
       <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 mb-8">
-            <Sparkles className="text-purple-600" size={24} />
-            <h2 className="text-2xl font-bold text-slate-800">Featured Devotional</h2>
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-2">
+              <Sparkles className="text-purple-600" size={24} />
+              <h2 className="text-2xl font-bold text-slate-800">Today's Featured Devotional</h2>
+            </div>
+            {featuredDevotional.link && (
+              <a 
+                href="https://odb.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center gap-1"
+              >
+                From Our Daily Bread
+                <ExternalLink size={14} />
+              </a>
+            )}
           </div>
 
           <Card className="overflow-hidden bg-white shadow-xl border-0">
@@ -233,13 +246,15 @@ export const BlogPage = () => {
                 <div className="text-center text-white">
                   <BookOpen size={48} className="mx-auto mb-4 opacity-80" />
                   <p className="text-lg font-medium italic opacity-90">"{featuredDevotional.verse}"</p>
-                  <p className="mt-4 text-2xl font-bold">"Peace I leave with you; my peace I give you."</p>
+                  {featuredDevotional.link && (
+                    <p className="mt-4 text-sm opacity-70">via Our Daily Bread</p>
+                  )}
                 </div>
               </div>
               <div className="p-8 md:p-10">
                 <div className="flex items-center gap-3 mb-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getCategoryColor(featuredDevotional.category)}`}>
-                    Devotional
+                    {featuredDevotional.link ? 'Our Daily Bread' : 'Devotional'}
                   </span>
                   <span className="text-slate-500 text-sm flex items-center gap-1">
                     <Calendar size={14} />
@@ -260,10 +275,22 @@ export const BlogPage = () => {
                     <Clock size={16} />
                     <span>{featuredDevotional.readTime}</span>
                   </div>
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
-                    Read Full Devotional
-                    <ChevronRight size={18} className="ml-1" />
-                  </Button>
+                  {featuredDevotional.link ? (
+                    <a 
+                      href={featuredDevotional.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-medium transition-colors"
+                    >
+                      Read on ODB
+                      <ExternalLink size={16} className="ml-1" />
+                    </a>
+                  ) : (
+                    <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                      Read Full Devotional
+                      <ChevronRight size={18} className="ml-1" />
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
