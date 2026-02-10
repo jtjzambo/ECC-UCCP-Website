@@ -7,7 +7,7 @@ export const LeadershipPage = () => {
   const pastor = {
     name: "Rev. Ronnie Flor Taripe Nicanor",
     title: "Resident Minister",
-    image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/6stu3l4h_ChatGPT%20Image%20Feb%2010%2C%202026%2C%2008_16_44%20AM.png",
+    image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/sj6xqyse_ChatGPT%20Image%20Feb%2010%2C%202026%2C%2008_21_13%20AM.png",
     bio: `Rev. Ronnie Flor Taripe Nicanor is a native of Zamboanga City and an ordained minister of the United Church of Christ in the Philippines (UCCP). He earned his Master of Divinity from Silliman University Divinity School in 2015 and was ordained to the ministry in 2018.
 
 His pastoral journey began as an intern at UCCP Makilas, followed by service as Associate Pastor of UCCP Ipil. He later served as Administrative Pastor of UCCP Kabasalan and UCCP Siay from 2016 to 2022, where he provided leadership in both pastoral care and church administration. Since 2022, he has been faithfully serving as Resident Pastor of the Ecumenical Center Church–UCCP (ECC-UCCP) Zamboanga.
