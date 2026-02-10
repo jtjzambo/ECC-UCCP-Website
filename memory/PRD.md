@@ -30,9 +30,12 @@ Build and refine a church website for UCCP Ecumenical Center Church in Zamboanga
 12. **Cookie Notice Banner** - Lightweight notice for first-time visitors (180-day localStorage persistence)
 
 ### In Progress 🔄
-1. **Lightbox/Zoom Feature** - Image zoom for History page photos (P0)
-2. **Mobile Header Fix** - "Zamboanga City" text visibility on mobile (P0)
-3. **Church Staff Photos Verification** - Confirm photos display correctly (P1)
+None - all items complete
+
+### Completed This Session ✅
+1. **Lightbox/Zoom Feature** - Fixed overlay click interception, images now zoom properly
+2. **Mobile Header Fix** - "Zamboanga City" text visible on mobile
+3. **Church Staff Photos** - Photos display correctly for staff members
 
 ### Future/Backlog 📋
 1. Backend cleanup - Remove deprecated devotional endpoints from server.py
