@@ -20,17 +20,17 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
     { name: "Leo Raul D. Jumalon", position: "Chairperson", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/pn7wm5gy_Chairperson%20-%20Leo%20Raul%20Jumalon.jpg" },
     { name: "Rosemarie O. Taguibolos", position: "Vice-Chairperson", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/dxq8svqz_Vice-Chairperson%20-%20Rosemarie%20Taguibolos.jpg" },
     { name: "Flordeliza T. Nicanor", position: "Secretary", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/ucoz00f1_Secretary%20-%20Flordeliza%20Nicanor.jpg" },
-    { name: "Cherie Lou S. Enriquez", position: "Treasurer", image: null },
+    { name: "Cherie Lou S. Enriquez", position: "Treasurer", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/0vkstcto_Treasurer%20-%20Cherie%20Lou%20Enriquez.jpg" },
     { name: "Arceli D. Silay", position: "Auditor", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/tym1ya36_Auditor%20-%20Araceli%20Silay.jpg" },
     { name: "Avelino A. Sulit", position: "Financial Secretary", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/urcvmhvs_Financial%20Secretary%20-%20Avelino%20Sulit.jpg" }
   ];
 
   // Church Boards
   const churchBoards = [
-    { name: "Esther N. Chang", position: "Board of Elders Chairperson", icon: Crown },
-    { name: "Avelino A. Sulit", position: "Board of Deacons Chairperson", icon: Heart },
-    { name: "Jesus C. Tan, Jr.", position: "Board of Christian Educators Chairperson", icon: BookOpen },
-    { name: "Romulo S. Sangalang", position: "Board of Trustees Chairperson", icon: Building2 }
+    { name: "Esther N. Chang", position: "Board of Elders Chairperson", icon: Crown, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/64cssbml_Board%20of%20Elders%20-%20Esther%20Change.jpg" },
+    { name: "Avelino A. Sulit", position: "Board of Deacons Chairperson", icon: Heart, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/6bdmj6wt_Board%20of%20Deacons%20-%20Avelino%20Sulit.jpg" },
+    { name: "Jesus C. Tan, Jr.", position: "Board of Christian Educators Chairperson", icon: BookOpen, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/2uihkwli_Board%20of%20Christian%20Educators%20-%20Jesus%20Tan%20Jr.jpg" },
+    { name: "Romulo S. Sangalang", position: "Board of Trustees Chairperson", icon: Building2, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/b9cvknz1_Board%20of%20Trustees%20-%20Romulo%20Sangalang.jpg" }
   ];
 
   // Church Organizations
