@@ -182,6 +182,7 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
                 key={index} 
                 name={leader.name} 
                 position={leader.position} 
+                image={leader.image}
                 highlight={index === 0}
               />
             ))}
