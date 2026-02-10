@@ -116,10 +116,10 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Our Resident Minister</h2>
           </div>
 
-          <Card className="max-w-3xl mx-auto overflow-hidden bg-white shadow-xl border-0">
+          <Card className="max-w-4xl mx-auto overflow-hidden bg-white shadow-xl border-0">
             <div className="grid md:grid-cols-3">
               <div className="bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center p-8">
-                <div className="w-32 h-32 rounded-full bg-white/20 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-white/20 flex items-center justify-center overflow-hidden border-4 border-white/30">
                   {pastor.image ? (
                     <img src={pastor.image} alt={pastor.name} className="w-full h-full rounded-full object-cover" />
                   ) : (
@@ -131,7 +131,11 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
                 <h3 className="text-2xl font-bold text-slate-800 mb-2">{pastor.name}</h3>
                 <p className="text-purple-600 font-medium mb-4">{pastor.title}</p>
                 {pastor.bio ? (
-                  <p className="text-slate-600 leading-relaxed">{pastor.bio}</p>
+                  <div className="text-slate-600 leading-relaxed text-sm space-y-3">
+                    {pastor.bio.split('\n\n').map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
                 ) : (
                   <p className="text-slate-400 italic">Bio and additional information coming soon.</p>
                 )}
