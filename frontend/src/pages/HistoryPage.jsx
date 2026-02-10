@@ -39,31 +39,172 @@ export const HistoryPage = () => {
             </p>
           </div>
 
-          {/* Founding Narrative */}
+          {/* Historical Photo Gallery Hero */}
+          <div className="mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4">
+              <div className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/f4qw8yt5_uccp-ecc%20002%20%282%29.jpg" 
+                  alt="The original ECC-UCCP wooden church building" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="font-bold text-lg">The First Church Building</p>
+                  <p className="text-sm opacity-90">Built through bayanihan spirit, 1965-1966</p>
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg group">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/plfnkx0o_uccp-ecc%20001.jpg" 
+                  alt="Early church fellowship gathering" 
+                  className="w-full h-40 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Fellowship Gathering</p>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg group">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/tot97zjz_uccp-ecc%20016%20%282%29.jpg" 
+                  alt="The humble beginnings location" 
+                  className="w-full h-40 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Humble Beginnings</p>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg group">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4wgc6trv_uccp-ecc%20015%20%282%29.jpg" 
+                  alt="Early congregation in front of the church" 
+                  className="w-full h-40 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Early Congregation</p>
+              </div>
+              <div className="col-span-2 relative overflow-hidden rounded-xl shadow-lg group">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4gysui8f_uccp-ecc%20017%20%282%29.jpg" 
+                  alt="Church community gathering" 
+                  className="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <p className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium">Community of Faith - Our Church Family Through the Years</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Founding Narrative with Photos */}
           <div className="bg-gradient-to-br from-emerald-50 to-sky-50 rounded-3xl p-8 md:p-12 shadow-lg mb-12 border border-emerald-100">
             <h3 className="text-3xl font-bold text-slate-800 mb-8 text-center">
               The Founding Story (1905-1969)
             </h3>
             
-            <div className="space-y-8">
-              <div className="bg-white rounded-2xl p-8 shadow-md">
-                <h4 className="text-2xl font-bold text-emerald-700 mb-4">Protestant Roots (1905-1952)</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  Protestant missionaries first designated Zamboanga as a mission field in 1905, with Alliance and Episcopal churches establishing organized work. The Episcopal Church founded Brent Hospital in 1908, strengthening the Christian presence in the region. In 1952, Mr. Gonzaga gathered the first UCCP parishioners in Zamboanga, planting seeds for what would become our church.
-                </p>
+            <div className="space-y-12">
+              {/* Protestant Roots */}
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="bg-white rounded-2xl p-8 shadow-md">
+                  <h4 className="text-2xl font-bold text-emerald-700 mb-4">Protestant Roots (1905-1952)</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    Protestant missionaries first designated Zamboanga as a mission field in 1905, with Alliance and Episcopal churches establishing organized work. The Episcopal Church founded Brent Hospital in 1908, strengthening the Christian presence in the region. In 1952, Mr. Gonzaga gathered the first UCCP parishioners in Zamboanga, planting seeds for what would become our church.
+                  </p>
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/tot97zjz_uccp-ecc%20016%20%282%29.jpg" 
+                    alt="The location where early gatherings took place" 
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <p className="absolute bottom-4 left-4 right-4 text-white text-sm">
+                    <span className="font-semibold">Early Days:</span> The humble setting where faith took root in Zamboanga
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-md">
-                <h4 className="text-2xl font-bold text-emerald-700 mb-4">Vision Revived (Early 1960s-1964)</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  In the early 1960s, Cipriano 'Papsi' Malonzo revived the vision of establishing a UCCP local church. In 1963, Rodulfo P. Beley was assigned to study the feasibility, and by May 1964, a planning committee was organized. The first congregational worship was held under a mango tree at the Malonzo residence—a humble beginning that exemplified true faith and community spirit.
-                </p>
+              {/* Vision Revived */}
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/plfnkx0o_uccp-ecc%20001.jpg" 
+                    alt="Fellowship and planning meeting" 
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <p className="absolute bottom-4 left-4 right-4 text-white text-sm">
+                    <span className="font-semibold">Planning Committee:</span> The visionaries who dreamed of establishing ECC-UCCP
+                  </p>
+                </div>
+                <div className="order-1 md:order-2 bg-white rounded-2xl p-8 shadow-md">
+                  <h4 className="text-2xl font-bold text-emerald-700 mb-4">Vision Revived (Early 1960s-1964)</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    In the early 1960s, Cipriano 'Papsi' Malonzo revived the vision of establishing a UCCP local church. In 1963, Rodulfo P. Beley was assigned to study the feasibility, and by May 1964, a planning committee was organized. The first congregational worship was held under a mango tree at the Malonzo residence—a humble beginning that exemplified true faith and community spirit.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-md">
-                <h4 className="text-2xl font-bold text-emerald-700 mb-4">Official Establishment (1965-1969)</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  Rev. Estenio Labrador became our first regular pastor in 1965. Through the bayanihan spirit, the congregation built the first church structure (1965-1966), dedicated on December 18, 1966. On August 3, 1969, after a congregational contest, the church was officially named Ecumenical Center Church (ECC), reflecting our commitment to Christian unity and cooperation.
+              {/* Official Establishment */}
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="bg-white rounded-2xl p-8 shadow-md">
+                  <h4 className="text-2xl font-bold text-emerald-700 mb-4">Official Establishment (1965-1969)</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    Rev. Estenio Labrador became our first regular pastor in 1965. Through the bayanihan spirit, the congregation built the first church structure (1965-1966), dedicated on December 18, 1966. On August 3, 1969, after a congregational contest, the church was officially named Ecumenical Center Church (ECC), reflecting our commitment to Christian unity and cooperation.
+                  </p>
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/f4qw8yt5_uccp-ecc%20002%20%282%29.jpg" 
+                    alt="The first ECC-UCCP church building" 
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <p className="absolute bottom-4 left-4 right-4 text-white text-sm">
+                    <span className="font-semibold">First Church Building:</span> Dedicated December 18, 1966 - Built through bayanihan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Community Photo Feature */}
+          <div className="mb-12">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4gysui8f_uccp-ecc%20017%20%282%29.jpg" 
+                alt="ECC-UCCP church community" 
+                className="w-full h-80 md:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">A Community Built on Faith</h3>
+                <p className="text-lg opacity-90 max-w-3xl">
+                  From the very beginning, ECC-UCCP has been more than a church—it has been a family united by faith, hope, and love. This photograph captures the spirit of our early congregation, whose dedication laid the foundation for generations to come.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Congregation Photo */}
+          <div className="mb-12">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4wgc6trv_uccp-ecc%20015%20%282%29.jpg" 
+                  alt="Early congregation gathered in front of the church" 
+                  className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="font-bold text-lg">Our Founding Members</p>
+                  <p className="text-sm opacity-90">The faithful pioneers who established ECC-UCCP in Zamboanga City</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-8 text-white flex flex-col justify-center">
+                <h4 className="text-2xl font-bold mb-4">Legacy of Faith</h4>
+                <p className="leading-relaxed opacity-95">
+                  These cherished photographs remind us of the sacrifices and dedication of our church founders. They gathered under mango trees, built with their own hands, and worshipped with hearts full of hope. Their legacy continues to inspire us today as we carry forward the mission of Christ in Zamboanga and beyond.
+                </p>
+                <p className="mt-4 text-sm opacity-80 italic">
+                  "One generation shall praise Your works to another, and shall declare Your mighty acts." — Psalm 145:4
                 </p>
               </div>
             </div>
