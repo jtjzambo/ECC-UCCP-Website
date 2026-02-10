@@ -173,6 +173,14 @@ export const Footer = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm">
+              <Link 
+                to="/privacy"
+                className="text-slate-400 hover:text-emerald-400 transition-colors"
+                data-testid="footer-privacy-link"
+              >
+                Privacy Policy
+              </Link>
+              <span className="hidden sm:inline text-slate-700">|</span>
               <a 
                 href="https://www.uccpchurch.com/" 
                 target="_blank" 

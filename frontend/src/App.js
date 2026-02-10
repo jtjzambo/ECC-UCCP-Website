@@ -13,6 +13,7 @@ import { BlogPage } from "./pages/BlogPage";
 import { DonatePage } from "./pages/DonatePage";
 import { StatementOfFaithPage } from "./pages/StatementOfFaithPage";
 import { LeadershipPage } from "./pages/LeadershipPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/statement-of-faith" element={<StatementOfFaithPage />} />
           <Route path="/leadership" element={<LeadershipPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
