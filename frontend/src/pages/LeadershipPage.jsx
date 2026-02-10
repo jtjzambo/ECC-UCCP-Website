@@ -49,6 +49,13 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
     { name: "Jose Marie T. Indig", position: "Driver / Utility", icon: Heart }
   ];
 
+  // District Conference
+  const districtConference = {
+    name: "Rev. Zosimo C. Molina, Jr.",
+    position: "Conference Minister",
+    district: "District Conference of Southern Zamboanga"
+  };
+
   // Wider Judicatory
   const widerJudicatory = [
     { name: "Rev. Bishop Ligaya F. San Francisco", position: "Jurisdictional Bishop of NWMJ" },
