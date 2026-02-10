@@ -106,23 +106,38 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
     </Card>
   );
 
-  // Small Leader Card for lists
-  const SmallLeaderCard = ({ name, position, org, logo }) => (
-    <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-all">
-      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-slate-200">
-        {logo ? (
-          <img src={logo} alt={org} className="w-full h-full object-cover" />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
-            {org || name.charAt(0)}
+  // Organization Leader Card - shows both logo and photo
+  const SmallLeaderCard = ({ name, position, org, logo, photo }) => (
+    <Card className="hover:shadow-lg transition-all duration-300 border-slate-200 overflow-hidden">
+      <CardContent className="p-0">
+        <div className="flex items-stretch">
+          {/* Photo Section */}
+          <div className="w-24 h-28 flex-shrink-0 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center overflow-hidden">
+            {photo ? (
+              <img src={photo} alt={name} className="w-full h-full object-cover object-center" />
+            ) : (
+              <User className="w-10 h-10 text-white" />
+            )}
           </div>
-        )}
-      </div>
-      <div>
-        <h4 className="font-semibold text-slate-800">{name}</h4>
-        <p className="text-sm text-slate-500">{position}</p>
-      </div>
-    </div>
+          {/* Info Section */}
+          <div className="flex-1 p-4 flex flex-col justify-center">
+            <div className="flex items-center gap-2 mb-2">
+              {/* Organization Logo */}
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-slate-200 flex-shrink-0">
+                {logo ? (
+                  <img src={logo} alt={org} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-xs font-bold text-slate-600">{org}</span>
+                )}
+              </div>
+              <span className="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded-full">{org}</span>
+            </div>
+            <h4 className="font-bold text-slate-800 text-sm leading-tight">{name}</h4>
+            <p className="text-xs text-slate-500 mt-1 leading-tight">{position}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 
   return (
