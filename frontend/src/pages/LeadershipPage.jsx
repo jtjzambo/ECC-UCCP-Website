@@ -322,8 +322,12 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
             {widerJudicatory.map((leader, index) => (
               <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-600 flex items-center justify-center">
-                    <Crown className="w-8 h-8 text-white" />
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-purple-600 flex items-center justify-center overflow-hidden border-4 border-white/30">
+                    {leader.image ? (
+                      <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <Crown className="w-8 h-8 text-white" />
+                    )}
                   </div>
                   <h3 className="font-bold text-white text-lg">{leader.name}</h3>
                   <p className="text-purple-300 text-sm mt-1">{leader.position}</p>
