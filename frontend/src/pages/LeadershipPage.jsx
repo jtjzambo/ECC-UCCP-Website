@@ -53,13 +53,14 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
   const districtConference = {
     name: "Rev. Zosimo C. Molina, Jr.",
     position: "Conference Minister",
-    district: "District Conference of Southern Zamboanga"
+    district: "District Conference of Southern Zamboanga",
+    image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/ypp9h8vx_ChatGPT%20Image%20Feb%2010%2C%202026%2C%2002_08_42%20PM.png"
   };
 
   // Wider Judicatory
   const widerJudicatory = [
-    { name: "Rev. Bishop Ligaya F. San Francisco", position: "Jurisdictional Bishop of NWMJ" },
-    { name: "Rev. Bishop Joseph G. Agpaoa", position: "Acting General Secretary" }
+    { name: "Rev. Bishop Ligaya F. San Francisco", position: "Jurisdictional Bishop of NWMJ", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4l9fy60n_Ligaya%20San%20Franz.jpg" },
+    { name: "Rev. Bishop Joseph G. Agpaoa", position: "Acting General Secretary", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/rxq23gj1_Jpse%5Bh%20Agpaoa.png" }
   ];
 
   // Leader Card Component
