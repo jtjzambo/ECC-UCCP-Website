@@ -17,12 +17,12 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
 
   // Church Council
   const churchCouncil = [
-    { name: "Leo Raul D. Jumalon", position: "Chairperson" },
-    { name: "Rosemarie O. Taguibolos", position: "Vice-Chairperson" },
-    { name: "Flordeliza T. Nicanor", position: "Secretary" },
-    { name: "Cherie Lou S. Enriquez", position: "Treasurer" },
-    { name: "Arceli D. Silay", position: "Auditor" },
-    { name: "Avelino A. Sulit", position: "Financial Secretary" }
+    { name: "Leo Raul D. Jumalon", position: "Chairperson", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/pn7wm5gy_Chairperson%20-%20Leo%20Raul%20Jumalon.jpg" },
+    { name: "Rosemarie O. Taguibolos", position: "Vice-Chairperson", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/dxq8svqz_Vice-Chairperson%20-%20Rosemarie%20Taguibolos.jpg" },
+    { name: "Flordeliza T. Nicanor", position: "Secretary", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/ucoz00f1_Secretary%20-%20Flordeliza%20Nicanor.jpg" },
+    { name: "Cherie Lou S. Enriquez", position: "Treasurer", image: null },
+    { name: "Arceli D. Silay", position: "Auditor", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/tym1ya36_Auditor%20-%20Araceli%20Silay.jpg" },
+    { name: "Avelino A. Sulit", position: "Financial Secretary", image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/urcvmhvs_Financial%20Secretary%20-%20Avelino%20Sulit.jpg" }
   ];
 
   // Church Boards
