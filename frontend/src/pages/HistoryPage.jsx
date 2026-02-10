@@ -526,14 +526,17 @@ export const HistoryPage = () => {
         </div>
       </section>
 
+      {/* Core Values and More Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Core Values */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
+          <div className="bg-gradient-to-br from-slate-50 to-emerald-50 rounded-3xl p-8 md:p-12 shadow-lg mb-12">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 bg-gradient-to-br from-rose-100 to-rose-200 rounded-xl flex items-center justify-center">
                 <Heart className="text-rose-700" size={24} />
               </div>
               <h3 className="text-3xl font-bold text-slate-800">
-                Core Values
+                Core Values of UCCP
               </h3>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
