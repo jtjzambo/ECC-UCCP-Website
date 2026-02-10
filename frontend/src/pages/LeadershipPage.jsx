@@ -35,10 +35,10 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
 
   // Church Organizations
   const churchOrganizations = [
-    { name: "Mario B. Jacobe", position: "United Church Men President", org: "UCM" },
-    { name: "Felogine T. Oscera", position: "Christian Women's Association President", org: "CWA" },
-    { name: "Arvin V. Duhaylungsod", position: "Christian Young Adult Fellowship President", org: "CYAF" },
-    { name: "Jobert A. Naval", position: "Christian Youth Fellowship President", org: "CYF" }
+    { name: "Mario B. Jacobe", position: "United Church Men President", org: "UCM", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/i65wcq3p_UCM.jpg" },
+    { name: "Felogine T. Oscera", position: "Christian Women's Association President", org: "CWA", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/d4by6gxw_cwa.jpg" },
+    { name: "Arvin V. Duhaylungsod", position: "Christian Young Adult Fellowship President", org: "CYAF", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/ud3fo0ue_cyaf%20logo.jpg" },
+    { name: "Jobert A. Naval", position: "Christian Youth Fellowship President", org: "CYF", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/lnoggs4d_cyf%20logo.jpg" }
   ];
 
   // Church Staff
