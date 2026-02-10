@@ -67,9 +67,9 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
   const LeaderCard = ({ name, position, image, icon: Icon, highlight = false }) => (
     <Card className={`hover:shadow-lg transition-all duration-300 ${highlight ? 'border-purple-300 bg-purple-50' : 'border-slate-200'}`}>
       <CardContent className="p-6 text-center">
-        <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${highlight ? 'bg-purple-600' : 'bg-slate-200'}`}>
+        <div className={`w-24 h-24 mx-auto mb-4 rounded-full flex items-center justify-center overflow-hidden border-4 ${highlight ? 'bg-purple-600 border-purple-300' : 'bg-slate-200 border-slate-300'}`}>
           {image ? (
-            <img src={image} alt={name} className="w-full h-full rounded-full object-cover" />
+            <img src={image} alt={name} className="w-full h-full rounded-full object-cover object-top" />
           ) : Icon ? (
             <Icon className={`w-10 h-10 ${highlight ? 'text-white' : 'text-slate-500'}`} />
           ) : (
