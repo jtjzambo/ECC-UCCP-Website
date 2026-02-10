@@ -75,10 +75,16 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
   );
 
   // Small Leader Card for lists
-  const SmallLeaderCard = ({ name, position, org }) => (
+  const SmallLeaderCard = ({ name, position, org, logo }) => (
     <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-all">
-      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
-        {org || name.charAt(0)}
+      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-slate-200">
+        {logo ? (
+          <img src={logo} alt={org} className="w-full h-full object-cover" />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+            {org || name.charAt(0)}
+          </div>
+        )}
       </div>
       <div>
         <h4 className="font-semibold text-slate-800">{name}</h4>
