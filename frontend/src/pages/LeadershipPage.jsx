@@ -204,13 +204,14 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             {churchBoards.map((leader, index) => (
               <LeaderCard 
                 key={index} 
                 name={leader.name} 
                 position={leader.position}
                 icon={leader.icon}
+                image={leader.image}
               />
             ))}
           </div>
