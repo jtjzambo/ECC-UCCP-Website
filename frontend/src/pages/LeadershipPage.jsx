@@ -288,8 +288,12 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
           <div className="max-w-md mx-auto">
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-sky-500 flex items-center justify-center">
-                  <User className="w-10 h-10 text-white" />
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-sky-500 flex items-center justify-center overflow-hidden border-4 border-white/30">
+                  {districtConference.image ? (
+                    <img src={districtConference.image} alt={districtConference.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <User className="w-10 h-10 text-white" />
+                  )}
                 </div>
                 <h3 className="font-bold text-white text-xl">{districtConference.name}</h3>
                 <p className="text-sky-200 text-sm mt-1">{districtConference.position}</p>
