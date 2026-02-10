@@ -50,8 +50,8 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
 
   // Wider Judicatory
   const widerJudicatory = [
-    { name: "To be updated", position: "Jurisdictional Bishop of NWMJ" },
-    { name: "To be updated", position: "Acting General Secretary" }
+    { name: "Rev. Bishop Ligaya F. San Francisco", position: "Jurisdictional Bishop of NWMJ" },
+    { name: "Rev. Bishop Joseph G. Agpaoa", position: "Acting General Secretary" }
   ];
 
   // Leader Card Component
