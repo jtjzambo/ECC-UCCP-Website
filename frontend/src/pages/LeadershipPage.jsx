@@ -29,7 +29,7 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
   const churchBoards = [
     { name: "Esther N. Chang", position: "Board of Elders Chairperson", icon: Crown },
     { name: "Avelino A. Sulit", position: "Board of Deacons Chairperson", icon: Heart },
-    { name: "Jesus C. Tan, Jr.", position: "Board of Christian Education Chairperson", icon: BookOpen },
+    { name: "Jesus C. Tan, Jr.", position: "Board of Christian Educators Chairperson", icon: BookOpen },
     { name: "Romulo S. Sangalang", position: "Board of Trustees Chairperson", icon: Building2 }
   ];
 
