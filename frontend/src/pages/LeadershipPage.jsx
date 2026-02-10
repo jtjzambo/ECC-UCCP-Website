@@ -229,6 +229,7 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
                 name={leader.name} 
                 position={leader.position}
                 org={leader.org}
+                logo={leader.logo}
               />
             ))}
           </div>
