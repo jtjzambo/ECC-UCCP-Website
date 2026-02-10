@@ -35,10 +35,34 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
 
   // Church Organizations
   const churchOrganizations = [
-    { name: "Mario B. Jacobe", position: "United Church Men President", org: "UCM", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/i65wcq3p_UCM.jpg" },
-    { name: "Felogine T. Oscera", position: "Christian Women's Association President", org: "CWA", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/d4by6gxw_cwa.jpg" },
-    { name: "Arvin V. Duhaylungsod", position: "Christian Young Adult Fellowship President", org: "CYAF", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/ud3fo0ue_cyaf%20logo.jpg" },
-    { name: "Jobert A. Naval", position: "Christian Youth Fellowship President", org: "CYF", logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/lnoggs4d_cyf%20logo.jpg" }
+    { 
+      name: "Mario B. Jacobe", 
+      position: "United Church Men President", 
+      org: "UCM", 
+      logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/i65wcq3p_UCM.jpg",
+      photo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/h67s7fyd_UCM%20-%20Mario%20Jacobe.jpg"
+    },
+    { 
+      name: "Felogine T. Oscera", 
+      position: "Christian Women's Association President", 
+      org: "CWA", 
+      logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/d4by6gxw_cwa.jpg",
+      photo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/2k3g4lav_CWA%20-%20Felogine%20Oscera.jpg"
+    },
+    { 
+      name: "Arvin V. Duhaylungsod", 
+      position: "Christian Young Adult Fellowship President", 
+      org: "CYAF", 
+      logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/ud3fo0ue_cyaf%20logo.jpg",
+      photo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/x1s3tnhq_CYAF%20-%20Arvin%20Duhaylungsod.jpg"
+    },
+    { 
+      name: "Jobert A. Naval", 
+      position: "Christian Youth Fellowship President", 
+      org: "CYF", 
+      logo: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/lnoggs4d_cyf%20logo.jpg",
+      photo: null
+    }
   ];
 
   // Church Staff
