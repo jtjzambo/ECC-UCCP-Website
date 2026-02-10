@@ -526,32 +526,6 @@ export const HistoryPage = () => {
         </div>
       </section>
 
-              <div className="border-l-4 border-emerald-600 pl-6">
-                <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-2">
-                  1978-1986
-                </div>
-                <h4 className="text-2xl font-bold text-slate-800 mb-3">
-                  Prophetic Witness
-                </h4>
-                <p className="text-slate-600 leading-relaxed">
-                  During authoritarian rule, the UCCP courageously stood against martial law and human rights violations. The church created a Human Rights Desk (1978) and actively participated in the movement for justice, celebrating the 1986 People Power Revolution.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-emerald-600 pl-6">
-                <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-2">
-                  1988-Present
-                </div>
-                <h4 className="text-2xl font-bold text-slate-800 mb-3">
-                  Mission and Transformation
-                </h4>
-                <p className="text-slate-600 leading-relaxed">
-                  Commemorating its 40th anniversary in 1988, the UCCP launched the ambitious "2,000 by the Year 2000" church growth program. The church continues evolving while maintaining its prophetic voice.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Core Values */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
             <div className="flex items-center gap-3 mb-8">
