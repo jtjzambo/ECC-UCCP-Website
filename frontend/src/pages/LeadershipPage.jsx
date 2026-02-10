@@ -270,6 +270,35 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
         </div>
       </section>
 
+      {/* District Conference Section */}
+      <section className="py-16 bg-gradient-to-br from-sky-600 to-indigo-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full text-sky-100 mb-4">
+              <Users size={18} />
+              <span className="text-sm font-semibold">Our Immediate Church Connection</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">{districtConference.district}</h2>
+            <p className="text-sky-100 mt-2 max-w-2xl mx-auto">
+              Our direct connection within the UCCP structure, providing pastoral care and administrative oversight.
+            </p>
+          </div>
+
+          <div className="max-w-md mx-auto">
+            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-sky-500 flex items-center justify-center">
+                  <User className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="font-bold text-white text-xl">{districtConference.name}</h3>
+                <p className="text-sky-200 text-sm mt-1">{districtConference.position}</p>
+                <p className="text-sky-300 text-xs mt-3 italic">{districtConference.district}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Wider Judicatory Section */}
       <section className="py-16 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
