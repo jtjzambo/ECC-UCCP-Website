@@ -117,17 +117,19 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
           </div>
 
           <Card className="max-w-4xl mx-auto overflow-hidden bg-white shadow-xl border-0">
-            <div className="grid md:grid-cols-3">
-              <div className="bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center p-3">
-                <div className="w-full aspect-square rounded-full bg-white/20 flex items-center justify-center overflow-hidden border-4 border-white/30">
-                  {pastor.image ? (
-                    <img src={pastor.image} alt={pastor.name} className="w-full h-full rounded-full object-cover" />
-                  ) : (
-                    <User className="w-16 h-16 text-white" />
+            <div className="grid md:grid-cols-5">
+              <div className="md:col-span-2 relative">
+                <div className="h-full min-h-[300px] md:min-h-full bg-gradient-to-br from-purple-600 to-indigo-700">
+                  {pastor.image && (
+                    <img 
+                      src={pastor.image} 
+                      alt={pastor.name} 
+                      className="w-full h-full object-cover object-top"
+                    />
                   )}
                 </div>
               </div>
-              <div className="md:col-span-2 p-8">
+              <div className="md:col-span-3 p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-slate-800 mb-2">{pastor.name}</h3>
                 <p className="text-purple-600 font-medium mb-4">{pastor.title}</p>
                 {pastor.bio ? (
