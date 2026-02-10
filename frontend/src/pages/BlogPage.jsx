@@ -113,6 +113,13 @@ const parseODBFeed = (xmlText) => {
     });
   });
   
+  // Sort by date (newest first)
+  devotionals.sort((a, b) => {
+    const dateA = new Date(a.published_date);
+    const dateB = new Date(b.published_date);
+    return dateB - dateA;
+  });
+  
   return devotionals;
 };
 
@@ -129,11 +136,18 @@ export const BlogPage = () => {
       try {
         setLoadingOdb(true);
         
-        // Use allorigins.win as CORS proxy
-        const proxyUrl = 'https://api.allorigins.win/raw?url=';
-        const odbUrl = encodeURIComponent('https://odb.org/feed/');
+        // Use allorigins.win as CORS proxy with cache-busting timestamp
+        const timestamp = new Date().getTime();
+        const proxyUrl = `https://api.allorigins.win/raw?url=`;
+        const odbUrl = encodeURIComponent(`https://odb.org/feed/?_=${timestamp}`);
         
-        const response = await fetch(proxyUrl + odbUrl);
+        const response = await fetch(proxyUrl + odbUrl, {
+          cache: 'no-store', // Prevent browser caching
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        });
+        
         if (response.ok) {
           const xmlText = await response.text();
           const devotionals = parseODBFeed(xmlText);
