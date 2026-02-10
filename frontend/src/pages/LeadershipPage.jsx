@@ -118,8 +118,8 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
 
           <Card className="max-w-4xl mx-auto overflow-hidden bg-white shadow-xl border-0">
             <div className="grid md:grid-cols-3">
-              <div className="bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center p-8">
-                <div className="w-40 h-40 rounded-full bg-white/20 flex items-center justify-center overflow-hidden border-4 border-white/30">
+              <div className="bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center p-3">
+                <div className="w-full aspect-square rounded-full bg-white/20 flex items-center justify-center overflow-hidden border-4 border-white/30">
                   {pastor.image ? (
                     <img src={pastor.image} alt={pastor.name} className="w-full h-full rounded-full object-cover" />
                   ) : (
