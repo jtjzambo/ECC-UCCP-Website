@@ -1,11 +1,33 @@
 import React, { useState } from 'react';
 import { Calendar, Users, Heart, BookOpen, Award, Church, Building2, GraduationCap } from 'lucide-react';
+import { Lightbox } from '../components/Lightbox';
 
 export const HistoryPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState({ src: '', alt: '', caption: '' });
+
+  // Function to open lightbox
+  const openLightbox = (src, alt, caption = '') => {
+    setLightboxImage({ src, alt, caption });
+    setLightboxOpen(true);
+  };
+
+  // Function to close lightbox
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Lightbox Component */}
+      <Lightbox
+        isOpen={lightboxOpen}
+        onClose={closeLightbox}
+        imageSrc={lightboxImage.src}
+        imageAlt={lightboxImage.alt}
+        caption={lightboxImage.caption}
+      />
       {/* Hero Section */}
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-800">
         <div className="absolute inset-0 bg-black/40"></div>
