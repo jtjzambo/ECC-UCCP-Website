@@ -67,10 +67,10 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
 
   // Church Staff
   const churchStaff = [
-    { name: "Ronaliza N. Imperial", position: "Church Office Secretary", icon: Briefcase },
-    { name: "Alfredo F. Alba, Jr.", position: "Musical Director", icon: Music },
-    { name: "Yolanda J. Hablo", position: "Utility", icon: Heart },
-    { name: "Jose Marie T. Indig", position: "Driver / Utility", icon: Heart }
+    { name: "Ronaliza N. Imperial", position: "Church Office Secretary", icon: Briefcase, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/02v11n2x_Ronaliza%20Imperial.jpg" },
+    { name: "Alfredo F. Alba, Jr.", position: "Musical Director", icon: Music, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/gfnbwk9g_Alfredo%20Alba%20Jr.jpg" },
+    { name: "Yolanda J. Hablo", position: "Utility", icon: Heart, image: "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/lt7z5g24_Yolanda%20Hablo.jpg" },
+    { name: "Jose Marie T. Indig", position: "Driver / Utility", icon: Heart, image: null }
   ];
 
   // District Conference
