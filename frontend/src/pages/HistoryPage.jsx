@@ -229,75 +229,302 @@ export const HistoryPage = () => {
             </p>
           </div>
 
-          {/* Founding Story */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center">
-                <Calendar className="text-amber-700" size={24} />
-              </div>
-              <h3 className="text-3xl font-bold text-slate-800">
-                The Founding Story (1898-1948)
-              </h3>
-            </div>
+          {/* Timeline of Key Periods */}
+          <div className="space-y-8">
             
-            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-              <p>
-                The roots of the UCCP trace back to the arrival of Protestant missionaries following the Philippine Revolution of 1898. When the Philippines transitioned from Spanish to American sovereignty, Methodist chaplain George C. Stull conducted the first Protestant worship service in the country. This marked the beginning of an extraordinary journey.
+            {/* 1898 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-amber-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-amber-600 text-white rounded-full text-sm font-semibold">1898</div>
+                <h4 className="text-xl font-bold text-slate-800">The Beginning of Protestant Mission in the Philippines</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p>Philippine Revolution against Spain culminates in the declaration of Philippine Independence in Kawit, Cavite. The first Philippine Republic is established through a congress at Barasoain Church in Malolos, Bulacan.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p>Spanish Forces surrender to the US Navy in Manila Bay. Spain cedes the Philippines to the United States through the Treaty of Paris.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
+                  <p><strong>George C. Stull</strong>, a Methodist chaplain with the US Armed Forces, conducts the first Protestant worship service and preaches the first Protestant sermon in the Philippines.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1899-1901 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-emerald-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-emerald-600 text-white rounded-full text-sm font-semibold">1899-1901</div>
+                <h4 className="text-xl font-bold text-slate-800">Arrival of Missionaries</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p><strong>1899:</strong> American Bishop James M. Thoburn of the Methodist Episcopal Church visits the Philippines to explore possibilities for mission work.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p><strong>April 1900:</strong> First missionaries from the Methodist Episcopal Church arrive: Rev. Thomas Martin and Rev. and Mrs. J. L. McLaughlin.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p><strong>April 1900:</strong> First missionaries from the Presbyterian Church in the USA arrive: Rev. James B. Rodgers, Dr. and Mrs. George Wright, and Rev. and Mrs. David Hibbard.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p><strong>1901:</strong> Rev. E. S. Eby and Rev. Sandford Kutz from the Church of the United Brethren arrive. Mr. and Mrs. William H. Hannah of the Foreign Christian Missionary Society (Disciples) also arrive.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                  <p><strong>1901:</strong> <strong>Silliman Institute</strong> is established by Dr. and Mrs. David Hibbard in Dumaguete City—later becomes Silliman University, the first university outside of Manila.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1902 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-sky-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-sky-600 text-white rounded-full text-sm font-semibold">1902</div>
+                <h4 className="text-xl font-bold text-slate-800">The Evangelical Union is Formed</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p><strong>April 26, 1902:</strong> The <strong>Evangelical Union</strong> is organized as a "council of representatives" of various mission groups to foster comity, unity, and cooperation, and to eliminate competition.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p><strong>Initiatives of the Evangelical Union:</strong></p>
+                </li>
+                <li className="ml-8 space-y-2">
+                  <p>1. Territorial division of the country among mission groups</p>
+                  <p>2. A common name for newly organized churches: "The Evangelical Church"</p>
+                  <p>3. A plan to establish a national church</p>
+                  <p>4. Cooperative work in schools, hospitals, printing presses, newspapers, and other fields</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-sky-600 rounded-full mt-2"></div>
+                  <p>The American Board of Foreign Missions of the Congregational Church sends Rev. Robert Black to Davao.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1907-1914 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-purple-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-purple-600 text-white rounded-full text-sm font-semibold">1907-1914</div>
+                <h4 className="text-xl font-bold text-slate-800">Establishing Theological Education</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-purple-600 rounded-full mt-2"></div>
+                  <p><strong>1907:</strong> The <strong>Union Theological Seminary</strong> in Manila is formed for training pastors, deaconesses, and lay leaders, merging the Ellinwood Bible School of the Presbyterian Mission and the Nicholson Seminary of the Methodists.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-purple-600 rounded-full mt-2"></div>
+                  <p><strong>1914:</strong> The <strong>Silliman Bible Training Institute</strong> is established as a cooperative venture between the Congregationalists in Mindanao and the Presbyterians in the Visayas. This becomes the College of Theology of Silliman University and later the Divinity School.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1924-1929 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-rose-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-rose-600 text-white rounded-full text-sm font-semibold">1924-1929</div>
+                <h4 className="text-xl font-bold text-slate-800">Movement Toward Union</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-rose-600 rounded-full mt-2"></div>
+                  <p><strong>March 15, 1924:</strong> The Articles of Incorporation of the <strong>United Church of Manila</strong> are signed and registered, demonstrating the viability of uniting members from various Protestant churches.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-rose-600 rounded-full mt-2"></div>
+                  <p><strong>August 24, 1924:</strong> The Central Committee for Church Union, comprising representatives from Presbyterian, Congregational, and United Brethren Churches, meets and adopts the principles of the "Nanking Agreement" as its basis of union.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-rose-600 rounded-full mt-2"></div>
+                  <p><strong>March 15, 1929:</strong> The <strong>United Evangelical Church</strong> is organized—the first Protestant Church covering the entire country.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-rose-600 rounded-full mt-2"></div>
+                  <p><strong>First Officers:</strong> Moderator: Rev. Enrique Sobrepeña, General Secretary: Rev. George W. Wright, General Treasurer: Rev. J. C. Hooper</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1933-1943 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-indigo-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-indigo-600 text-white rounded-full text-sm font-semibold">1933-1943</div>
+                <h4 className="text-xl font-bold text-slate-800">War Years and Filipino Leadership</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-indigo-600 rounded-full mt-2"></div>
+                  <p><strong>March 1933:</strong> The <strong>Philippine Methodist Church</strong> is organized under Rev. Samuel Stagg and Rev. Cipriano Navarro.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-indigo-600 rounded-full mt-2"></div>
+                  <p><strong>December 8, 1941:</strong> Japanese Imperial Forces attack Pearl Harbor. Within a month (January 2, 1942), the Japanese occupy the Philippines.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-indigo-600 rounded-full mt-2"></div>
+                  <p><strong>1943:</strong> The <strong>Evangelical Church of the Philippines</strong> is formed during Japanese occupation—the <strong>first union of churches under full Filipino leadership</strong>. It united the United Evangelical Church, Church of Christ (Disciples), Iglesia Evangelica Unida de Cristo, segments of IEMELIF, Iglesia Evangelica Nacional, the Philippine Methodist Church, and some independent congregations.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1948 - THE FOUNDING */}
+            <div className="bg-gradient-to-br from-emerald-600 to-sky-600 rounded-2xl p-6 md:p-8 shadow-lg text-white">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-white text-emerald-700 rounded-full text-sm font-semibold">May 22-25, 1948</div>
+                <h4 className="text-xl font-bold">THE FOUNDING OF UCCP</h4>
+              </div>
+              <p className="text-lg mb-4">
+                <strong>165 delegates</strong> from the Evangelical Church of the Philippines, the Philippine Methodist Church, and the United Evangelical Church sign a declaration of union to form the <strong>"United Church of Christ in the Philippines"</strong> at Ellinwood Malate Church.
               </p>
-              
-              <p>
-                Starting in 1899, various American mission boards—Methodist Episcopal Church, Presbyterian Church, Church of the United Brethren, Foreign Christian Missionary Society, and Congregational Church—sent missionaries to the Philippines. These pioneers established not only churches but also vital institutions: Silliman Institute (1901, later Silliman University), Union Theological Seminary (1907), and numerous hospitals.
-              </p>
-              
-              <p>
-                Recognizing the need for unity rather than competition, these mission groups formed the Evangelical Union in 1902 to foster cooperation and work toward a national church. This vision progressed through several stages: the United Church of Manila (1924), the United Evangelical Church (1929), and the Philippine Methodist Church (1933).
-              </p>
-              
-              <p>
-                During World War II, under Japanese occupation, Filipino church leaders demonstrated remarkable courage by forming the Evangelical Church of the Philippines in 1943—the first union under Filipino leadership. This wartime experience strengthened the resolve for complete union.
-              </p>
-              
-              <p className="font-semibold text-emerald-700">
-                On May 22-25, 1948, at the historic Uniting Assembly in Ellinwood Malate Church, Manila, 165 delegates from three churches signed the declaration of union, formally establishing the United Church of Christ in the Philippines.
+              <div className="bg-white/10 rounded-xl p-4 mb-4">
+                <p className="font-semibold mb-2">First Elected Officers:</p>
+                <ul className="grid md:grid-cols-2 gap-2 text-sm">
+                  <li>• Bishop for North Luzon: Rev. Enrique Sobrepeña</li>
+                  <li>• Bishop for South Luzon: Rev. Cipriano Navarro</li>
+                  <li>• Bishop for Visayas: Rev. Leonardo G. Dia</li>
+                  <li>• Bishop for Mindanao: Rev. Proculo Rodriguez</li>
+                  <li>• General Evangelist: Rev. Hugh Bousman</li>
+                  <li>• General Treasurer: Mr. Jose L. Navarro</li>
+                  <li>• General Secretary: Rev. Stephen L. Smith</li>
+                </ul>
+              </div>
+              <p className="text-emerald-100">
+                The Basis of Union establishes the UCCP with a General Assembly as its highest legislative body, meeting biennially. The country is divided into four jurisdictional areas headed by Bishops.
               </p>
             </div>
+
+            {/* 1952-1960 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-teal-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-teal-600 text-white rounded-full text-sm font-semibold">1952-1960</div>
+                <h4 className="text-xl font-bold text-slate-800">Establishing Identity</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
+                  <p><strong>1952:</strong> Rev. and Mrs. Jorge Quismundo and Rev. and Mrs. Jose P. Estoye are appointed the <strong>first overseas missionaries</strong>. The Estoyes go to Thailand (1953), and the Quismundos go to Indonesia (1954).</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
+                  <p>The General Assembly adopts a <strong>Book of Government</strong> and a <strong>Book of Common Worship</strong>. Bishop Leonardo G. Dia becomes the first Filipino General Secretary.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
+                  <p><strong>1954:</strong> Rev. and Mrs. Lorenzo Genotiva begin mission work among the Blaan tribes in Southern Mindanao. Rev. and Mrs. Samuel Velez are sent to work among the Kalingas and Apayaos.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
+                  <p><strong>1957:</strong> Construction begins on the <strong>UCCP National Offices Building</strong> on Highway 54 (now EDSA), Quezon City. Completed in 1958.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
+                  <p><strong>1960:</strong> The General Assembly approves the <strong>UCCP Constitution</strong> for implementation and approves the Statement of Social Concern.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1962-1974 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-orange-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-orange-600 text-white rounded-full text-sm font-semibold">1962-1974</div>
+                <h4 className="text-xl font-bold text-slate-800">Growth and Self-Reliance</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-orange-600 rounded-full mt-2"></div>
+                  <p><strong>1962:</strong> The union of the Tagalog Convention of the Church of Christ (Disciples) with UCCP is proclaimed at the General Assembly in Cebu City.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-orange-600 rounded-full mt-2"></div>
+                  <p><strong>1972:</strong> A Constitutional Convention is held at Ellinwood-Malate Church to revise the UCCP Constitution. The "At Least One Million Pesos" Fund campaign is launched.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-orange-600 rounded-full mt-2"></div>
+                  <p><strong>September 21, 1972:</strong> President Ferdinand E. Marcos declares <strong>Martial Law</strong>.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-orange-600 rounded-full mt-2"></div>
+                  <p><strong>1974:</strong> The General Assembly in Cebu City proclaims the ratification of the new UCCP Constitution and By-Laws. Significant decisions include:</p>
+                </li>
+                <li className="ml-8 space-y-2 text-sm">
+                  <p>1. Declaration of a moratorium on receiving foreign missionaries</p>
+                  <p>2. Declaration of a self-reliance stance</p>
+                  <p>3. Approval of a Statement of Concern on the deteriorating situation due to Martial Law</p>
+                  <p>4. Launch of the Insurance and Retirement Program</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1978-1986 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-red-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-red-600 text-white rounded-full text-sm font-semibold">1978-1986</div>
+                <h4 className="text-xl font-bold text-slate-800">Prophetic Witness and People Power</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+                  <p><strong>1978:</strong> The General Assembly in Cagayan de Oro City reiterates UCCP's position against Martial Law and denounces Human Rights Violations. The <strong>Faith and Order Committee</strong> is formed to work on a Statement of Faith.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+                  <p><strong>1982:</strong> The General Assembly approves <strong>Evangelism and Church Growth</strong> as a priority program, calling for 2,000 new churches by the year 2000. The draft Statement of Faith is approved for dissemination.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+                  <p><strong>August 21, 1983:</strong> Senator Benigno Aquino, Jr. is assassinated at the Manila International Airport.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+                  <p><strong>February 22-25, 1986:</strong> The <strong>"People's Power Revolution"</strong> ends President Marcos' 20-year rule, installing Corazon C. Aquino as president.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+                  <p><strong>1986:</strong> The General Assembly in Quezon City approves the <strong>UCCP Statement of Faith</strong> and adopts the theme "The Church for the Life of the World."</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* 1987-1988 */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-cyan-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-1 bg-cyan-600 text-white rounded-full text-sm font-semibold">1987-1988</div>
+                <h4 className="text-xl font-bold text-slate-800">40th Anniversary and Renewal</h4>
+              </div>
+              <ul className="space-y-3 text-slate-600">
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-cyan-600 rounded-full mt-2"></div>
+                  <p><strong>1987:</strong> UCCP programs are clustered into three areas: Education and Nurture, Stewardship, and Witness and Service. The annual Church Workers Convocation becomes the <strong>National Church Workers Convocation</strong>.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-cyan-600 rounded-full mt-2"></div>
+                  <p><strong>1987:</strong> <em>"Like A Mustard Seed,"</em> a book of commentaries on the UCCP Statement of Faith, is launched.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-cyan-600 rounded-full mt-2"></div>
+                  <p><strong>May 22, 1988:</strong> The United Church of Christ in the Philippines commemorates its <strong>40th Anniversary</strong> with a Thanksgiving Worship Service at Ellinwood Malate Church.</p>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-2 h-2 bg-cyan-600 rounded-full mt-2"></div>
+                  <p>Two major programs are launched: <strong>"2,000 by the Year 2000 Discipling the Nation Church Growth Program"</strong> and the <strong>"Second Mile Giving Program."</strong></p>
+                </li>
+              </ul>
+            </div>
+
           </div>
-
-          {/* Key Milestones */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
-                <Award className="text-emerald-700" size={24} />
-              </div>
-              <h3 className="text-3xl font-bold text-slate-800">
-                Key Periods in UCCP History
-              </h3>
-            </div>
-            
-            <div className="space-y-8">
-              <div className="border-l-4 border-emerald-600 pl-6">
-                <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-2">
-                  1952-1960
-                </div>
-                <h4 className="text-2xl font-bold text-slate-800 mb-3">
-                  Establishing Identity
-                </h4>
-                <p className="text-slate-600 leading-relaxed">
-                  The young church sent its first overseas missionaries (1952), adopted governance structures including a Book of Government and Book of Common Worship, and began mission work among indigenous tribes. In 1960, the UCCP Constitution was approved.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-emerald-600 pl-6">
-                <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-2">
-                  1962-1974
-                </div>
-                <h4 className="text-2xl font-bold text-slate-800 mb-3">
-                  Growth and Self-Reliance
-                </h4>
-                <p className="text-slate-600 leading-relaxed">
-                  Following the declaration of Martial Law (1973), the church boldly declared its commitment to self-reliance, announcing a moratorium on foreign missionaries and launching local fundraising campaigns.
-                </p>
-              </div>
+        </div>
+      </section>
 
               <div className="border-l-4 border-emerald-600 pl-6">
                 <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-2">
