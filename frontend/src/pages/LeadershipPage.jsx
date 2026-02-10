@@ -307,6 +307,7 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
                 name={staff.name} 
                 position={staff.position}
                 icon={staff.icon}
+                image={staff.image}
               />
             ))}
           </div>
