@@ -1,123 +1,74 @@
-# Ecumenical Center Church - UCCP Homepage
+# UCCP Ecumenical Center Church Website - PRD
 
 ## Original Problem Statement
-Create a homepage for Ecumenical Center Church – UCCP with:
-- A welcoming hero banner with tagline "Building Faith, Embracing Community"
-- Short paragraph introducing the church and its mission
-- Buttons/links for Our Services, History, Events, and Donate
-- Warm, inviting, and community-focused tone
+Build and refine a church website for UCCP Ecumenical Center Church in Zamboanga City with:
+- Homepage with editable text
+- Blog page fetching devotionals from "Our Daily Bread" (odb.org)
+- Leadership page with photos for all church roles
+- History page with historical content from PDF and photos
+- Privacy Policy page
 
-## User Choices & Design Decisions
-- **Color Scheme:** Modern & clean (light blues, greens, white)
-- **Hero Image:** Placeholder (user will provide own)
-- **Content:** Placeholder text (user will fill in later)
-- **Functionality:** Static homepage with navigation (frontend only)
-- **Logo:** User-provided ECC-UCCP logo integrated
+## Target Audience
+- Church members and congregation
+- Visitors seeking information about the church
+- Community members looking for events and services
 
-## Architecture & Technology Stack
-- **Frontend:** React with React Router
-- **UI Framework:** Shadcn/UI components with Tailwind CSS
-- **Styling:** Modern Inter font, clean design with smooth transitions
-- **Backend:** Not yet implemented (frontend only MVP)
-- **Database:** Not yet implemented
+## Core Requirements
 
-## What's Been Implemented (Dec 3, 2025)
+### Completed Features ✅
+1. **Homepage** - Welcome page with church information
+2. **About Page** - Church overview and mission
+3. **Services Page** - Worship services information
+4. **Blog Page** - Auto-fetches devotionals from Our Daily Bread RSS feed (client-side)
+5. **Leadership Page** - All church leadership roles with photos
+6. **History Page** - National UCCP history timeline + local church history with photos
+7. **Events Page** - Church events listing
+8. **Contact Page** - Contact information and form
+9. **Donate Page** - Donation information
+10. **Statement of Faith Page** - Church beliefs
+11. **Privacy Policy Page** - Data privacy information (RA 10173 compliance)
 
-### Components Created
-1. **Header.jsx** - Navigation bar with logo, menu items, and donate button
-2. **Footer.jsx** - Professional footer with contact info and quick links
-3. **HeroSection.jsx** - Hero banner with gradient overlay and CTA buttons
-4. **WelcomeSection.jsx** - Introduction section with mission statement (enhanced with Vision/Mission/Goals cards)
-5. **QuickLinksSection.jsx** - Four card grid for main navigation
-6. **EventsSection.jsx** - Events showcase with three featured cards
-7. **CTASection.jsx** - Call-to-action section for visitor engagement
-8. **Home.jsx** - Main homepage component integrating all sections
+### In Progress 🔄
+1. **Lightbox/Zoom Feature** - Image zoom for History page photos (P0)
+2. **Mobile Header Fix** - "Zamboanga City" text visibility on mobile (P0)
+3. **Church Staff Photos Verification** - Confirm photos display correctly (P1)
 
-### Pages Structure
-- **Home (/)** - Full homepage with all sections ✅
-- **History (/history)** - Complete history page with timeline ✅
-- **About Us (/about)** - Placeholder page
-- **Our Services (/services)** - Placeholder page
-- **Events (/events)** - Placeholder page
-- **Contact (/contact)** - Placeholder page
-- **Donate (/donate)** - Placeholder page
+### Future/Backlog 📋
+1. Backend cleanup - Remove deprecated devotional endpoints from server.py
 
-### History Page (Dec 4, 2025) ✅
-Complete history page with:
-- Hero section with "Our Story of Faith"
-- **Our Local History** section with 3 milestone cards
-- **Understanding UCCP** section including:
-  - UCCP History (1948 founding)
-  - Core Values (4 values with descriptions)
-  - Theological Stance (6 principles)
-- **Timeline of Events** section with filterable milestones
-- Photo gallery suggestions section with placeholders
+## Technical Architecture
 
-### Mock Data (mock.js & historyMock.js)
-- Church information and tagline
-- Introduction and mission statement
-- Service schedule (Sunday Worship, Prayer Meeting, Bible Study)
-- History content and milestones
-- Three sample events (Sunday Fellowship, Community Outreach, Youth Ministry)
-- Contact information
-- Image URLs for sections
-- Complete UCCP history and values
-- Timeline events from 1948 to present
+### Frontend (React + Tailwind CSS)
+- `/app/frontend/src/pages/` - Page components
+- `/app/frontend/src/components/` - Reusable components (Header, Footer, Lightbox)
+- `/app/frontend/src/mock.js` - Static data
 
-## Design Features
-- Clean, modern design with Inter font
-- Emerald green as primary color (church/community appropriate)
-- Smooth animations and hover effects
-- Responsive layout for mobile, tablet, and desktop
-- Professional imagery showcasing community and faith
-- Clear call-to-action buttons throughout
-- Interactive timeline with filter options
-- Enhanced Vision/Mission/Goals display with icon cards
+### Key Pages
+- `Home.jsx` - Landing page
+- `BlogPage.jsx` - Client-side RSS fetching from odb.org
+- `LeadershipPage.jsx` - Church leadership with photos
+- `HistoryPage.jsx` - Historical content with timeline
+- `PrivacyPage.jsx` - Privacy policy (RA 10173)
 
-## Prioritized Backlog
+### Backend (FastAPI - Partially Deprecated)
+- `/app/backend/server.py` - Contains deprecated endpoints for devotionals
+- Blog functionality moved to frontend for Cloudflare Pages deployment
 
-### P0 - Content Updates
-- [ ] Replace placeholder text with actual church content
-- [ ] Upload and integrate actual church photos
-- [ ] Update contact information (phone, email, address)
-- [ ] Add real service times and schedule
-- [ ] Add actual historical photos to History page
+### External Dependencies
+- Our Daily Bread RSS Feed: `https://odb.org/feed/`
+- CORS Proxy: `allorigins.win` (for client-side RSS fetching)
 
-### P1 - Page Development
-- [ ] Build detailed Services page with full schedule
-- [ ] Develop Events page with calendar integration
-- [ ] Build About Us page with leadership team
-- [ ] Create Contact page with form
+## Deployment Model
+Frontend-only static deployment to **Cloudflare Pages**:
+- Emergent → GitHub → Cloudflare Pages
+- All dynamic content fetched client-side
+- No backend required in production
 
-### P2 - Enhanced Features
-- [ ] Contact form with email integration
-- [ ] Events management system with backend
-- [ ] Image gallery for church activities
-- [ ] Sermon library or resource section
-- [ ] Newsletter signup integration
-- [ ] Social media links and integration
-- [ ] Google Maps integration for directions
+## Data Privacy
+- No user accounts or data collection
+- Essential cookies only
+- Third-party embeds governed by their policies
+- Compliant with Data Privacy Act of 2012 (RA 10173)
 
-### P3 - Advanced Features
-- [ ] Online giving/donation integration
-- [ ] Live stream integration for services
-- [ ] Member portal/login system
-- [ ] Prayer request submission form
-- [ ] Multi-language support
-- [ ] Blog or news section
-
-## Next Tasks
-1. User to provide actual content to replace placeholders
-2. User to provide actual church photos for hero and sections
-3. Build individual pages (Services, Events, About, Contact)
-4. Implement contact form
-5. Consider backend integration for events and donations
-
-## Technical Notes
-- All components use Shadcn/UI for consistency
-- Color scheme uses Tailwind's emerald and slate palettes
-- Images currently from Unsplash (placeholder)
-- Smooth scrolling and transitions implemented
-- Mobile-responsive design included
-- Navigation fully functional with React Router
-- History page includes educational content about UCCP
+---
+Last Updated: December 2025

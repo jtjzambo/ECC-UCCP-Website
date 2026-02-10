@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { CookieNotice } from "./components/CookieNotice";
 import { Home } from "./pages/Home";
 import { HistoryPage } from "./pages/HistoryPage";
 import { ServicesPage } from "./pages/ServicesPage";
@@ -37,6 +38,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
         <Footer />
+        <CookieNotice />
       </BrowserRouter>
     </div>
   );
