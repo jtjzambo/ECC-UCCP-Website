@@ -39,7 +39,7 @@ export const Header = () => {
               <span className="text-[9px] sm:text-xs md:text-sm lg:text-base font-bold text-emerald-700 leading-tight tracking-wide">
                 United Church of Christ in the Philippines
               </span>
-              <span className="text-[8px] sm:text-[10px] text-slate-600 leading-tight mt-0.5 hidden sm:block">
+              <span className="text-[9px] sm:text-[10px] text-emerald-600 font-semibold leading-tight mt-0.5">
                 Zamboanga City
               </span>
             </div>
