@@ -136,20 +136,38 @@ export const BlogPage = () => {
       try {
         setLoadingOdb(true);
         
-        // Use allorigins.win as CORS proxy with cache-busting timestamp
-        const timestamp = new Date().getTime();
-        const proxyUrl = `https://api.allorigins.win/raw?url=`;
-        const odbUrl = encodeURIComponent(`https://odb.org/feed/?_=${timestamp}`);
+        // Try multiple CORS proxies for reliability
+        const corsProxies = [
+          'https://corsproxy.io/?',
+          'https://api.allorigins.win/raw?url=',
+          'https://cors-anywhere.herokuapp.com/'
+        ];
         
-        const response = await fetch(proxyUrl + odbUrl, {
-          cache: 'no-store', // Prevent browser caching
-          headers: {
-            'Cache-Control': 'no-cache'
+        const odbFeedUrl = 'https://odb.org/feed/';
+        let xmlText = null;
+        
+        for (const proxy of corsProxies) {
+          try {
+            const url = proxy + encodeURIComponent(odbFeedUrl);
+            const response = await fetch(url, {
+              cache: 'no-store',
+              headers: {
+                'Accept': 'application/rss+xml, application/xml, text/xml'
+              }
+            });
+            
+            if (response.ok) {
+              xmlText = await response.text();
+              if (xmlText && xmlText.includes('<item>')) {
+                break; // Successfully got RSS feed
+              }
+            }
+          } catch (e) {
+            console.log(`Proxy ${proxy} failed, trying next...`);
           }
-        });
+        }
         
-        if (response.ok) {
-          const xmlText = await response.text();
+        if (xmlText && xmlText.includes('<item>')) {
           const devotionals = parseODBFeed(xmlText);
           setOdbDevotionals(devotionals);
         }
