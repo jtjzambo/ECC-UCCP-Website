@@ -271,7 +271,7 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {churchOrganizations.map((leader, index) => (
               <SmallLeaderCard 
                 key={index} 
@@ -279,6 +279,7 @@ Beyond the local church, Rev. Nicanor has been actively involved in conference-w
                 position={leader.position}
                 org={leader.org}
                 logo={leader.logo}
+                photo={leader.photo}
               />
             ))}
           </div>
