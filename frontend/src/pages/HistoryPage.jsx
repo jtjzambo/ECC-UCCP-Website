@@ -77,7 +77,7 @@ export const HistoryPage = () => {
                   alt="The original ECC-UCCP wooden church building" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <p className="font-bold text-lg">The First Church Building</p>
                   <p className="text-sm opacity-90">Built through bayanihan spirit, 1965-1966</p>
@@ -97,7 +97,7 @@ export const HistoryPage = () => {
                   alt="Early church fellowship gathering" 
                   className="w-full h-40 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Fellowship Gathering</p>
               </div>
               <div 
@@ -113,7 +113,7 @@ export const HistoryPage = () => {
                   alt="The humble beginnings location" 
                   className="w-full h-40 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Humble Beginnings</p>
               </div>
               <div 
@@ -129,7 +129,7 @@ export const HistoryPage = () => {
                   alt="Early congregation in front of the church" 
                   className="w-full h-40 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Early Congregation</p>
               </div>
               <div 
@@ -145,7 +145,7 @@ export const HistoryPage = () => {
                   alt="Church community gathering" 
                   className="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium">Community of Faith - Our Church Family Through the Years</p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export const HistoryPage = () => {
                     alt="The location where early gatherings took place" 
                     className="w-full h-64 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                   <p className="absolute bottom-4 left-4 right-4 text-white text-sm">
                     <span className="font-semibold">Early Days:</span> The humble setting where faith took root in Zamboanga
                   </p>
@@ -187,7 +187,7 @@ export const HistoryPage = () => {
                     alt="Fellowship and planning meeting" 
                     className="w-full h-64 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                   <p className="absolute bottom-4 left-4 right-4 text-white text-sm">
                     <span className="font-semibold">Planning Committee:</span> The visionaries who dreamed of establishing ECC-UCCP
                   </p>
@@ -214,7 +214,7 @@ export const HistoryPage = () => {
                     alt="The first ECC-UCCP church building" 
                     className="w-full h-64 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                   <p className="absolute bottom-4 left-4 right-4 text-white text-sm">
                     <span className="font-semibold">First Church Building:</span> Dedicated December 18, 1966 - Built through bayanihan
                   </p>
@@ -250,7 +250,7 @@ export const HistoryPage = () => {
                   alt="Early congregation gathered in front of the church" 
                   className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <p className="font-bold text-lg">Our Founding Members</p>
                   <p className="text-sm opacity-90">The faithful pioneers who established ECC-UCCP in Zamboanga City</p>
