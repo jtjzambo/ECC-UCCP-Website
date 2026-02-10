@@ -64,7 +64,14 @@ export const HistoryPage = () => {
           {/* Historical Photo Gallery Hero */}
           <div className="mb-16">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4">
-              <div className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">
+              <div 
+                className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer"
+                onClick={() => openLightbox(
+                  "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/f4qw8yt5_uccp-ecc%20002%20%282%29.jpg",
+                  "The original ECC-UCCP wooden church building",
+                  "The First Church Building - Built through bayanihan spirit, 1965-1966"
+                )}
+              >
                 <img 
                   src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/f4qw8yt5_uccp-ecc%20002%20%282%29.jpg" 
                   alt="The original ECC-UCCP wooden church building" 
@@ -75,8 +82,16 @@ export const HistoryPage = () => {
                   <p className="font-bold text-lg">The First Church Building</p>
                   <p className="text-sm opacity-90">Built through bayanihan spirit, 1965-1966</p>
                 </div>
+                <div className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Click to enlarge</div>
               </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg group">
+              <div 
+                className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                onClick={() => openLightbox(
+                  "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/plfnkx0o_uccp-ecc%20001.jpg",
+                  "Early church fellowship gathering",
+                  "Fellowship Gathering - The early days of ECC-UCCP"
+                )}
+              >
                 <img 
                   src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/plfnkx0o_uccp-ecc%20001.jpg" 
                   alt="Early church fellowship gathering" 
@@ -85,7 +100,14 @@ export const HistoryPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Fellowship Gathering</p>
               </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg group">
+              <div 
+                className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                onClick={() => openLightbox(
+                  "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/tot97zjz_uccp-ecc%20016%20%282%29.jpg",
+                  "The humble beginnings location",
+                  "Humble Beginnings - Where our faith journey started"
+                )}
+              >
                 <img 
                   src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/tot97zjz_uccp-ecc%20016%20%282%29.jpg" 
                   alt="The humble beginnings location" 
@@ -94,7 +116,14 @@ export const HistoryPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Humble Beginnings</p>
               </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg group">
+              <div 
+                className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                onClick={() => openLightbox(
+                  "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4wgc6trv_uccp-ecc%20015%20%282%29.jpg",
+                  "Early congregation in front of the church",
+                  "Early Congregation - The faithful pioneers of ECC-UCCP"
+                )}
+              >
                 <img 
                   src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4wgc6trv_uccp-ecc%20015%20%282%29.jpg" 
                   alt="Early congregation in front of the church" 
@@ -103,7 +132,14 @@ export const HistoryPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <p className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium">Early Congregation</p>
               </div>
-              <div className="col-span-2 relative overflow-hidden rounded-xl shadow-lg group">
+              <div 
+                className="col-span-2 relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                onClick={() => openLightbox(
+                  "https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4gysui8f_uccp-ecc%20017%20%282%29.jpg",
+                  "Church community gathering",
+                  "Community of Faith - Our Church Family Through the Years"
+                )}
+              >
                 <img 
                   src="https://customer-assets.emergentagent.com/job_git-pull-saver/artifacts/4gysui8f_uccp-ecc%20017%20%282%29.jpg" 
                   alt="Church community gathering" 
