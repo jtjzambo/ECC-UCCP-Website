@@ -27,6 +27,7 @@ Build and refine a church website for UCCP Ecumenical Center Church in Zamboanga
 9. **Donate Page** - Donation information
 10. **Statement of Faith Page** - Church beliefs
 11. **Privacy Policy Page** - Data privacy information (RA 10173 compliance)
+12. **Cookie Notice Banner** - Lightweight notice for first-time visitors (180-day localStorage persistence)
 
 ### In Progress 🔄
 1. **Lightbox/Zoom Feature** - Image zoom for History page photos (P0)
